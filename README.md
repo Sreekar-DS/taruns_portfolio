@@ -1,14 +1,5 @@
-## Contact Information
-- **Location:** Vijayawada, India
-- **LinkedIn:** [linkedin.com/in/sreekar-ai](https://www.linkedin.com/in/sreekar-ai)
-- **Email:** [tarunsreekarp@gmail.com](mailto:tarunsreekarp@gmail.com)
-- **Portfolio:** [datascienceportfol.io/taruns_portfolio](https://datascienceportfol.io/taruns_portfolio)
-
-## Summary
-Detail-oriented Data Analyst with expertise in Google BigQuery, Python, and SQL. Skilled in statistical methods, data visualization, and storytelling for impactful reporting. Proven collaborator with clients and stakeholders, delivering actionable insights. Committed to leveraging data for business improvement and continuous professional growth.
-
+# Data Analyst | Business Analyst
 ## Experience
-
 ### Associate Business Analyst Intern
 **Sokrati Technologies Pvt. Ltd., Pune**  
 *Jun 2022 – Aug 2022*
