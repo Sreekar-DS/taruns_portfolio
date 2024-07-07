@@ -1,5 +1,14 @@
 # Data Analyst | Business Analyst
+## Welcome
+Welcome to my portfolio website! I am Tarun Sreekar Parasa, a detail-oriented Data Analyst with expertise in Google BigQuery, Python, and SQL. Explore my projects, experience, education, skills, and professional development to learn more about my work and capabilities.
+
+## Connect with Me
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/sreekar-ai)
+[![Projects Portfolio](https://img.shields.io/badge/Projects-Portfolio-brightgreen)](https://www.datascienceportfol.io/taruns_portfolio)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-black)](https://sreekar-ds.github.io/taruns_portfolio/)
+
 ## Experience
+
 ### Associate Business Analyst Intern
 **Sokrati Technologies Pvt. Ltd., Pune**  
 *Jun 2022 – Aug 2022*
@@ -13,19 +22,19 @@
 
 ### Operation and Metric Analysis
 - Analyzed various datasets to derive insights and answer questions posed by different departments. Investigated sudden metric changes to provide actionable insights for cross-functional teams.
-- **Project URL:** [taruns_portfolio/projects/3](https://datascienceportfol.io/taruns_portfolio/projects/3)
+- **Project URL:** [taruns_portfolio/projects/3](https://www.datascienceportfol.io/taruns_portfolio/projects/3)
 
 ### RFM Analysis of e-Commerce Customers
 - Performed Recency, Frequency, Monetary (RFM) analysis to segment customers and identify key target groups for marketing campaigns.
-- **Project URL:** [taruns_portfolio/projects/2](https://datascienceportfol.io/taruns_portfolio/projects/2)
+- **Project URL:** [taruns_portfolio/projects/2](https://www.datascienceportfol.io/taruns_portfolio/projects/2)
 
 ### Instagram User Analytics
 - Analyzed user interactions and engagement with the Instagram app, providing insights to cross-functional teams for business growth and strategic decision making.
-- **Project URL:** [taruns_portfolio/projects/1](https://datascienceportfol.io/taruns_portfolio/projects/1)
+- **Project URL:** [taruns_portfolio/projects/1](https://www.datascienceportfol.io/taruns_portfolio/projects/1)
 
 ### Student App Data Learning Analysis
 - Analyzed student app usage data to identify study patterns and to provide actionable coaching feedback.
-- **Project URL:** [taruns_portfolio/projects/0](https://datascienceportfol.io/taruns_portfolio/projects/0)
+- **Project URL:** [taruns_portfolio/projects/0](https://www.datascienceportfol.io/taruns_portfolio/projects/0)
 
 ## Education
 
