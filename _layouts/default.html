@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   {% seo %}
   <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
   <!--[if lt IE 9]>
@@ -18,63 +17,42 @@
       <nav>
         <ul>
           <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#skills">Skills</a></li>
           <li><a href="#certifications">Certifications</a></li>
           <li><a href="#professional-development">Professional Development</a></li>
           <li><a href="#publications">Publications</a></li>
         </ul>
       </nav>
-      <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-      {% if site.logo %}
-        <img src="{{site.logo | relative_url}}" alt="Logo" />
-      {% endif %}
-      <section>
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
-        <div class="buttons">
-          <a href="{{ site.linkedin_url }}" class="button linkedin">LinkedIn</a>
-          <a href="{{ site.portfolio_url }}" class="button portfolio">Projects Portfolio</a>
-          <a href="{{ site.github_url }}" class="button github">GitHub</a>
-        </div>
-      </section>
-      {% if site.show_downloads %}
-        <ul class="downloads">
-          <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
-          <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
-        </ul>
-      {% endif %}
     </header>
-    <section id="about">
-      <h2>About</h2>
-      {{ content }}
-    </section>
-    <section id="skills">
-      <h2>Skills</h2>
-      <h3>Technical Skills</h3>
-      <ul>
-        {% for skill in site.skills.technical_skills %}
-          <li>{{ skill }}</li>
-        {% endfor %}
-      </ul>
-      <h3>Soft Skills</h3>
-      <ul>
-        {% for skill in site.skills.soft_skills %}
-          <li>{{ skill }}</li>
-        {% endfor %}
-      </ul>
-      <h3>Others</h3>
-      <ul>
-        {% for skill in site.skills.others %}
-          <li>{{ skill }}</li>
-        {% endfor %}
-      </ul>
-    </section>
+    <div class="main-content">
+      <div class="left-section">
+        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+        <section>
+          <p>{{ site.description | default: site.github.project_tagline }}</p>
+          <div class="buttons">
+            <a href="{{ site.linkedin_url }}" class="button linkedin">LinkedIn</a>
+            <a href="{{ site.portfolio_url }}" class="button portfolio">Projects Portfolio</a>
+            <a href="{{ site.github_url }}" class="button github">GitHub</a>
+          </div>
+        </section>
+        <section id="skills">
+          <h2>Skills</h2>
+          <ul>
+            {% for skill in site.skills %}
+              <li>{{ skill }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+      </div>
+      <div class="right-section">
+        {{ content }}
+      </div>
+    </div>
     <footer>
       {% if site.github.is_project_page %}
-        <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+      <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
       {% endif %}
       <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
     </footer>
