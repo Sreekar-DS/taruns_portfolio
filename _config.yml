@@ -3,9 +3,5 @@ logo:
 show_downloads: True
 description: >
   Welcome to my data science portfolio! Kindly go through my projects, experience, education, skills, and professional development to learn more about my work and capabilities.
-  ## Connect with Me
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/sreekar-ai)
-[![Projects Portfolio](https://img.shields.io/badge/Projects-Portfolio-brightgreen)](https://www.datascienceportfol.io/taruns_portfolio)
-[![GitHub](https://img.shields.io/badge/GitHub-Profile-black)](https://sreekar-ds.github.io/taruns_portfolio/)
 theme: jekyll-theme-minimal
 font: Arial
