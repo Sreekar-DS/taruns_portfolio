@@ -8,3 +8,16 @@ font: Arial
 linkedin_url: https://www.linkedin.com/in/sreekar-ai
 portfolio_url: https://www.datascienceportfol.io/taruns_portfolio
 github_url: https://sreekar-ds.github.io/taruns_portfolio/
+
+skills:
+  technical_skills:
+    - Cloud: GCP, AWS
+    - Programming Languages: Python, SQL, VBA
+    - Python Libraries: Pandas, NumPy, Matplotlib, Seaborn
+    - Analytics Tools/Software: Microsoft Excel, Spreadsheets, BigQuery, Tableau, Power BI, Postgres SQL, MySQL, Looker Studio, Jupyter Notebook, Google Colab
+    - Analytics Techniques: Data Importing, Data Wrangling, Data Manipulation, Data Modelling, Data Processing, Data Visualization, ETL/ELT, Exploratory Data Analysis (EDA), Data Analysis, Statistical Analysis, Hypothesis Testing, A/B Testing
+    - Generative_ai: ChatGPT, Gemini, Copilot, Prompt Engineering
+  soft_skills:
+    - Communication and Presentation Skills, Adaptability and Learning Agility, Client/Stakeholder Collaboration, Attention to Detail, Critical Thinking, Problem Solving, Defining Requirements, Knowledge Acquisition, Research Skills, Task Management, Business Reporting
+  others:
+    - Business Intelligence (BI), Large-scale Data Analysis, Customer Relationship Management (CRM)
