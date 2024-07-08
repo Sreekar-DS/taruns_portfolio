@@ -21,15 +21,15 @@
           <img src="{{site.logo | relative_url}}" alt="Logo" />
         {% endif %}
 
+        
+      <section>
         <p>{{ site.description | default: site.github.project_tagline }}</p>
-
-        {% if site.github.is_project_page %}
-        <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
-        {% endif %}
-
-        {% if site.github.is_user_page %}
-        <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
-        {% endif %}
+        <div class="buttons">
+          <a href="{{ site.linkedin_url }}" class="button linkedin">LinkedIn</a>
+          <a href="{{ site.portfolio_url }}" class="button portfolio">Projects Portfolio</a>
+          <a href="{{ site.github_url }}" class="button github">GitHub</a>
+        </div>
+      </section>
 
         {% if site.show_downloads %}
         <ul class="downloads">
