@@ -1,43 +1,62 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ site.title }}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <nav class="navbar">
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#professional-development">Professional Development</a>
-      <a href="#publications">Publications</a>
-    </nav>
-    <div class="container">
-      <div class="left-column">
-        <header>
-          <h1><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></h1>
-          <p>{{ site.description }}</p>
-        </header>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+  <!--[if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
+  {% include head-custom.html %}
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#professional-development">Professional Development</a></li>
+          <li><a href="#publications">Publications</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="main-content">
+      <div class="left-section">
+        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+        <section>
+          <p>{{ site.description | default: site.github.project_tagline }}</p>
+          <div class="buttons">
+            <a href="{{ site.linkedin_url }}" class="button linkedin">LinkedIn</a>
+            <a href="{{ site.portfolio_url }}" class="button portfolio">Projects Portfolio</a>
+            <a href="{{ site.github_url }}" class="button github">GitHub</a>
+          </div>
+        </section>
         <section id="skills">
           <h2>Skills</h2>
-          <p>{{ site.skills }}</p>
+          <ul>
+            {% for skill in site.skills %}
+              <li>{{ skill }}</li>
+            {% endfor %}
+          </ul>
         </section>
-        <footer>
-          <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-        </footer>
       </div>
-      <div class="right-column">
-        <section id="about">{{ content }}</section>
+      <div class="right-section">
+        {{ content }}
       </div>
     </div>
-    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-  </body>
+    <footer>
+      {% if site.github.is_project_page %}
+      <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+      {% endif %}
+      <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+    </footer>
+  </div>
+  <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+</body>
 </html>
