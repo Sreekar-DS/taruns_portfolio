@@ -1,0 +1,62 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// Add your custom styles here
+body {
+  font-family: Arial, sans-serif;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.buttons a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #0073b1;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.buttons a.github {
+  background-color: #333;
+}
+
+.buttons a.portfolio {
+  background-color: #28a745;
+}
+
+section {
+  margin: 20px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
