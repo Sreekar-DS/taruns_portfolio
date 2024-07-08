@@ -3,60 +3,63 @@
 
 @import "{{ site.theme }}";
 
-// Add your custom styles here
+// Custom styles
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .wrapper {
-  width: 80%;
-  margin: 0 auto;
-}
-
-header {
-  text-align: center;
-  padding: 20px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 nav ul {
-  list-style-type: none;
+  list-style: none;
+  display: flex;
+  gap: 10px;
   padding: 0;
+  margin: 0;
+  background-color: #f0f0f0;
 }
 
 nav ul li {
   display: inline;
-  margin: 0 10px;
 }
 
 nav ul li a {
   text-decoration: none;
+  padding: 10px 15px;
   color: #000;
-}
-
-.buttons a {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 5px;
-  background-color: #0073b1;
-  color: #fff;
-  text-decoration: none;
+  background-color: #f0f0f0;
   border-radius: 5px;
 }
 
-.buttons a.github {
-  background-color: #333;
+nav ul li a:hover {
+  background-color: #e0e0e0;
 }
 
-.buttons a.portfolio {
-  background-color: #28a745;
+.main-content {
+  display: flex;
+  width: 100%;
 }
 
-section {
-  margin: 20px 0;
+.left-section {
+  width: 30%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+.right-section {
+  width: 70%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 footer {
   text-align: center;
-  padding: 20px 0;
-  border-top: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f0f0f0;
 }
