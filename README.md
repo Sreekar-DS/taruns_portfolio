@@ -42,11 +42,11 @@ Filter by:
     - **[Project URL](https://www.datascienceportfol.io/taruns_portfolio/projects/2)**
   </details>
 </div>
-<div class="project python">
+<div class="project sql">
   <details>
     <summary>Instagram User Analytics</summary>
-    - Analyzed user interactions and engagement with the Instagram app, providing insights to cross-functional teams for business growth and strategic decision making.
-    - **[Project URL](https://www.datascienceportfol.io/taruns_portfolio/projects/1)**
+    <li>Analyzed user interactions and engagement with the Instagram app, providing insights to cross-functional teams for business growth and strategic decision making.</li>
+    <li>- **[Project URL](https://www.datascienceportfol.io/taruns_portfolio/projects/1)**</li>
   </details>
 </div>
 <div class="project python">
