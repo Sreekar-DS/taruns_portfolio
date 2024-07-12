@@ -3,26 +3,41 @@
 
 @import "{{ site.theme }}";
 
-nav ul {
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+}
+
+.navbar ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  background-color: #f8f8f8;
-  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
 }
 
-nav ul li {
+.navbar ul li {
   display: inline;
   margin-right: 20px;
 }
 
-nav ul li a {
+.navbar ul li a {
   text-decoration: none;
   color: #000;
   padding: 14px 20px;
   display: inline-block;
 }
 
-nav ul li a:hover {
+.navbar ul li a:hover {
   background-color: #ddd;
+}
+
+/* Adjust the wrapper to account for the fixed navbar */
+.wrapper {
+  padding-top: 50px; /* Adjust this value if your navbar height changes */
 }
