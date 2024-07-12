@@ -4,9 +4,9 @@
 I am Tarun, a data enthusiast with a broad skillset in data analytics tools and techniques. I hold a Bachelor's degree in Electronics and Communication Engineering from Lovely Professional University and currently, I'm pursuing my Master's in Machine Learning and Artificial Intelligence from Woolf University (AlmaBetter Innovarsity). I honed my skills in data analytics through trial and error by exploring various courses, certifications, and projects. I excel in leveraging Google BigQuery, Python, and SQL to process and analyze large datasets, uncovering key trends and insights through data wrangling, statistical analysis, and data visualization. Explore my projects, experience, education, skills, and professional development to learn more about my work and capabilities.
 
 ## Connect with Me
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/sreekar-ai)
-[![Projects Portfolio](https://img.shields.io/badge/Projects-Portfolio-brightgreen)](https://www.datascienceportfol.io/taruns_portfolio)
-[![GitHub](https://img.shields.io/badge/GitHub-Profile-black)](https://sreekar-ds.github.io/taruns_portfolio/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square)](https://www.linkedin.com/in/sreekar-ai)
+[![Projects Portfolio](https://img.shields.io/badge/Projects-Portfolio-brightgreen?style=flat-square)](https://www.datascienceportfol.io/taruns_portfolio)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?style=flat-square)](https://sreekar-ds.github.io/taruns_portfolio/)
 
 ## Experience
 ### Associate Business Analyst Intern
