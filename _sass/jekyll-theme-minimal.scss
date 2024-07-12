@@ -23,7 +23,8 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size:28px;
+  font-size:25px;
+  color:#000;
 }
 
 h2 {
@@ -103,7 +104,10 @@ th {
 }
 
 img {
-  max-width:100%;
+  max-width:50%;
+  padding-left:65px;
+  padding-right:65px;
+  border-radius:50%;
 }
 
 kbd {
@@ -208,7 +212,7 @@ footer {
   width:270px;
   float:left;
   position:fixed;
-  bottom:50px;
+  bottom:25px;
   -webkit-font-smoothing:subpixel-antialiased;
 }
 
