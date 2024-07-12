@@ -1,17 +1,17 @@
 ---
 ---
 
-/* Define variables */
+/* /* Define variables */
 $body-padding: 20px; // Padding for body
 $wrapper-margin-left: 0px; // Margin left for wrapper
 $wrapper-margin-right: 0px; // Margin right for wrapper
 $wrapper-width: 1159px; // Width for wrapper
-$section-width: 859px; // Width for section
+$section-width: 859px; // Width for section */
 
 /* Import the theme styles */
 @import "{{ site.theme }}";
 
-/* Body styles */
+/* /* Body styles */
 body {
   padding: $body-padding;
 }
@@ -27,10 +27,10 @@ body {
 /* Section styles */
 section {
   width: $section-width;
-}
+} */
 
 /* Navbar Styles */
-.navbar {
+.navbar.styles {
   position: fixed;
   top: 0;
   right: 0px;
