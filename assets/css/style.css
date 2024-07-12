@@ -37,6 +37,19 @@
   background-color: #ddd;
 }
 
+/* Wrapper Styling */
+.wrapper {
+  padding-top: 50px; /* Adjust this value if your navbar height changes */
+  margin: 0; /* Remove space on the left and right */
+  padding: 0; /* Remove space inside the wrapper */
+}
+
+/* Remove default margin and padding from body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Adjust the wrapper to account for the fixed navbar */
 .wrapper {
   padding-top: 50px; /* Adjust this value if your navbar height changes */
