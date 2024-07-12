@@ -39,3 +39,11 @@
 .navbar ul li a:hover {
   background-color: #ddd;
 }
+
+/* Logo Styling */
+.photo {
+  margin-right:65px;
+  margin-left:65px;
+  width:50%;
+  border-radius:50%;
+}
