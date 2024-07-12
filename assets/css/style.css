@@ -1,41 +1,15 @@
 ---
 ---
 
-/* /* Define variables */
-$body-padding: 20px; // Padding for body
-$wrapper-margin-left: 0px; // Margin left for wrapper
-$wrapper-margin-right: 0px; // Margin right for wrapper
-$wrapper-width: 1159px; // Width for wrapper
-$section-width: 859px; // Width for section */
-
 /* Import the theme styles */
 @import "{{ site.theme }}";
 
-/* /* Body styles */
-body {
-  padding: $body-padding;
-}
-
-/* Wrapper styles */
-.wrapper {
-  margin-left: $wrapper-margin-left;
-  margin-right: $wrapper-margin-right;
-  width: $wrapper-width;
-  padding: 0; /* Reset padding to remove space inside */
-}
-
-/* Section styles */
-section {
-  width: $section-width;
-} */
-
 /* Navbar Styles */
-.navbar.styles {
+.navbar {
   position: fixed;
   top: 0;
-  right: 0px;
-  left: 0px;
-  
+  right: 0;
+  left: 0;
   background-color: #f8f8f8;
   border-bottom: 1px solid #ddd;
   z-index: 1000;
@@ -48,9 +22,8 @@ section {
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: left;
+  justify-content: left; /* Adjusted to center align items */
 }
-
 .navbar ul li {
   display: inline;
   margin: 0 10px; /* Adjust this value if needed */
