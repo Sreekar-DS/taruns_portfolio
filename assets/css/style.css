@@ -3,6 +3,13 @@
 
 @import "{{ site.theme }}";
 
+/* Apply box-sizing to all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Navbar Styles */
 .navbar {
   position: fixed;
@@ -11,6 +18,8 @@
   background-color: #f8f8f8;
   border-bottom: 1px solid #ddd;
   z-index: 1000;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar ul {
@@ -23,7 +32,7 @@
 
 .navbar ul li {
   display: inline;
-  margin-right: 20px;
+  margin: 0 10px; /* Adjust this value if needed */
 }
 
 .navbar ul li a {
@@ -37,9 +46,9 @@
   background-color: #ddd;
 }
 
-/* Wrapper Styling */
+/* Adjust the wrapper to account for the fixed navbar */
 .wrapper {
-  padding-top: 50px; /* Adjust this value if your navbar height changes */
+  padding-top: 40px; /* Adjust this value if your navbar height changes */
   margin: 0; /* Remove space on the left and right */
   padding: 0; /* Remove space inside the wrapper */
 }
@@ -48,9 +57,4 @@
 body {
   margin: 0;
   padding: 0;
-}
-
-/* Adjust the wrapper to account for the fixed navbar */
-.wrapper {
-  padding-top: 50px; /* Adjust this value if your navbar height changes */
 }
