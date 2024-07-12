@@ -1,21 +1,40 @@
 ---
 ---
 
+/* Define variables */
+$body-padding: 20px; // Padding for body
+$wrapper-margin-left: 0px; // Margin left for wrapper
+$wrapper-margin-right: 0px; // Margin right for wrapper
+$wrapper-width: 1159px; // Width for wrapper
+$section-width: 859px; // Width for section
+
+/* Import the theme styles */
 @import "{{ site.theme }}";
 
-// Custom styles
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* Body styles */
+body {
+  padding: $body-padding;
+}
+
+/* Wrapper styles */
+.wrapper {
+  margin-left: $wrapper-margin-left;
+  margin-right: $wrapper-margin-right;
+  width: $wrapper-width;
+  padding: 0; /* Reset padding to remove space inside */
+}
+
+/* Section styles */
+section {
+  width: $section-width;
 }
 
 /* Navbar Styles */
 .navbar {
   position: fixed;
   top: 0;
-  right: 20px;
-  left: 20px;
+  right: 0px;
+  left: 0px;
   
   background-color: #f8f8f8;
   border-bottom: 1px solid #ddd;
@@ -46,41 +65,4 @@
 
 .navbar ul li a:hover {
   background-color: #ddd;
-}
-
-/* Adjust the wrapper to account for the fixed navbar */
-.wrapper {
-  padding-top: 50px; /* Adjust this value if your navbar height changes */
-  width: 1159px
-  margin-left: 0px; /* Remove space on the left and right */
-  margin-right: 0px;
-  padding: 0; /* Remove space inside the wrapper */
-}
-
-/* Remove default margin and padding from body */
-body {
-  margin: 0;
-  padding: 0;
-}
-
-/* Remove padding from header, section, and footer */
-header {
-  width: 270px;
-  height: 270px;
-  margin: 0px;
-  padding: 0px;
-}
-
-section {
-  width: 869px;
-  height: auto;
-  padding: 0px;
-  
-}
-
-footer {
-  width: 270px;
-  height: 270px;
-  margin: 0px;
-  padding: 0px;
 }
