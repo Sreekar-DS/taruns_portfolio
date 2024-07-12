@@ -12,22 +12,22 @@
     {% include head-custom.html %}
   </head>
   <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="{{ "/" | absolute_url }}">Home</a></li>
+        <li><a href="{{ "/about/" | relative_url }}">About</a></li>
+        <li><a href="{{ "/experience/" | relative_url }}">Experience</a></li>
+        <li><a href="{{ "/education/" | relative_url }}">Education</a></li>
+        <li><a href="{{ "/projects/" | relative_url }}">Projects</a></li>
+        <li><a href="{{ "/skills/" | relative_url }}">Skills</a></li>
+        <li><a href="{{ "/certifications/" | relative_url }}">Certifications</a></li>
+        <li><a href="{{ "/courses/" | relative_url }}">Courses</a></li>
+        <li><a href="{{ "/publication/" | relative_url }}">Publication</a></li>
+      </ul>
+    </nav>
+    
     <div class="wrapper">
-      <!-- Navbar -->
-      <nav>
-        <ul>
-          <li><a href="{{ "/" | absolute_url }}">Home</a></li>
-          <li><a href="{{ "/about/" | relative_url }}">About</a></li>
-          <li><a href="{{ "/experience/" | relative_url }}">Experience</a></li>
-          <li><a href="{{ "/education/" | relative_url }}">Education</a></li>
-          <li><a href="{{ "/projects/" | relative_url }}">Projects</a></li>
-          <li><a href="{{ "/skills/" | relative_url }}">Skills</a></li>
-          <li><a href="{{ "/certifications/" | relative_url }}">Certifications</a></li>
-          <li><a href="{{ "/courses/" | relative_url }}">Courses</a></li>
-          <li><a href="{{ "/publication/" | relative_url }}">Publication</a></li>
-        </ul>
-      </nav>
-      
+      <!-- Navbar -->      
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
         {% if site.logo %}
