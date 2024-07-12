@@ -3,7 +3,7 @@
 
 @import "{{ site.theme }}";
 
-/* Apply box-sizing to all elements */
+// Custom styles
 *,
 *::before,
 *::after {
@@ -48,13 +48,19 @@
 
 /* Adjust the wrapper to account for the fixed navbar */
 .wrapper {
-  padding-top: 40px; /* Adjust this value if your navbar height changes */
+  padding-top: 60px; /* Adjust this value if your navbar height changes */
   margin: 0; /* Remove space on the left and right */
   padding: 0; /* Remove space inside the wrapper */
 }
 
 /* Remove default margin and padding from body */
 body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove padding from header, section, and footer */
+header, section, footer {
   margin: 0;
   padding: 0;
 }
