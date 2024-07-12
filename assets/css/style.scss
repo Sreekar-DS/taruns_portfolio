@@ -7,10 +7,13 @@
 .navbar {
   position: fixed;
   top: 0;
-  width: 100%;
+  right: 0;
+  left: 0;
   background-color: #f8f8f8;
   border-bottom: 1px solid #ddd;
   z-index: 1000;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar ul {
@@ -18,12 +21,11 @@
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: center;
+  justify-content: left; /* Adjusted to center align items */
 }
-
 .navbar ul li {
   display: inline;
-  margin-right: 20px;
+  margin: 0 10px; /* Adjust this value if needed */
 }
 
 .navbar ul li a {
@@ -35,9 +37,4 @@
 
 .navbar ul li a:hover {
   background-color: #ddd;
-}
-
-/* Adjust the wrapper to account for the fixed navbar */
-.wrapper {
-  padding-top: 50px; /* Adjust this value if your navbar height changes */
 }
