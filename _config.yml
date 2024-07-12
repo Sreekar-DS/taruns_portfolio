@@ -6,4 +6,3 @@ description: >
 theme: jekyll-theme-minimal
 font: Arial
 include: ["_pages"]
-footer: False
