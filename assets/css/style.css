@@ -14,7 +14,9 @@
 .navbar {
   position: fixed;
   top: 0;
-  width: 100%;
+  right: 20px;
+  left: 20px;
+  
   background-color: #f8f8f8;
   border-bottom: 1px solid #ddd;
   z-index: 1000;
@@ -27,7 +29,7 @@
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 
 .navbar ul li {
@@ -48,8 +50,10 @@
 
 /* Adjust the wrapper to account for the fixed navbar */
 .wrapper {
-  padding-top: 60px; /* Adjust this value if your navbar height changes */
-  margin: 0; /* Remove space on the left and right */
+  padding-top: 50px; /* Adjust this value if your navbar height changes */
+  width: 1159px
+  margin-left: 0px; /* Remove space on the left and right */
+  margin-right: 0px;
   padding: 0; /* Remove space inside the wrapper */
 }
 
@@ -60,7 +64,23 @@ body {
 }
 
 /* Remove padding from header, section, and footer */
-header, section, footer {
-  margin: 0;
-  padding: 0;
+header {
+  width: 270px;
+  height: 270px;
+  margin: 0px;
+  padding: 0px;
+}
+
+section {
+  width: 869px;
+  height: auto;
+  padding: 0px;
+  
+}
+
+footer {
+  width: 270px;
+  height: 270px;
+  margin: 0px;
+  padding: 0px;
 }
