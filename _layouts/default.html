@@ -63,6 +63,12 @@
       .project-description {
         margin: 10px 0;
       }
+
+      #certifications {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
       .certification-box {
       border: 1px solid #ddd;
       padding: 15px;
@@ -72,9 +78,16 @@
     }
     .certification-box h3 {
       margin: 0 0 10px 0;
+      display: flex;
+      flex-direction: row;
     }
     .certification-box p {
       margin: 5px 0;
+    }
+
+    .certification-org-cred, .certification-dates {
+      display:flex;
+      flex-direction: row
     }
     </style>
 
