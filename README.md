@@ -1,7 +1,5 @@
-# Data Analyst | Business Analyst
-
-## Welcome
-I am Tarun, a data enthusiast with a broad skillset in data analytics tools and techniques. I hold a Bachelor's degree in Electronics and Communication Engineering from Lovely Professional University and currently, I'm pursuing my Master's in Machine Learning and Artificial Intelligence from Woolf University (AlmaBetter Innovarsity). I honed my skills in data analytics through trial and error by exploring various courses, certifications, and projects. I excel in leveraging Google BigQuery, Python, and SQL to process and analyze large datasets, uncovering key trends and insights through data wrangling, statistical analysis, and data visualization. Explore my projects, experience, education, skills, and professional development to learn more about my work and capabilities.
+# Welcome
+Welcome to my data science portfolio! I'm Tarun Sreekar Parasa, a dedicated data analyst and machine learning enthusiast. Dive into my projects, discover my journey, and see the skills and knowledge that fuel my data-driven explorations. Learn about my experience, expertise, and the continuous professional development that shapes my career.
 
 ## Connect with Me
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square)](https://www.linkedin.com/in/sreekar-ai)
