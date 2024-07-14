@@ -4,35 +4,53 @@ title: Projects
 permalink: /projects/
 ---
 
-<div class="filter-box">
-  <label><input type="checkbox" class="filter" value="python"> Python</label>
-  <label><input type="checkbox" class="filter" value="sql"> SQL</label>
-  <label><input type="checkbox" class="filter" value="excel"> Excel</label>
-  <label><input type="checkbox" class="filter" value="tableau"> Tableau</label>
-  <label><input type="checkbox" class="filter" value="powerbi"> Power BI</label>
-</div>
-
 <div class="project-box python excel tableau">
-  <div class="details-header">
-    <h3>Operation and Metric Analysis</h3>
-  </div>
-  <div class="details-content">
-    <p>Analyzed various datasets to derive insights and answer questions posed by different departments. Investigated sudden metric changes to provide actionable insights for cross-functional teams.</p>
-    <p><a href="https://www.datascienceportfol.io/taruns_portfolio/projects/3">Project URL</a></p>
+  <div class="project-content">
+    <img src="path/to/image1.png" alt="Project Image" class="project-image">
+    <div class="project-details">
+      <h3>Student App Data Learning Analysis</h3>
+      <div class="project-skills">
+        <span>Microsoft Excel</span>
+        <span>Data Extraction</span>
+        <span>Data Cleaning</span>
+        <span>Data Manipulation</span>
+        <span>Exploratory Data Analysis</span>
+        <span>Pattern Recognition</span>
+        <span>Educational Analytics</span>
+        <span>Data Analysis</span>
+        <span>Data Visualization</span>
+        <span>Reporting</span>
+      </div>
+      <p class="project-description">
+        In this project, I analyzed student learning behaviors using Excel. I identified patterns like lack of engagement, distractions, and attempts to game the app. Insights from idle times, distraction rates, and response times helped evaluate student performance and suggest targeted coaching strategies.
+      </p>
+      <p><a href="https://www.datascienceportfol.io/taruns_portfolio/projects/3">Read more →</a></p>
+    </div>
   </div>
 </div>
 
 <div class="project-box sql">
-  <div class="details-header">
-    <h3>RFM Analysis of e-Commerce Customers</h3>
-  </div>
-  <div class="details-content">
-    <p>Performed Recency, Frequency, Monetary (RFM) analysis to segment customers and identify key target groups for marketing campaigns.</p>
-    <p><a href="https://www.datascienceportfol.io/taruns_portfolio/projects/2">Project URL</a></p>
+  <div class="project-content">
+    <img src="path/to/image2.png" alt="Project Image" class="project-image">
+    <div class="project-details">
+      <h3>Instagram User Analytics</h3>
+      <div class="project-skills">
+        <span>MySQL</span>
+        <span>Python</span>
+        <span>Tableau</span>
+        <span>Data Importing</span>
+        <span>Data Analysis</span>
+        <span>Data Visualization</span>
+        <span>Reporting</span>
+      </div>
+      <p class="project-description">
+        This project extracts insights and trends from Instagram user data. I am redoing it in a Kaggle notebook to consolidate results, explanations, and Tableau charts in one place. This will be available by 8th July EOD.
+      </p>
+      <p><a href="https://www.datascienceportfol.io/taruns_portfolio/projects/1">Read more →</a></p>
+    </div>
   </div>
 </div>
-
-<div class="project-box sql">
+<!-- <div class="project-box sql">
   <div class="details-header">
     <h3>Instagram User Analytics</h3>
   </div>
@@ -49,5 +67,5 @@ permalink: /projects/
   <div class="details-content">
     <p>Analyzed student app usage data to identify study patterns and to provide actionable coaching feedback.</p>
     <p><a href="https://www.datascienceportfol.io/taruns_portfolio/projects/0">Project URL</a></p>
-  </div>
+  </div> -->
 </div>
