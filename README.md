@@ -1,4 +1,4 @@
-# Welcome
+## Welcome
 Welcome to my data science portfolio! I'm Tarun Sreekar Parasa, a dedicated data analyst and machine learning enthusiast. Dive into my projects, discover my journey, and see the skills and knowledge that fuel my data-driven explorations. Learn about my experience, expertise, and the continuous professional development that shapes my career.
 
 ## Connect with Me
