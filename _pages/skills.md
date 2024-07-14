@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Skills
-permalink: /Skills/
+permalink: /skills/
 ---
 
 
