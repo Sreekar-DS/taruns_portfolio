@@ -13,7 +13,7 @@ permalink: /certifications/
   <label><input type="checkbox" class="filter" value="Business Analysis"> Business Analysis</label>
 </div>
 
-<div class="certifications">
+<div id="certifications">
   <div class="certification-box" data-skills="sql">
     <h3>SQL Associate</h3>
     <div class="certification-dates">
