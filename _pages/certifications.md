@@ -25,6 +25,8 @@ permalink: /certifications/
       <p><strong>Issued by:</strong> Datacamp</p>
       <p><strong>Credential ID:</strong> SQA0013570873781</p>
     </div>
+  </div>
+
     
   <div class="certification-box" data-skills="dataanalysis">
       <h3>Certificate of achievement - Data Analyst</h3>
