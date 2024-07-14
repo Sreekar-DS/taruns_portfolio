@@ -17,15 +17,15 @@ permalink: /certifications/
 <div id="certifications">
   <div class="certification-box" data-skills="sql">
       <h3>SQL Associate</h3>
+    <div class="certification-dates"> 
+      <p><strong>Issued date:</strong> Jan 2024</p>
+      <p><strong>Expiration date:</strong> Jan 2026</p></div>
+    </div>
     <div class="certification-org-cred">
       <p><strong>Issued by:</strong> Datacamp</p>
       <p><strong>Credential ID:</strong> SQA0013570873781</p>
     </div>
-    <div class="certification-dates"> 
-      <p><strong>Issued date:</strong> Jan 2024</p>
-      <p><strong>Expiration date:</strong> Jan 2026</p></div>
-  </div>
-
+    
   <div class="certification-box" data-skills="dataanalysis">
       <h3>Certificate of achievement - Data Analyst</h3>
         <div></div>
