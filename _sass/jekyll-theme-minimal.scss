@@ -15,8 +15,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .jobtitle{
-  padding-top: 20px;
-  justify: center;
+  margin-top: 20px;
+  float: center;
+  font-weight: bold;
+  text-align: center;  
 }
 
 p, ul, ol, table, pre, dl {
