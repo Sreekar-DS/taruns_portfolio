@@ -11,6 +11,7 @@ Welcome to my data science portfolio! I'm Tarun Sreekar Parasa, a dedicated data
 ## Currently Working ON
 Filter by: 
 <select id="project-filter" onchange="filterProjects()">
+  <option value="all">All</option>
   <option value="course">Professional Development/Courses</option>
   <option value="project">Projects</option>
   <option value="jobsimulation">Job Simulations</option>
