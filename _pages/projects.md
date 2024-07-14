@@ -4,6 +4,14 @@ title: Projects
 permalink: /projects/
 ---
 
+<div class="filter-box">
+  <label><input type="checkbox" class="filter" value="python"> Python</label>
+  <label><input type="checkbox" class="filter" value="sql"> SQL</label>
+  <label><input type="checkbox" class="filter" value="excel"> Excel</label>
+  <label><input type="checkbox" class="filter" value="tableau"> Tableau</label>
+  <label><input type="checkbox" class="filter" value="powerbi"> Power BI</label>
+</div>
+
 <div class="project-box python excel tableau">
   <div class="project-content">
     <img src="path/to/image1.png" alt="Project Image" class="project-image">
