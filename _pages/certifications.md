@@ -5,25 +5,31 @@ permalink: /certifications/
 ---
 
 <div class="filter-box">
-
   <label><input type="checkbox" class="filter" value="python"> Python</label>
   <label><input type="checkbox" class="filter" value="sql"> SQL</label>
   <label><input type="checkbox" class="filter" value="excel"> Excel</label>
   <label><input type="checkbox" class="filter" value="tableau"> Tableau</label>
   <label><input type="checkbox" class="filter" value="powerbi"> Power BI</label>
+  <label><input type="checkbox" class="filter" value="Data Analysis"> Data Analysis</label>
+  <label><input type="checkbox" class="filter" value="Business Analysis"> Business Analysis</label>
 </div>
 
 <div id="certifications">
   <div class="certification-box" data-skills="sql">
       <h3>SQL Associate</h3>
+    <div class="certification-org-cred">
       <p><strong>Issued by:</strong> Datacamp</p>
-      <p><strong>Issued date:</strong> Jan 2024</p>
-      <p><strong>Expiration date:</strong> Jan 2026</p>
       <p><strong>Credential ID:</strong> SQA0013570873781</p>
+    </div>
+    <div class="certification-dates"> 
+      <p><strong>Issued date:</strong> Jan 2024</p>
+      <p><strong>Expiration date:</strong> Jan 2026</p></div>
   </div>
 
   <div class="certification-box" data-skills="dataanalysis">
       <h3>Certificate of achievement - Data Analyst</h3>
+        <div></div>
+        <div></div>
       <p><strong>Issued by:</strong> 365 Data Science</p>
       <p><strong>Issued date:</strong> Nov 2023</p>
       <p><strong>Expiration date:</strong> No expiry</p>
