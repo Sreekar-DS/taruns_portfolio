@@ -1,0 +1,50 @@
+[
+    {
+        "name": "SQL Associate",
+        "skills": "sql",
+        "issued_date": "Jan 2024",
+        "expiration_date": "Jan 2026",
+        "organisation": "Datacamp",
+        "credential_id": "SQA0013570873781"
+    },
+    {
+        "name": "Certificate of achievement - Data Analyst",
+        "skills": "dataanalysis",
+        "issued_date": "Nov 2023",
+        "expiration_date": "No expiry",
+        "organisation": "365 Data Science",
+        "credential_id": "DD-3DF0FA5ED4"
+    },
+    {
+        "name": "Certificate of achievement - Business Analyst",
+        "skills": "businessanalysis",
+        "issued_date": "Nov 2023",
+        "expiration_date": "No expiry",
+        "organisation": "365 Data Science",
+        "credential_id": "DD-43238FF645"
+    },
+    {
+        "name": "EF SET English Certification",
+        "skills": "dataanalysis",
+        "issued_date": "Jan 2023",
+        "expiration_date": "No expiry",
+        "organisation": "EF Education First",
+        "credential_id": "ZEKp5E"
+    },
+    {
+        "name": "Introduction to AWS",
+        "skills": "python",
+        "issued_date": "Jun 2024",
+        "expiration_date": "No expiry",
+        "organisation": "Datacamp",
+        "credential_id": "d0d755bdaa5"
+    },
+    {
+        "name": "PCAP: Programming Essentials in Python",
+        "skills": "python",
+        "issued_date": "Jun 2023",
+        "expiration_date": "No expiry",
+        "organisation": "Cisco Networking Academy",
+        "credential_id": "985eec45a"
+    }
+]
