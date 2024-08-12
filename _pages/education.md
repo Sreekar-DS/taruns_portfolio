@@ -8,9 +8,9 @@ permalink: /education/
 
 ### Master of Science in Computer Science: Machine Learning and Artificial Intelligence
 **Woolf University (AlmaBetter Innovarsity) - Remote**
-*Dec 2023 - Expected in Nov2024*
+*December 2023 - Expected in November 2024*
 
 ### Bachelor of Technology: Electronics and Communication Engineering
 **Lovely Professional University (LPU) | Punjab, India**
-*Aug 2018 - Jul 2022*
+*August 2018 - July 2022*
 -GPA: 7.27
