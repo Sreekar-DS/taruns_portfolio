@@ -48,8 +48,8 @@ permalink: /projects/
         <span>Exploratory Data Analysis</span>
         <span>Data Visualization</span>
         <span>Reporting</span>
-      </div>
-      <p class="project-description"> -->
+      </div>-->
+      <p class="project-description"> 
         This project extracts insights and trends from Instagram user data. I am redoing it in a Kaggle notebook to consolidate results, explanations, and Tableau charts in one place. This will be available by 25 Aug EOD.
       </p>
       <p><a href="https://www.datascienceportfol.io/taruns_portfolio/projects/1">Read more →</a></p>
