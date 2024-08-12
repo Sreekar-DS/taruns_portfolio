@@ -29,9 +29,7 @@ permalink: /projects/
         <span>Data Visualization</span>
         <span>Reporting</span>
       </div> -->
-      <p class="project-description">
-        In this project, I analyzed student learning behaviors using Excel. I identified patterns like lack of engagement, distractions, and attempts to game the app. Insights from idle times, distraction rates, and response times helped evaluate student performance and suggest targeted coaching strategies.
-      </p>
+      <p class="project-description">In this project, I analyzed student learning behaviors using Excel. I identified patterns like lack of engagement, distractions, and attempts to game the app. Insights from idle times, distraction rates, and response times helped evaluate student performance and suggest targeted coaching strategies.</p>
       <p><a href="https://www.datascienceportfol.io/taruns_portfolio/projects/0">Read more →</a></p>
     </div>
   </div>
@@ -57,23 +55,4 @@ permalink: /projects/
       <p><a href="https://www.datascienceportfol.io/taruns_portfolio/projects/1">Read more →</a></p>
     </div>
   </div>
-</div>
-<!-- <div class="project-box sql">
-  <div class="details-header">
-    <h3>Instagram User Analytics</h3>
-  </div>
-  <div class="details-content">
-    <p>Analyzed user interactions and engagement with the Instagram app, providing insights to cross-functional teams for business growth and strategic decision making.</p>
-    <p><a href="https://www.datascienceportfol.io/taruns_portfolio/projects/1">Project URL</a></p>
-  </div>
-</div>
-
-<div class="project-box python">
-  <div class="details-header">
-    <h3>Student App Data Learning Analysis</h3>
-  </div>
-  <div class="details-content">
-    <p>Analyzed student app usage data to identify study patterns and to provide actionable coaching feedback.</p>
-    <p><a href="https://www.datascienceportfol.io/taruns_portfolio/projects/0">Project URL</a></p>
-  </div> -->
 </div>
