@@ -12,12 +12,12 @@ permalink: /projects/
   <label><input type="checkbox" class="filter" value="powerbi"> Power BI</label>
 </div>
 
-<div class="project-box python excel tableau">
+<div class="project-box excel">
   <div class="project-content">
     <img src="path/to/image1.png" alt="Project Image" class="project-image">
     <div class="project-details">
       <h3>Student App Data Learning Analysis</h3>
-      <div class="project-skills">
+<!--       <div class="project-skills">
         <span>Microsoft Excel</span>
         <span>Data Extraction</span>
         <span>Data Cleaning</span>
@@ -28,11 +28,11 @@ permalink: /projects/
         <span>Data Analysis</span>
         <span>Data Visualization</span>
         <span>Reporting</span>
-      </div>
+      </div> -->
       <p class="project-description">
         In this project, I analyzed student learning behaviors using Excel. I identified patterns like lack of engagement, distractions, and attempts to game the app. Insights from idle times, distraction rates, and response times helped evaluate student performance and suggest targeted coaching strategies.
       </p>
-      <p><a href="https://www.datascienceportfol.io/taruns_portfolio/projects/3">Read more →</a></p>
+      <p><a href="https://www.datascienceportfol.io/taruns_portfolio/projects/0">Read more →</a></p>
     </div>
   </div>
 </div>
@@ -42,17 +42,17 @@ permalink: /projects/
     <img src="path/to/image2.png" alt="Project Image" class="project-image">
     <div class="project-details">
       <h3>Instagram User Analytics</h3>
-      <div class="project-skills">
+<!--       <div class="project-skills">
         <span>MySQL</span>
-        <span>Python</span>
         <span>Tableau</span>
         <span>Data Importing</span>
-        <span>Data Analysis</span>
+        <span>Data Manipulation</span>
+        <span>Exploratory Data Analysis</span>
         <span>Data Visualization</span>
         <span>Reporting</span>
       </div>
-      <p class="project-description">
-        This project extracts insights and trends from Instagram user data. I am redoing it in a Kaggle notebook to consolidate results, explanations, and Tableau charts in one place. This will be available by 8th July EOD.
+      <p class="project-description"> -->
+        This project extracts insights and trends from Instagram user data. I am redoing it in a Kaggle notebook to consolidate results, explanations, and Tableau charts in one place. This will be available by 25 Aug EOD.
       </p>
       <p><a href="https://www.datascienceportfol.io/taruns_portfolio/projects/1">Read more →</a></p>
     </div>
