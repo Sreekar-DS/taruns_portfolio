@@ -29,7 +29,7 @@ permalink: /professional development/
 </div>
 
 <script>
-  fetch('/path/to/your/repo/data/courses.json')
+  fetch('assets/courses.json')
     .then(response => response.json())
     .then(data => {
       const certificationsContainer = document.getElementById('certifications');
