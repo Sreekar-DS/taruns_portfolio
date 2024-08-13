@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const careerTracksContainer = document.getElementById("career-tracks");
   const skillsFilterBox = document.getElementById("skills-filter-box");
 
-  fetch('/assets/professional development.json')
+  fetch('assets/professional development.json')
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
