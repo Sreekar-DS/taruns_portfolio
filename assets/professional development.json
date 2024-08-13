@@ -1,224 +1,222 @@
-{
-  "Courses": [
-    {
-      "Course Name": "Certificate of Achievement - Business Analyst",
-      "Organisation": "365 Data Science",
-      "Issued Date": "07-Nov-23",
-      "Credential ID": "DD-43238FF645",
-      "Credential URL": "https://learn.365datascience.com/c/0eb1f58bb1",
-      "Course Type": "Career Track",
-      "Career Track Name": "Business Analyst Career Track",
-      "Skills": "Excel, Tableau, Power BI"
-    },
-    {
-      "Course Name": "Certificate of Achievement - Data Analyst",
-      "Organisation": "365 Data Science",
-      "Issued Date": "17-Nov-23",
-      "Credential ID": "DD-3DF0FA5ED4",
-      "Credential URL": "https://learn.365datascience.com/c/17752ebc10",
-      "Course Type": "Career Track",
-      "Career Track Name": "Data Analyst Career Track",
-      "Skills": "Python, SQL, Tableau, Excel"
-    },
-    {
-      "Course Name": "Introduction to Data and Data Science",
-      "Organisation": "365 Data Science",
-      "Issued Date": "14-Jul-23",
-      "Credential ID": "6f5978aeda",
-      "Credential URL": "https://learn.365datascience.com/c/6f5978aeda/",
-      "Course Type": "Career Track Course",
-      "Career Track Name": "Business Analyst Career Track, Data Analyst Career Track",
-      "Skills": "Data Analytics"
-    },
-    {
-      "Course Name": "Data Literacy",
-      "Organisation": "365 Data Science",
-      "Issued Date": "05-Oct-23",
-      "Credential ID": "6db05dc3a7",
-      "Credential URL": "https://learn.365datascience.com/c/6db05dc3a7/",
-      "Course Type": "Career Track Course",
-      "Career Track Name": "Business Analyst Career Track",
-      "Skills": "Data Analytics"
-    },
-    {
-      "Course Name": "Data Strategy",
-      "Organisation": "365 Data Science",
-      "Issued Date": "05-Oct-23",
-      "Credential ID": "64eec437c8",
-      "Credential URL": "https://learn.365datascience.com/c/64eec437c8/",
-      "Course Type": "Career Track Course",
-      "Career Track Name": "Business Analyst Career Track",
-      "Skills": "Data Analytics"
-    },
-    {
-      "Course Name": "Introduction to Excel",
-      "Organisation": "365 Data Science",
-      "Issued Date": "06-Oct-23",
-      "Credential ID": "8da8503ba3",
-      "Credential URL": "https://learn.365datascience.com/c/8da8503ba3/",
-      "Course Type": "Career Track Course",
-      "Career Track Name": "Business Analyst Career Track, Data Analyst Career Track",
-      "Skills": "Excel"
-    },
-    {
-      "Course Name": "Data Analysis with Excel Pivot Tables",
-      "Organisation": "365 Data Science",
-      "Issued Date": "17-Feb-23",
-      "Credential ID": "2b335f1f52",
-      "Credential URL": "https://learn.365datascience.com/c/2b335f1f52/",
-      "Course Type": "Career Track Course",
-      "Career Track Name": "Business Analyst Career Track",
-      "Skills": "Excel"
-    },
-    {
-      "Course Name": "Advanced Microsoft Excel",
-      "Organisation": "365 Data Science",
-      "Issued Date": "09-Oct-23",
-      "Credential ID": "255d164eeb",
-      "Credential URL": "https://learn.365datascience.com/c/255d164eeb/",
-      "Course Type": "Career Track Course",
-      "Career Track Name": "Business Analyst Career Track",
-      "Skills": "Excel"
-    },
-    {
-      "Course Name": "Statistics",
-      "Organisation": "365 Data Science",
-      "Issued Date": "07-Nov-23",
-      "Credential ID": "736582a118",
-      "Credential URL": "https://learn.365datascience.com/c/736582a118/",
-      "Course Type": "Career Track Course",
-      "Career Track Name": "Business Analyst Career Track, Data Analyst Career Track",
-      "Skills": "Data Analytics"
-    },
-    {
-      "Course Name": "The Complete Data Visualization Course with Python, Tableau and Excel",
-      "Organisation": "366 Data Science",
-      "Issued Date": "07-Nov-23",
-      "Credential ID": "4d91236ea0",
-      "Credential URL": "https://learn.365datascience.com/c/4d91236ea0/",
-      "Course Type": "Career Track Course",
-      "Career Track Name": "Business Analyst Career Track, Data Analyst Career Track",
-      "Skills": "Python,Tableau, Excel"
-    },
-    {
-      "Course Name": "Data Analysis in Power BI with Chat ",
-      "Organisation": "365 Data Science",
-      "Issued Date": "07-Nov-23",
-      "Credential ID": "87105a7da5",
-      "Credential URL": "https://learn.365datascience.com/c/87105a7da5/",
-      "Course Type": "Career Track Course",
-      "Career Track Name": "Business Analyst Career Track",
-      "Skills": "Power BI"
-    },
-    {
-      "Course Name": "Introduction to Tableau",
-      "Organisation": "365 Data Science",
-      "Issued Date": "07-Nov-23",
-      "Credential ID": "9c6c126052",
-      "Credential URL": "https://learn.365datascience.com/c/9c6c126052/",
-      "Course Type": "Career Track Course",
-      "Career Track Name": "Business Analyst Career Track",
-      "Skills": "Tableau"
-    },
-    {
-      "Course Name": "SQL",
-      "Organisation": "365 Data Science",
-      "Issued Date": "17-Nov-23",
-      "Credential ID": "530bf4031c",
-      "Credential URL": "https://learn.365datascience.com/c/530bf4031c/",
-      "Course Type": "Career Track Course",
-      "Career Track Name": "Data Analyst Career Track",
-      "Skills": "SQL"
-    },
-    {
-      "Course Name": "Introduction to Python",
-      "Organisation": "365 Data Science",
-      "Issued Date": "05-Oct-23",
-      "Credential ID": "4d5ad50261",
-      "Credential URL": "https://learn.365datascience.com/c/4d5ad50261/",
-      "Course Type": "Career Track Course",
-      "Career Track Name": "Data Analyst Career Track",
-      "Skills": "Python"
-    },
-    {
-      "Course Name": "Data Preprocessing with NumPy",
-      "Organisation": "365 Data Science",
-      "Issued Date": "17-Nov-23",
-      "Credential ID": "88f4fbb331",
-      "Credential URL": "https://learn.365datascience.com/c/88f4fbb331/",
-      "Course Type": "Career Track Course",
-      "Career Track Name": "Data Analyst Career Track",
-      "Skills": "Python"
-    },
-    {
-      "Course Name": "Data Cleaning and Preprocessing with pandas",
-      "Organisation": "365 Data Science",
-      "Issued Date": "17-Nov-23",
-      "Credential ID": "6309dd39c2",
-      "Credential URL": "https://learn.365datascience.com/c/6309dd39c2/",
-      "Course Type": "Career Track Course",
-      "Career Track Name": "Data Analyst Career Track",
-      "Skills": "Python"
-    },
-    {
-      "Course Name": "SQL + Tableau + Python",
-      "Organisation": "365 Data Science",
-      "Issued Date": "17-Nov-23",
-      "Credential ID": "1c9276c34b",
-      "Credential URL": "https://learn.365datascience.com/c/1c9276c34b/",
-      "Course Type": "Career Track Course",
-      "Career Track Name": "Data Analyst Career Track",
-      "Skills": "SQL, Tableau, Python"
-    },
-    {
-      "Course Name": "Time series Analysis with Python",
-      "Organisation": "365 Data Science",
-      "Issued Date": "17-Nov-23",
-      "Credential ID": "9605f4c08d",
-      "Credential URL": "https://learn.365datascience.com/c/9605f4c08d/",
-      "Course Type": "Career Track Course",
-      "Career Track Name": "Data Analyst Career Track",
-      "Skills": "Python"
-    },
-    {
-      "Course Name": "PCAP: Programming Essentials in Python ",
-      "Organisation": "Cisco networking academy",
-      "Issued Date": "02-Jun-23",
-      "Credential ID": "b985eec45a",
-      "Credential URL": "https://www.credly.com/badges/92bae892-812d-4e4a-be1c-c7b985eec45a/public_url",
-      "Course Type": "Independent Course",
-      "Career Track Name": "",
-      "Skills": "Python"
-    },
-    {
-      "Course Name": "Prompt Engineering for Everyone",
-      "Organisation": "Cognitive Class",
-      "Issued Date": "20-Mar-24",
-      "Credential ID": "f192a8ff51",
-      "Credential URL": "https://courses.cognitiveclass.ai/certificates/4d786e91a9b845c8b76dfaf192a8ff51",
-      "Course Type": "Independent Course",
-      "Career Track Name": "",
-      "Skills": "Generative AI"
-    },
-    {
-      "Course Name": "ChatGPT for Everyone ",
-      "Organisation": "Learn Prompting",
-      "Issued Date": "16-Mar-24",
-      "Credential ID": "304kkwxncu",
-      "Credential URL": "https://learnprompting.thinkific.com/certificates/304kkwxncu",
-      "Course Type": "Independent Course",
-      "Career Track Name": "",
-      "Skills": "Generative AI"
-    },
-    {
-      "Course Name": "Introduction to AWS",
-      "Organisation": "Datacamp",
-      "Issued Date": "01-Jun-24",
-      "Credential ID": "0d755bdaa5",
-      "Credential URL": "https://www.datacamp.com/completed/statement-of-accomplishment/course/b974104db717bc96dc1cf3455a2a1d0d755bdaa5",
-      "Course Type": "Independent Course",
-      "Career Track Name": "",
-      "Skills": "AWS"
-    }
-  ]
-}
+[
+  {
+    "Course Name": "Certificate of Achievement - Business Analyst",
+    "Organisation": "365 Data Science",
+    "Issued Date": "07-Nov-23",
+    "Credential ID": "DD-43238FF645",
+    "Credential URL": "https://learn.365datascience.com/c/0eb1f58bb1",
+    "Course Type": "Career Track",
+    "Career Track Name": "Business Analyst Career Track",
+    "Skills": "Excel, Tableau, Power BI"
+  },
+  {
+    "Course Name": "Certificate of Achievement - Data Analyst",
+    "Organisation": "365 Data Science",
+    "Issued Date": "17-Nov-23",
+    "Credential ID": "DD-3DF0FA5ED4",
+    "Credential URL": "https://learn.365datascience.com/c/17752ebc10",
+    "Course Type": "Career Track",
+    "Career Track Name": "Data Analyst Career Track",
+    "Skills": "Python, SQL, Tableau, Excel"
+  },
+  {
+    "Course Name": "Introduction to Data and Data Science",
+    "Organisation": "365 Data Science",
+    "Issued Date": "14-Jul-23",
+    "Credential ID": "6f5978aeda",
+    "Credential URL": "https://learn.365datascience.com/c/6f5978aeda/",
+    "Course Type": "Career Track Course",
+    "Career Track Name": "Business Analyst Career Track, Data Analyst Career Track",
+    "Skills": "Data Analytics"
+  },
+  {
+    "Course Name": "Data Literacy",
+    "Organisation": "365 Data Science",
+    "Issued Date": "05-Oct-23",
+    "Credential ID": "6db05dc3a7",
+    "Credential URL": "https://learn.365datascience.com/c/6db05dc3a7/",
+    "Course Type": "Career Track Course",
+    "Career Track Name": "Business Analyst Career Track",
+    "Skills": "Data Analytics"
+  },
+  {
+    "Course Name": "Data Strategy",
+    "Organisation": "365 Data Science",
+    "Issued Date": "05-Oct-23",
+    "Credential ID": "64eec437c8",
+    "Credential URL": "https://learn.365datascience.com/c/64eec437c8/",
+    "Course Type": "Career Track Course",
+    "Career Track Name": "Business Analyst Career Track",
+    "Skills": "Data Analytics"
+  },
+  {
+    "Course Name": "Introduction to Excel",
+    "Organisation": "365 Data Science",
+    "Issued Date": "06-Oct-23",
+    "Credential ID": "8da8503ba3",
+    "Credential URL": "https://learn.365datascience.com/c/8da8503ba3/",
+    "Course Type": "Career Track Course",
+    "Career Track Name": "Business Analyst Career Track, Data Analyst Career Track",
+    "Skills": "Excel"
+  },
+  {
+    "Course Name": "Data Analysis with Excel Pivot Tables",
+    "Organisation": "365 Data Science",
+    "Issued Date": "17-Feb-23",
+    "Credential ID": "2b335f1f52",
+    "Credential URL": "https://learn.365datascience.com/c/2b335f1f52/",
+    "Course Type": "Career Track Course",
+    "Career Track Name": "Business Analyst Career Track",
+    "Skills": "Excel"
+  },
+  {
+    "Course Name": "Advanced Microsoft Excel",
+    "Organisation": "365 Data Science",
+    "Issued Date": "09-Oct-23",
+    "Credential ID": "255d164eeb",
+    "Credential URL": "https://learn.365datascience.com/c/255d164eeb/",
+    "Course Type": "Career Track Course",
+    "Career Track Name": "Business Analyst Career Track",
+    "Skills": "Excel"
+  },
+  {
+    "Course Name": "Statistics",
+    "Organisation": "365 Data Science",
+    "Issued Date": "07-Nov-23",
+    "Credential ID": "736582a118",
+    "Credential URL": "https://learn.365datascience.com/c/736582a118/",
+    "Course Type": "Career Track Course",
+    "Career Track Name": "Business Analyst Career Track, Data Analyst Career Track",
+    "Skills": "Data Analytics"
+  },
+  {
+    "Course Name": "The Complete Data Visualization Course with Python, Tableau and Excel",
+    "Organisation": "366 Data Science",
+    "Issued Date": "07-Nov-23",
+    "Credential ID": "4d91236ea0",
+    "Credential URL": "https://learn.365datascience.com/c/4d91236ea0/",
+    "Course Type": "Career Track Course",
+    "Career Track Name": "Business Analyst Career Track, Data Analyst Career Track",
+    "Skills": "Python,Tableau, Excel"
+  },
+  {
+    "Course Name": "Data Analysis in Power BI with Chat ",
+    "Organisation": "365 Data Science",
+    "Issued Date": "07-Nov-23",
+    "Credential ID": "87105a7da5",
+    "Credential URL": "https://learn.365datascience.com/c/87105a7da5/",
+    "Course Type": "Career Track Course",
+    "Career Track Name": "Business Analyst Career Track",
+    "Skills": "Power BI"
+  },
+  {
+    "Course Name": "Introduction to Tableau",
+    "Organisation": "365 Data Science",
+    "Issued Date": "07-Nov-23",
+    "Credential ID": "9c6c126052",
+    "Credential URL": "https://learn.365datascience.com/c/9c6c126052/",
+    "Course Type": "Career Track Course",
+    "Career Track Name": "Business Analyst Career Track",
+    "Skills": "Tableau"
+  },
+  {
+    "Course Name": "SQL",
+    "Organisation": "365 Data Science",
+    "Issued Date": "17-Nov-23",
+    "Credential ID": "530bf4031c",
+    "Credential URL": "https://learn.365datascience.com/c/530bf4031c/",
+    "Course Type": "Career Track Course",
+    "Career Track Name": "Data Analyst Career Track",
+    "Skills": "SQL"
+  },
+  {
+    "Course Name": "Introduction to Python",
+    "Organisation": "365 Data Science",
+    "Issued Date": "05-Oct-23",
+    "Credential ID": "4d5ad50261",
+    "Credential URL": "https://learn.365datascience.com/c/4d5ad50261/",
+    "Course Type": "Career Track Course",
+    "Career Track Name": "Data Analyst Career Track",
+    "Skills": "Python"
+  },
+  {
+    "Course Name": "Data Preprocessing with NumPy",
+    "Organisation": "365 Data Science",
+    "Issued Date": "17-Nov-23",
+    "Credential ID": "88f4fbb331",
+    "Credential URL": "https://learn.365datascience.com/c/88f4fbb331/",
+    "Course Type": "Career Track Course",
+    "Career Track Name": "Data Analyst Career Track",
+    "Skills": "Python"
+  },
+  {
+    "Course Name": "Data Cleaning and Preprocessing with pandas",
+    "Organisation": "365 Data Science",
+    "Issued Date": "17-Nov-23",
+    "Credential ID": "6309dd39c2",
+    "Credential URL": "https://learn.365datascience.com/c/6309dd39c2/",
+    "Course Type": "Career Track Course",
+    "Career Track Name": "Data Analyst Career Track",
+    "Skills": "Python"
+  },
+  {
+    "Course Name": "SQL + Tableau + Python",
+    "Organisation": "365 Data Science",
+    "Issued Date": "17-Nov-23",
+    "Credential ID": "1c9276c34b",
+    "Credential URL": "https://learn.365datascience.com/c/1c9276c34b/",
+    "Course Type": "Career Track Course",
+    "Career Track Name": "Data Analyst Career Track",
+    "Skills": "SQL, Tableau, Python"
+  },
+  {
+    "Course Name": "Time series Analysis with Python",
+    "Organisation": "365 Data Science",
+    "Issued Date": "17-Nov-23",
+    "Credential ID": "9605f4c08d",
+    "Credential URL": "https://learn.365datascience.com/c/9605f4c08d/",
+    "Course Type": "Career Track Course",
+    "Career Track Name": "Data Analyst Career Track",
+    "Skills": "Python"
+  },
+  {
+    "Course Name": "PCAP: Programming Essentials in Python ",
+    "Organisation": "Cisco networking academy",
+    "Issued Date": "02-Jun-23",
+    "Credential ID": "b985eec45a",
+    "Credential URL": "https://www.credly.com/badges/92bae892-812d-4e4a-be1c-c7b985eec45a/public_url",
+    "Course Type": "Independent Course",
+    "Career Track Name": "",
+    "Skills": "Python"
+  },
+  {
+    "Course Name": "Prompt Engineering for Everyone",
+    "Organisation": "Cognitive Class",
+    "Issued Date": "20-Mar-24",
+    "Credential ID": "f192a8ff51",
+    "Credential URL": "https://courses.cognitiveclass.ai/certificates/4d786e91a9b845c8b76dfaf192a8ff51",
+    "Course Type": "Independent Course",
+    "Career Track Name": "",
+    "Skills": "Generative AI"
+  },
+  {
+    "Course Name": "ChatGPT for Everyone ",
+    "Organisation": "Learn Prompting",
+    "Issued Date": "16-Mar-24",
+    "Credential ID": "304kkwxncu",
+    "Credential URL": "https://learnprompting.thinkific.com/certificates/304kkwxncu",
+    "Course Type": "Independent Course",
+    "Career Track Name": "",
+    "Skills": "Generative AI"
+  },
+  {
+    "Course Name": "Introduction to AWS",
+    "Organisation": "Datacamp",
+    "Issued Date": "01-Jun-24",
+    "Credential ID": "0d755bdaa5",
+    "Credential URL": "https://www.datacamp.com/completed/statement-of-accomplishment/course/b974104db717bc96dc1cf3455a2a1d0d755bdaa5",
+    "Course Type": "Independent Course",
+    "Career Track Name": "",
+    "Skills": "AWS"
+  }
+]
