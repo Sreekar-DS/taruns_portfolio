@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const certificationsContainer = document.getElementById("certifications");
   const careerTracksContainer = document.getElementById("career-tracks");
 
-  fetch('assets/professional development.json')
+  fetch('/assets/professional development.json')
     .then(response => response.json())
     .then(certifications => {
 
