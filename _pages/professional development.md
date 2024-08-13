@@ -7,122 +7,126 @@ permalink: /professional development/
 
 <!-- Filter Section -->
 <div class="filter-box">
-  <div>
-    <label><strong>Filter by Course Type:</strong></label>
-    <select id="course-type-filter">
-      <option value="all">All</option>
-      <option value="career-track">Career Track</option>
-      <option value="independent-course">Independent Course</option>
-    </select>
-  </div>
+  <label><input type="radio" name="filter" class="filter" value="all" checked> All</label>
+  <label><input type="radio" name="filter" class="filter" value="career-track"> Career Track</label>
+  <label><input type="radio" name="filter" class="filter" value="independent-course"> Independent Course</label>
 </div>
 
-<!-- Career Tracks Container (will be shown/hidden based on selection) -->
-<div id="career-tracks" class="hidden">
-  <!-- Career Tracks will be dynamically inserted here by JavaScript -->
-</div>
-
-<!-- Independent Courses Container -->
+<!-- Containers for Courses -->
 <div id="certifications">
-  <!-- Independent courses will be dynamically inserted here by JavaScript -->
+  <!-- Courses will be dynamically inserted here -->
+</div>
+
+<div id="career-tracks" class="hidden">
+  <!-- Career Tracks and their courses will be dynamically inserted here by JavaScript -->
 </div>
 
 <script>
-  fetch('assets/courses.json')
+document.addEventListener("DOMContentLoaded", function() {
+  const certificationsContainer = document.getElementById("certifications");
+  const careerTracksContainer = document.getElementById("career-tracks");
+
+  fetch('path/to/courses.json')
     .then(response => response.json())
-    .then(data => {
-      const certificationsContainer = document.getElementById('certifications');
-      const careerTracksContainer = document.getElementById('career-tracks');
-      const courseTypeFilter = document.getElementById('course-type-filter');
+    .then(certifications => {
 
-      function renderCourses() {
-        certificationsContainer.innerHTML = ''; // Clear independent courses
-        careerTracksContainer.innerHTML = ''; // Clear career tracks
+      function renderCertifications(filter) {
+        certificationsContainer.innerHTML = "";
+        careerTracksContainer.innerHTML = "";
+        
+        if (filter === "career-track") {
+          const tracks = {};
 
-        const selectedCourseType = courseTypeFilter.value;
-
-        if (selectedCourseType === 'career-track') {
-          const careerTracks = [...new Set(data.courses.map(course => course.career_track_name))].filter(Boolean);
-
-          careerTracks.forEach(track => {
-            const trackDiv = document.createElement('div');
-            trackDiv.classList.add('career-track');
-            trackDiv.innerHTML = `
-              <h3>${track} <span class="toggle-arrow">&#9660;</span></h3>
-              <div class="track-courses hidden"></div>
-            `;
-            const trackCoursesDiv = trackDiv.querySelector('.track-courses');
-
-            data.courses.forEach(course => {
-              if (course.career_track_name === track) {
-                const courseDiv = document.createElement('div');
-                courseDiv.classList.add('certification-box');
-                courseDiv.innerHTML = `
-                  <h4>${course.title}</h4>
-                  <div class="course-org-date">
-                    <p><strong>Issued by:</strong> ${course.organization}</p>
-                    <p><strong>Issued date:</strong> ${course.issue_date}</p>
-                  </div>
-                  <div class="certification-org-cred">
-                    <p><strong>Credential ID:</strong> <a href="${course.credential_url}" target="_blank">${course.credential_id}</a></p>
-                  </div>
-                `;
-                trackCoursesDiv.appendChild(courseDiv);
-              }
-            });
-
-            // Add toggle functionality for showing/hiding track courses
-            trackDiv.querySelector('.toggle-arrow').addEventListener('click', () => {
-              trackCoursesDiv.classList.toggle('hidden');
-              const arrow = trackDiv.querySelector('.toggle-arrow');
-              arrow.textContent = trackCoursesDiv.classList.contains('hidden') ? '▼' : '▲';
-            });
-
-            careerTracksContainer.appendChild(trackDiv);
-          });
-
-          // Show career tracks container and hide independent courses
-          careerTracksContainer.classList.remove('hidden');
-          certificationsContainer.classList.add('hidden');
-
-        } else if (selectedCourseType === 'independent-course') {
-          data.courses.forEach(course => {
-            if (course.course_type.toLowerCase().replace(/\s+/g, '-') === 'independent-course') {
-              const certBox = document.createElement('div');
-              certBox.classList.add('certification-box');
-              certBox.innerHTML = `
-                <h4>${course.title}</h4>
-                <div class="course-org-date">
-                  <p><strong>Issued by:</strong> ${course.organization}</p>
-                  <p><strong>Issued date:</strong> ${course.issue_date}</p>
-                </div>
-                <div class="certification-org-cred">
-                  <p><strong>Credential ID:</strong> <a href="${course.credential_url}" target="_blank">${course.credential_id}</a></p>
-                </div>
-              `;
-              certificationsContainer.appendChild(certBox);
+          certifications.forEach(cert => {
+            if (cert["Course Type"] === "Career Track Course") {
+              const trackNames = cert["Career Track Name"].split(", ");
+              trackNames.forEach(track => {
+                if (!tracks[track]) {
+                  tracks[track] = [];
+                }
+                tracks[track].push(cert);
+              });
             }
           });
 
-          // Show independent courses container and hide career tracks
-          certificationsContainer.classList.remove('hidden');
-          careerTracksContainer.classList.add('hidden');
+          for (const [trackName, courses] of Object.entries(tracks)) {
+            const trackContainer = document.createElement("div");
+            trackContainer.classList.add("track-container");
+
+            const trackTitle = document.createElement("h3");
+            trackTitle.innerHTML = `${trackName} <span class="toggle-arrow">&#x25BC;</span>`;
+            trackContainer.appendChild(trackTitle);
+
+            const courseList = document.createElement("div");
+            courseList.classList.add("course-list", "hidden");
+
+            courses.forEach(cert => {
+              const courseBox = document.createElement("div");
+              courseBox.classList.add("certification-box");
+
+              courseBox.innerHTML = `
+                <h3>${cert["Course Name"]}</h3>
+                <div class="course-org-date">
+                  <p><strong>Issued by:</strong> ${cert["Organisation"]}</p>
+                  <p><strong>Issued date:</strong> ${cert["Issued Date"]}</p>
+                </div>
+                <div class="certification-org-cred">
+                  <p><strong>Credential ID:</strong> <a href="${cert["Credential URL"]}">${cert["Credential ID"]}</a></p>
+                </div>
+              `;
+
+              courseList.appendChild(courseBox);
+            });
+
+            trackContainer.appendChild(courseList);
+            careerTracksContainer.appendChild(trackContainer);
+
+            trackTitle.addEventListener("click", () => {
+              courseList.classList.toggle("hidden");
+            });
+          }
+
+          certificationsContainer.classList.add("hidden");
+          careerTracksContainer.classList.remove("hidden");
 
         } else {
-          // If "All" is selected, show both independent courses and career tracks
-          renderCoursesForAll();
+          certifications.forEach(cert => {
+            const courseTypeClass = cert["Course Type"].toLowerCase().replace(" ", "-");
+
+            if (filter === "all" || courseTypeClass === filter) {
+              const certificationBox = document.createElement("div");
+              certificationBox.classList.add("certification-box");
+              certificationBox.classList.add(courseTypeClass);
+
+              certificationBox.innerHTML = `
+                <h3>${cert["Course Name"]}</h3>
+                <div class="course-org-date">
+                  <p><strong>Issued by:</strong> ${cert["Organisation"]}</p>
+                  <p><strong>Issued date:</strong> ${cert["Issued Date"]}</p>
+                </div>
+                <div class="certification-org-cred">
+                  <p><strong>Credential ID:</strong> <a href="${cert["Credential URL"]}">${cert["Credential ID"]}</a></p>
+                </div>
+              `;
+
+              certificationsContainer.appendChild(certificationBox);
+            }
+          });
+
+          certificationsContainer.classList.remove("hidden");
+          careerTracksContainer.classList.add("hidden");
         }
       }
 
-      function renderCoursesForAll() {
-        renderCourses(); // Reset rendering based on the currently selected filter
-      }
+      document.querySelectorAll(".filter").forEach(filter => {
+        filter.addEventListener("change", () => {
+          const selectedFilter = document.querySelector(".filter:checked").value;
+          renderCertifications(selectedFilter);
+        });
+      });
 
-      // Initial rendering of courses
-      renderCoursesForAll();
-
-      // Add event listeners for filters
-      courseTypeFilter.addEventListener('change', renderCourses);
+      renderCertifications("all"); // Initial render
     })
-    .catch(error => console.error('Error fetching the JSON data:', error));
+    .catch(error => console.error('Error loading JSON:', error));
+});
 </script>
