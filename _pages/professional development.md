@@ -12,6 +12,11 @@ permalink: /professional development/
   <label><input type="radio" name="filter" class="filter" value="independent-course"> Independent Course</label>
 </div>
 
+<!-- Skills Filter Section (initially hidden) -->
+<div id="skills-filter-box" class="hidden">
+  <!-- Skills checkboxes will be dynamically inserted here -->
+</div>
+
 <!-- Containers for Courses -->
 <div id="certifications">
   <!-- Courses will be dynamically inserted here -->
@@ -25,16 +30,40 @@ permalink: /professional development/
 document.addEventListener("DOMContentLoaded", function() {
   const certificationsContainer = document.getElementById("certifications");
   const careerTracksContainer = document.getElementById("career-tracks");
+  const skillsFilterBox = document.getElementById("skills-filter-box");
 
   fetch('/assets/professional development.json')
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
     .then(certifications => {
+      console.log('JSON data:', certifications);
+
+      // Extract unique skills from JSON data
+      const skills = new Set();
+      certifications.forEach(cert => {
+        cert["Skills"].split(", ").forEach(skill => skills.add(skill));
+      });
+
+      // Populate the skills filter section with checkboxes
+      skills.forEach(skill => {
+        const label = document.createElement("label");
+        label.innerHTML = `<input type="checkbox" name="skill-filter" class="skill-filter" value="${skill}"> ${skill}`;
+        skillsFilterBox.appendChild(label);
+      });
 
       function renderCertifications(filter) {
+        const selectedSkills = Array.from(document.querySelectorAll(".skill-filter:checked")).map(input => input.value.toLowerCase());
+
         certificationsContainer.innerHTML = "";
         careerTracksContainer.innerHTML = "";
-        
+
         if (filter === "career-track") {
+          skillsFilterBox.classList.add("hidden");
+
           const tracks = {};
 
           certifications.forEach(cert => {
@@ -90,10 +119,17 @@ document.addEventListener("DOMContentLoaded", function() {
           careerTracksContainer.classList.remove("hidden");
 
         } else {
+          skillsFilterBox.classList.remove("hidden");
+
           certifications.forEach(cert => {
             const courseTypeClass = cert["Course Type"].toLowerCase().replace(" ", "-");
 
-            if (filter === "all" || courseTypeClass === filter) {
+            const certSkills = cert["Skills"].split(", ").map(skill => skill.toLowerCase());
+
+            if (
+              (filter === "all" || courseTypeClass === filter) &&
+              (selectedSkills.length === 0 || selectedSkills.every(skill => certSkills.includes(skill)))
+            ) {
               const certificationBox = document.createElement("div");
               certificationBox.classList.add("certification-box");
               certificationBox.classList.add(courseTypeClass);
@@ -120,6 +156,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
       document.querySelectorAll(".filter").forEach(filter => {
         filter.addEventListener("change", () => {
+          const selectedFilter = document.querySelector(".filter:checked").value;
+          renderCertifications(selectedFilter);
+        });
+      });
+
+      document.querySelectorAll(".skill-filter").forEach(skillFilter => {
+        skillFilter.addEventListener("change", () => {
           const selectedFilter = document.querySelector(".filter:checked").value;
           renderCertifications(selectedFilter);
         });
