@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Professional Development
-permalink: /professional development/
+permalink: /professionaldevelopment/
 ---
 
 <h2>Professional Development Courses</h2>
