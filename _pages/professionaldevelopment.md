@@ -1,9 +1,8 @@
 ---
 layout: default
 title: Professional Development
-permalink: /professional_development/
+permalink: /professionaldevelopment/
 ---
-
 <h2>Professional Development Courses</h2>
 
 <!-- Filter Section -->
