@@ -15,7 +15,7 @@ permalink: /projects/
 <div class="project-box excel">
   <div class="project-content">
     <div class="project-image">
-      <img src="/assets/Student_App_Learning_Data_Analysis_Cover_Image.png"
+      <img src="{{ '/assets/Student_App_Learning_Data_Analysis_Cover_Image.png' | relative_url }}"
            alt="Project Image"
            class="project-image"
            style="width: 100%; max-width: 215px; height: auto; display: block; border-radius: 8px; border: 1px solid #ddd;">
