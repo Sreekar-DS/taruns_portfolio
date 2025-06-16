@@ -14,7 +14,7 @@ permalink: /projects/
 
 <div class="project-box excel">
   <div class="project-content">
-    <div><img src="https://github.com/Sreekar-DS/taruns_portfolio/blob/8dd1334d34bd7f7a28e7b853a9ba67460ed3567c/assets/Projects%20Cover%20Images/Student%20App%20Learning%20Data%20Analysis.png" alt="Project Image" class="project-image"></div>
+    <img src="assets/Projects Cover Images/Student App Learning Data Analysis.png" alt="Project Image" class="project-image">
     <div class="project-details">
       <h3>Student App Data Learning Analysis</h3>
 <!--       <div class="project-skills">
