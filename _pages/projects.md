@@ -14,7 +14,7 @@ permalink: /projects/
 
 <div class="project-box excel">
   <div class="project-content">
-    <img src="https://drive.google.com/file/d/1jQmU7xs2Km92nc2KLQj_jmHnYjGBOcN8/view?usp=drive_link" alt="Project Image" class="project-image">
+    <img src="https://drive.google.com/uc?export=view&id=1jQmU7xs2Km92nc2KLQj_jmHnYjGBOcN8" alt="Project Image" class="project-image">
     <div class="project-details">
       <h3>Student App Data Learning Analysis</h3>
 <!--       <div class="project-skills">
