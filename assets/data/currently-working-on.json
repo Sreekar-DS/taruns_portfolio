@@ -1,0 +1,47 @@
+[
+  {
+    "title": "RetailGPT: Personalized E-commerce Chatbot",
+    "type": "Capstone Project",
+    "status": "In Progress",
+    "start_date": "2026-06-01",
+    "expected_finish_date": "2026-07-20",
+    "priority": "High",
+    "skills": ["Python", "NLP", "SQL", "Flask", "Jupyter"],
+    "short_description": "Building a personalized e-commerce chatbot that combines customer, product, order, and policy data to answer user queries based on intent.",
+    "progress": 70,
+    "github_link": "",
+    "demo_link": "",
+    "display_on_home": true,
+    "display_order": 1
+  },
+  {
+    "title": "Google Play Store EDA & Tableau Dashboard",
+    "type": "Data Analytics Project",
+    "status": "In Progress",
+    "start_date": "2026-06-05",
+    "expected_finish_date": "2026-07-15",
+    "priority": "Medium",
+    "skills": ["Python", "Pandas", "Matplotlib", "Tableau"],
+    "short_description": "Exploratory data analysis of Play Store app performance and user review sentiment, supported by a Tableau dashboard.",
+    "progress": 80,
+    "github_link": "",
+    "demo_link": "",
+    "display_on_home": true,
+    "display_order": 2
+  },
+  {
+    "title": "Online Retail Customer Segmentation",
+    "type": "Machine Learning Project",
+    "status": "In Progress",
+    "start_date": "2026-06-10",
+    "expected_finish_date": "2026-07-25",
+    "priority": "Medium",
+    "skills": ["Python", "RFM Analysis", "Clustering", "Scikit-learn"],
+    "short_description": "Customer segmentation project using RFM analysis and unsupervised learning to identify business-relevant customer groups.",
+    "progress": 60,
+    "github_link": "",
+    "demo_link": "",
+    "display_on_home": true,
+    "display_order": 3
+  }
+]
