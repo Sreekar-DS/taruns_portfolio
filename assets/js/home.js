@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  const priorityRank = {
+    high: 1,
+    medium: 2,
+    low: 3
+  };
+
   function escapeHtml(value) {
     return String(value || "")
       .replace(/&/g, "&amp;")
@@ -26,6 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
       month: "short",
       year: "numeric"
     });
+  }
+
+  function dateValue(value) {
+    if (!value) return Number.MAX_SAFE_INTEGER;
+    const date = new Date(`${value}T00:00:00`);
+    return Number.isNaN(date.getTime()) ? Number.MAX_SAFE_INTEGER : date.getTime();
   }
 
   function normalizeSkills(skills) {
@@ -104,7 +116,18 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(items => {
       const visibleItems = items
         .filter(item => item.display_on_home !== false)
-        .sort((a, b) => (a.display_order || 999) - (b.display_order || 999));
+        .sort((a, b) => {
+          const priorityA = priorityRank[String(a.priority || "").toLowerCase()] || 99;
+          const priorityB = priorityRank[String(b.priority || "").toLowerCase()] || 99;
+
+          if (priorityA !== priorityB) return priorityA - priorityB;
+
+          const dateA = dateValue(a.expected_finish_date);
+          const dateB = dateValue(b.expected_finish_date);
+          if (dateA !== dateB) return dateA - dateB;
+
+          return String(a.title || "").localeCompare(String(b.title || ""));
+        });
 
       if (!visibleItems.length) {
         container.innerHTML = '<p class="home-loading-message">No current work items are listed yet.</p>';
