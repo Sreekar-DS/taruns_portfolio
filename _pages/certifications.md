@@ -13,9 +13,9 @@ permalink: /certifications/
 <div
   id="certifications"
   class="portfolio-card-grid"
-  data-source="{{ '/assets/data/certifications.json' | relative_url }}"
+  data-source="{{ '/assets/data/certifications.json' | relative_url }}?v={{ site.github.build_revision }}"
   aria-live="polite">
   <p>Loading certifications...</p>
 </div>
 
-<script src="{{ '/assets/js/certifications.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/certifications.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
