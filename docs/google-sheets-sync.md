@@ -12,6 +12,8 @@ Expected sheet tabs:
 - `Projects`
 - `Certifications`
 - `Professional Development`
+- `Experience`
+- `Education`
 
 The Apps Script reads these tabs and creates one GitHub commit that updates:
 
@@ -19,6 +21,8 @@ The Apps Script reads these tabs and creates one GitHub commit that updates:
 - `assets/data/projects.json`
 - `assets/data/certifications.json`
 - `assets/data/professional-development.json`
+- `assets/data/experience.json`
+- `assets/data/education.json`
 
 The deployed website reads these committed JSON files directly.
 
@@ -28,6 +32,8 @@ The deployed website reads these committed JSON files directly.
 - `Projects`: sorted manually using `display_order`.
 - `Certifications`: sorted by `issue_date` descending on the Certifications page.
 - `Professional Development`: sorted by `completion_date` descending on the Professional Development page.
+- `Experience`: sorted manually using `display_order`.
+- `Education`: sorted manually using `display_order`.
 
 ## Required sheet headers
 
@@ -46,13 +52,25 @@ title, type, status, start_date, completion_date, skills, short_description, lon
 ### Certifications
 
 ```text
-title, issuer, issue_date, expiry_date, credential_id, credential_url, skills, display_on_certifications
+title, issuer, issue_date, expiry_date, credential_id, credential_url, image_url, display_on_certifications
 ```
 
 ### Professional Development
 
 ```text
-title, provider, type, status, start_date, completion_date, skills, short_description, certificate_link, display_on_professional_development
+title, provider, type, status, start_date, completion_date, career_track_name, skills, short_description, certificate_link, image_url, display_on_professional_development
+```
+
+### Experience
+
+```text
+company, role, experience_type, location, start_date, end_date, status, summary, highlights, tools, project_link, image_url, display_on_experience, display_order
+```
+
+### Education
+
+```text
+institution, degree, field_of_study, location, start_date, end_date, status, details, image_url, display_on_education, display_order
 ```
 
 ## Files in this repo
