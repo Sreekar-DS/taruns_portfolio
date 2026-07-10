@@ -7,14 +7,14 @@ permalink: /
 <section class="home-section home-intro">
   <h2>Welcome</h2>
   <p>
-    Welcome to my data analytics portfolio. I am <strong>Tarun Sreekar Parasa</strong>,
-    a data analyst and machine learning enthusiast focused on turning raw data into
-    clear business insights using Python, SQL, Tableau, Excel, and machine learning.
+    Welcome to my portfolio. I am <strong>Tarun Sreekar Parasa</strong>, an MSc Data Analytics
+    student based in Germany, building practical projects across data analytics, business
+    intelligence, SQL, Python, machine learning, and applied AI.
   </p>
   <p>
-    This portfolio brings together my academic projects, analytics case studies,
-    certifications, and professional development work as I build toward data analyst,
-    business analyst, and analytics-focused roles.
+    This portfolio highlights my projects, internship experience, education, certifications,
+    professional development, and current work as I grow toward data analyst, business analyst,
+    BI analyst, and analytics-focused AI roles.
   </p>
 </section>
 
@@ -30,20 +30,20 @@ permalink: /
 <section class="home-section home-current-work">
   <h2>Currently Working On</h2>
   <p>
-    These are the projects and learning items I am actively working on. The cards below
-    are loaded from portfolio data, so I can update them from the Excel workbook instead
-    of manually editing this page.
+    These are the projects and learning items I am actively working on. The cards below are loaded
+    from portfolio data, so I can keep this section updated from the Google Sheet instead of
+    manually editing the page.
   </p>
 
   <div class="home-work-scroll" aria-label="Scrollable currently working on section">
     <div
       id="currently-working-on"
       class="home-work-grid"
-      data-source="{{ '/assets/data/currently-working-on.json' | relative_url }}"
+      data-source="{{ '/assets/data/currently-working-on.json' | relative_url }}?v={{ site.github.build_revision }}"
       aria-live="polite">
       <p class="home-loading-message">Loading current work...</p>
     </div>
   </div>
 </section>
 
-<script src="{{ '/assets/js/home.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/home.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
