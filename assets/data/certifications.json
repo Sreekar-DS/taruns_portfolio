@@ -1,1 +1,80 @@
-[]
+[
+  {
+    "title": "SQL Associate",
+    "issuer": "Datacamp",
+    "issue_date": "2024-01-01",
+    "expiry_date": "2026-01-01",
+    "credential_id": "SQA0013570873781",
+    "credential_url": "",
+    "skills": [
+      "sql"
+    ],
+    "display_on_certifications": true,
+    "display_order": 1
+  },
+  {
+    "title": "Certificate of achievement - Data Analyst",
+    "issuer": "365 Data Science",
+    "issue_date": "2023-11-01",
+    "expiry_date": "No expiry",
+    "credential_id": "DD-3DF0FA5ED4",
+    "credential_url": "",
+    "skills": [
+      "dataanalysis"
+    ],
+    "display_on_certifications": true,
+    "display_order": 2
+  },
+  {
+    "title": "Certificate of achievement - Business Analyst",
+    "issuer": "365 Data Science",
+    "issue_date": "2023-11-01",
+    "expiry_date": "No expiry",
+    "credential_id": "DD-43238FF645",
+    "credential_url": "",
+    "skills": [
+      "businessanalysis"
+    ],
+    "display_on_certifications": true,
+    "display_order": 3
+  },
+  {
+    "title": "EF SET English Certification",
+    "issuer": "EF Education First",
+    "issue_date": "2023-01-01",
+    "expiry_date": "No expiry",
+    "credential_id": "ZEKp5E",
+    "credential_url": "",
+    "skills": [
+      "dataanalysis"
+    ],
+    "display_on_certifications": true,
+    "display_order": 4
+  },
+  {
+    "title": "Introduction to AWS",
+    "issuer": "Datacamp",
+    "issue_date": "2024-06-01",
+    "expiry_date": "No expiry",
+    "credential_id": "d0d755bdaa5",
+    "credential_url": "",
+    "skills": [
+      "python"
+    ],
+    "display_on_certifications": true,
+    "display_order": 5
+  },
+  {
+    "title": "PCAP: Programming Essentials in Python",
+    "issuer": "Cisco Networking Academy",
+    "issue_date": "2023-06-01",
+    "expiry_date": "No expiry",
+    "credential_id": "985eec45a",
+    "credential_url": "",
+    "skills": [
+      "python"
+    ],
+    "display_on_certifications": true,
+    "display_order": 6
+  }
+]

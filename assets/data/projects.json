@@ -1,1 +1,51 @@
-[]
+[
+  {
+    "title": "Student App Data Learning Analysis",
+    "type": "Data Analytics Project",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "",
+    "skills": [
+      "Microsoft Excel",
+      "Data Extraction",
+      "Data Cleaning",
+      "Data Manipulation",
+      "Exploratory Data Analysis",
+      "Pattern Recognition",
+      "Educational Analytics",
+      "Data Analysis",
+      "Data Visualization",
+      "Reporting"
+    ],
+    "short_description": "Analyzed student learning behaviors using Excel to identify engagement patterns, distractions, and attempts to game the app.",
+    "long_description": "In this project, I analyzed student learning behaviors using Excel. I identified patterns like lack of engagement, distractions, and attempts to game the app. Insights from idle times, distraction rates, and response times helped evaluate student performance and suggest targeted coaching strategies.",
+    "github_link": "",
+    "demo_link": "https://www.datascienceportfol.io/taruns_portfolio/projects/0",
+    "image_url": "/assets/Student_App_Learning_Data_Analysis_Cover_Image.png",
+    "display_on_projects": true,
+    "display_order": 1
+  },
+  {
+    "title": "Instagram User Analytics",
+    "type": "SQL Project",
+    "status": "In Progress",
+    "start_date": "",
+    "completion_date": "",
+    "skills": [
+      "MySQL",
+      "Tableau",
+      "Data Importing",
+      "Data Manipulation",
+      "Exploratory Data Analysis",
+      "Data Visualization",
+      "Reporting"
+    ],
+    "short_description": "Extracts insights and trends from Instagram user data using SQL and analytics techniques.",
+    "long_description": "This project extracts insights and trends from Instagram user data. I am redoing it in a Kaggle notebook to consolidate results, explanations, and Tableau charts in one place.",
+    "github_link": "",
+    "demo_link": "https://www.datascienceportfol.io/taruns_portfolio/projects/1",
+    "image_url": "",
+    "display_on_projects": true,
+    "display_order": 2
+  }
+]
