@@ -32,22 +32,6 @@
     "display_on_professional_development": true
   },
   {
-    "title": "ChatGPT for Everyone",
-    "provider": "Learn Prompting",
-    "type": "Independent Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "Mar 2024",
-    "career_track_name": "",
-    "skills": [
-      "Generative AI"
-    ],
-    "short_description": "",
-    "certificate_link": "https://learnprompting.thinkific.com/certificates/304kkwxncu",
-    "image_url": "",
-    "display_on_professional_development": true
-  },
-  {
     "title": "SQL",
     "provider": "365 Data Science",
     "type": "Career Track Course",
