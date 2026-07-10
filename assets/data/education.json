@@ -1,0 +1,41 @@
+[
+  {
+    "institution": "Berlin School of Business and Innovation (BSBI) – University of Creative Arts (UCA)",
+    "degree": "Master of Science",
+    "field_of_study": "Data Analytics",
+    "location": "Berlin, Germany",
+    "start_date": "May 2025",
+    "end_date": "Present",
+    "status": "Ongoing",
+    "details": "MSc Data Analytics program focused on analytics, business intelligence, AI, and data-driven decision-making.",
+    "image_url": "",
+    "display_on_education": true,
+    "display_order": 1
+  },
+  {
+    "institution": "AlmaBetter Innovarsity – Woolf Higher Education Institution",
+    "degree": "Master of Science",
+    "field_of_study": "Computer Science: Artificial Intelligence and Machine Learning",
+    "location": "Remote, India",
+    "start_date": "Dec 2023",
+    "end_date": "Present",
+    "status": "Ongoing",
+    "details": "MSc Computer Science program focused on Artificial Intelligence and Machine Learning.",
+    "image_url": "",
+    "display_on_education": true,
+    "display_order": 2
+  },
+  {
+    "institution": "School of Electrical and Electronics Engineering – Lovely Professional University (LPU)",
+    "degree": "Bachelor of Technology",
+    "field_of_study": "Electronics and Communication Engineering",
+    "location": "Punjab, India",
+    "start_date": "Aug 2018",
+    "end_date": "Jul 2022",
+    "status": "Completed",
+    "details": "Bachelor's degree in Electronics and Communication Engineering.",
+    "image_url": "",
+    "display_on_education": true,
+    "display_order": 3
+  }
+]
