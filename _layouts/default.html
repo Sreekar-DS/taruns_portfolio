@@ -12,7 +12,7 @@
     <![endif]-->
     {% include head-custom.html %}
   </head>
-  <body>
+  <body class="{% if page.url == '/' %}home-dashboard-page{% endif %}">
     <div class="analytics-background" aria-hidden="true">
       <div class="analytics-grid"></div>
       <div class="analytics-orb analytics-orb-one"></div>
@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary navigation">
       <ul>
         <li><a href="{{ "/" | absolute_url }}">Home</a></li>
         <li><a href="{{ "/about/" | relative_url }}">About</a></li>
@@ -52,7 +52,8 @@
       </ul>
     </nav>
 
-    <div class="wrapper">
+    <div class="wrapper{% if page.url == '/' %} dashboard-wrapper{% endif %}">
+      {% unless page.url == '/' %}
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
         {% if site.logo %}
@@ -69,17 +70,20 @@
         </ul>
         {% endif %}
       </header>
+      {% endunless %}
 
-      <section>
+      <section{% if page.url == '/' %} class="dashboard-content"{% endif %}>
         {{ content }}
       </section>
 
+      {% unless page.url == '/' %}
       <footer>
         {% if site.github.is_project_page %}
         <p>This portfolio is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
+      {% endunless %}
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   </body>

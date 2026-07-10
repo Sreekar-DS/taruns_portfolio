@@ -50,3 +50,19 @@
   width: 50%;
   border-radius: 50%;
 }
+
+/* Keep the dashboard navigation visually integrated with the dark homepage. */
+.home-dashboard-page .navbar {
+  background: rgba(4, 17, 36, 0.94) !important;
+  border-bottom-color: rgba(32, 211, 238, 0.24) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
+}
+
+.home-dashboard-page .navbar ul li a {
+  color: #dbeafe !important;
+}
+
+.home-dashboard-page .navbar ul li a:hover {
+  color: #ffffff !important;
+  background: rgba(32, 211, 238, 0.12) !important;
+}
