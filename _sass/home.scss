@@ -1,29 +1,39 @@
 /* Homepage styles */
 .home-section {
-  margin-bottom: 18px;
+  float: none !important;
+  width: auto !important;
+  padding: 0 !important;
+  margin: 0 0 12px !important;
 }
 
 .home-section h2 {
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .home-section p {
-  line-height: 1.5;
+  line-height: 1.45;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-.home-connect,
+.home-intro {
+  margin-bottom: 14px !important;
+}
+
+.home-connect {
+  margin-bottom: 16px !important;
+}
+
 .home-current-work {
-  margin-top: 0;
+  margin-bottom: 0 !important;
 }
 
 .home-link-badges {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .home-link-badges a {
@@ -48,7 +58,7 @@
   overscroll-behavior: contain;
   scrollbar-gutter: stable;
   padding: 12px;
-  margin-top: 12px;
+  margin-top: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background: #fafafa;
