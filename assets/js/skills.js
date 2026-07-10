@@ -13,23 +13,36 @@ document.addEventListener("DOMContentLoaded", () => {
       .replace(/'/g, "&#039;");
   }
 
+  function orderValue(value) {
+    const numberValue = Number(value);
+    return Number.isNaN(numberValue) ? 999 : numberValue;
+  }
+
   function groupByCategory(items) {
     return items.reduce((groups, item) => {
       const category = item.category || "Other Skills";
-      if (!groups[category]) groups[category] = [];
-      groups[category].push(item);
+      if (!groups[category]) {
+        groups[category] = {
+          category,
+          categoryOrder: orderValue(item.display_order),
+          skills: []
+        };
+      }
+
+      groups[category].categoryOrder = Math.min(groups[category].categoryOrder, orderValue(item.display_order));
+      groups[category].skills.push(item);
       return groups;
     }, {});
   }
 
-  function createSkillCard(category, skills) {
-    const sortedSkills = skills
+  function createSkillCard(group) {
+    const sortedSkills = group.skills
       .slice()
-      .sort((a, b) => (Number(a.display_order) || 999) - (Number(b.display_order) || 999));
+      .sort((a, b) => orderValue(a.display_order) - orderValue(b.display_order));
 
     return `
       <article class="skill-category-card">
-        <h3>${escapeHtml(category)}</h3>
+        <h3>${escapeHtml(group.category)}</h3>
         <div class="skill-tag-list">
           ${sortedSkills.map(item => `<span class="skill-tag">${escapeHtml(item.skill)}</span>`).join("\n")}
         </div>
@@ -38,19 +51,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function render(items) {
-    const visibleItems = items
-      .filter(item => item.display_on_skills !== false)
-      .sort((a, b) => (Number(a.display_order) || 999) - (Number(b.display_order) || 999));
+    const visibleItems = items.filter(item => item.display_on_skills !== false);
 
     if (!visibleItems.length) {
       container.innerHTML = "<p>No skills are listed yet.</p>";
       return;
     }
 
-    const grouped = groupByCategory(visibleItems);
-    container.innerHTML = Object.entries(grouped)
-      .map(([category, skills]) => createSkillCard(category, skills))
-      .join("\n");
+    const groups = Object.values(groupByCategory(visibleItems))
+      .sort((a, b) => a.categoryOrder - b.categoryOrder || a.category.localeCompare(b.category));
+
+    container.innerHTML = groups.map(createSkillCard).join("\n");
   }
 
   fetch(dataUrl)
