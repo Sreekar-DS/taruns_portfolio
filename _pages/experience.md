@@ -12,7 +12,7 @@ permalink: /experience/
 
 <div
   id="experience"
-  class="portfolio-card-grid"
+  class="portfolio-card-list-layout"
   data-source="{{ '/assets/data/experience.json' | relative_url }}?v={{ site.github.build_revision }}"
   aria-live="polite">
   <p>Loading experience...</p>
