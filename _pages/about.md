@@ -5,17 +5,19 @@ permalink: /about/
 ---
 
 ## About Me
-With an unyielding thirst for knowledge, I excel in navigating complex challenges, ceaselessly pursuing knowledge and enthusiastically promoting a culture of shared learning.
 
-I am Tarun, a data enthusiast with a broad skillset in data analytics tools and techniques. I hold a Bachelor’s degree in Electronics and Communication Engineering from Lovely Professional University and currently, I’m upskilling myself with the help of AlmaBetter Data Sceience Bootcamp. I honed my skills in data analytics through trial and error by exploring various courses, certifications, and projects. I excel in leveraging various tools/softwares such as Microsoft Excel, Google BigQuery, Python, Tableau, Power BI, Looker Studio(Data Studio) and SQL to process and analyze large datasets, uncovering key trends and insights through data wrangling, statistical analysis, and data visualization. Explore my portfolio to see my projects, experience, education, and the continuous professional development that fuels my passion for data and to learn more about my work and capabilities.
+I am **Tarun Sreekar Parasa**, an MSc Data Analytics student based in Germany with a Bachelor of Technology background in Electronics and Communication Engineering. My work focuses on turning raw data into clear business insights using SQL, Python, Excel, dashboarding tools, and structured analytical thinking.
 
-## My Story
-Since high school, I've been passionate about robotics and envisioned building one in the future. This led me to pursue a Bachelor's degree in Electronics and Communication Engineering from Lovely Professional University. As I delved into robotics, I realized the importance of software in bringing robots to life. I understood that without artificial intelligence, a robot is merely a toy; with intelligence, it transforms into something extraordinary.
+I am building this portfolio as a practical record of my progress across data analytics, business intelligence, machine learning, customer segmentation, and applied AI projects. It includes academic projects, internship experience, certifications, professional development, and the projects I am currently improving.
 
-My exploration of artificial intelligence made me realize that data is the cornerstone of effective AI. This realization ignited my passion for data. I wanted to learn AI from the ground up, starting with data analytics. I didn't want to skip the fundamentals and jump straight into machine learning.
+## My Analytics Journey
 
-I began my journey as an Associate Business Analyst intern, where I learned how data drives decision-making in businesses. I found immense satisfaction in uncovering insights from large datasets and aiding in data-driven decisions. I discovered my natural aptitude for analytical thinking and problem-solving.
+My interest in technology started with electronics, robotics, and intelligent systems. Over time, I realized that useful AI and automation depend heavily on clean data, reliable analysis, and clear decision-making. That shifted my focus toward data analytics as the foundation for solving business and technical problems.
 
-Driven by a desire to master data analysis tools and techniques, I decided to strengthen my foundation in data analytics before venturing into machine learning, deep learning, and AI. I took various courses related to data analysis and business analysis, often using free trials on platforms like 365datascience and DataCamp, leading to a somewhat messy timeline of course completions. Despite this, I earned certifications in data analysis and business analysis, preparing myself for a career as a data analyst.
+During my Associate Business Analyst internship at Sokrati Technologies, I worked with e-commerce data, analytical reports, and dashboards. This helped me understand how data supports marketing strategy, client reporting, and business decisions. Later, through Excelerate internships, I worked on data visualization, digital marketing analysis, and project planning tasks, which strengthened my ability to communicate insights and manage structured analytical work.
 
-I am committed to applying my expertise in data analytics to excel as a data analyst or business analyst, contributing to strategic decision-making and driving business success through actionable insights.
+## What I Am Working Toward
+
+I am currently strengthening my portfolio through practical analytics projects involving SQL analysis, Python-based EDA, Tableau dashboards, customer segmentation, and AI-enabled retail use cases. My goal is to grow into data analyst, business analyst, BI analyst, or analytics-focused AI roles where I can combine technical analysis with business understanding.
+
+I value clear reporting, careful problem framing, and simple explanations. This portfolio is a living workspace, so I continue to update it as projects, certifications, and professional development items are completed and verified.
