@@ -1,5 +1,51 @@
 [
   {
+    "title": "Operation and Metric Analysis",
+    "type": "SQL Analytics Project",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "",
+    "skills": [
+      "SQL",
+      "Job Metrics",
+      "User Metrics",
+      "Engagement Analysis",
+      "Retention Analysis",
+      "Email Analytics",
+      "Data Analysis"
+    ],
+    "short_description": "Analyzed job and user metrics using SQL across multiple datasets to measure engagement, retention, and performance.",
+    "long_description": "Analyzed job and user metrics using SQL across multiple datasets with 4 tables. Developed SQL queries to measure user engagement, retention, and performance across 325,000+ events and 90,000+ email events.",
+    "github_link": "",
+    "demo_link": "https://www.datascienceportfol.io/taruns_portfolio/projects/3",
+    "image_url": "",
+    "display_on_projects": true,
+    "display_order": 1
+  },
+  {
+    "title": "Instagram User Analytics",
+    "type": "SQL Project",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "",
+    "skills": [
+      "SQL",
+      "MySQL",
+      "User Analytics",
+      "User Engagement",
+      "Bot Detection",
+      "Data Analysis",
+      "Business Insights"
+    ],
+    "short_description": "Analyzed Instagram user interactions and engagement to identify loyal users, inactive users, bot-like behavior, and campaign timing insights.",
+    "long_description": "Analyzed user interactions and user engagement with the Instagram app using a database containing 7 tables. Delivered actionable insights for 3 cross-functional teams, identified the 5 most loyal users, optimal days for ad campaigns, 13% bot-like users, and 13% inactive users for re-engagement strategy.",
+    "github_link": "",
+    "demo_link": "https://www.datascienceportfol.io/taruns_portfolio/projects/1",
+    "image_url": "",
+    "display_on_projects": true,
+    "display_order": 2
+  },
+  {
     "title": "Student App Data Learning Analysis",
     "type": "Data Analytics Project",
     "status": "Completed",
@@ -9,43 +55,39 @@
       "Microsoft Excel",
       "Data Extraction",
       "Data Cleaning",
-      "Data Manipulation",
       "Exploratory Data Analysis",
-      "Pattern Recognition",
-      "Educational Analytics",
-      "Data Analysis",
+      "Learning Analytics",
       "Data Visualization",
       "Reporting"
     ],
-    "short_description": "Analyzed student learning behaviors using Excel to identify engagement patterns, distractions, and attempts to game the app.",
-    "long_description": "In this project, I analyzed student learning behaviors using Excel. I identified patterns like lack of engagement, distractions, and attempts to game the app. Insights from idle times, distraction rates, and response times helped evaluate student performance and suggest targeted coaching strategies.",
+    "short_description": "Analyzed student app usage patterns to identify engagement gaps, distractions, and opportunities for targeted coaching feedback.",
+    "long_description": "Provided actionable coaching feedback by analyzing student app usage data against 3 distinct study patterns. Discovered that the student spent only 67% of test time on the test, with the remaining 33% spent on gaming the device and other distractions.",
     "github_link": "",
     "demo_link": "https://www.datascienceportfol.io/taruns_portfolio/projects/0",
     "image_url": "/assets/Student_App_Learning_Data_Analysis_Cover_Image.png",
     "display_on_projects": true,
-    "display_order": 1
+    "display_order": 3
   },
   {
-    "title": "Instagram User Analytics",
-    "type": "SQL Project",
-    "status": "In Progress",
+    "title": "RFM Analysis of e-Commerce Customers",
+    "type": "Customer Analytics Project",
+    "status": "Completed",
     "start_date": "",
     "completion_date": "",
     "skills": [
-      "MySQL",
-      "Tableau",
-      "Data Importing",
-      "Data Manipulation",
-      "Exploratory Data Analysis",
-      "Data Visualization",
-      "Reporting"
+      "RFM Analysis",
+      "Customer Segmentation",
+      "E-commerce Analytics",
+      "Marketing Analytics",
+      "Data Analysis",
+      "Customer Targeting"
     ],
-    "short_description": "Extracts insights and trends from Instagram user data using SQL and analytics techniques.",
-    "long_description": "This project extracts insights and trends from Instagram user data. I am redoing it in a Kaggle notebook to consolidate results, explanations, and Tableau charts in one place.",
+    "short_description": "Performed RFM analysis on e-commerce customer, product, and order datasets to segment customers and identify marketing target groups.",
+    "long_description": "Performed Recency, Frequency, Monetary (RFM) analysis on three datasets covering 99,990 customers, 29,000 products, and 181,000 orders to segment customers and identify key target groups for marketing strategy optimization.",
     "github_link": "",
-    "demo_link": "https://www.datascienceportfol.io/taruns_portfolio/projects/1",
+    "demo_link": "https://www.datascienceportfol.io/taruns_portfolio/projects/2",
     "image_url": "",
     "display_on_projects": true,
-    "display_order": 2
+    "display_order": 4
   }
 ]
