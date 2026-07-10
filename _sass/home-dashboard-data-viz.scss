@@ -1,0 +1,422 @@
+/* Homepage top-row positioning and data-backed learning visualizations. */
+
+.home-dashboard-page {
+  .dashboard-top-grid {
+    display: grid;
+    grid-template-columns: minmax(430px, 0.92fr) minmax(760px, 1.72fr);
+    align-items: stretch;
+    gap: 13px;
+    width: 100%;
+  }
+
+  .dashboard-top-grid > * {
+    min-width: 0;
+  }
+
+  .dashboard-top-grid .dashboard-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 15px;
+    min-height: 244px;
+    margin: 0;
+    padding: 21px 23px;
+  }
+
+  .dashboard-top-grid .dashboard-identity {
+    gap: 16px;
+  }
+
+  .dashboard-top-grid .dashboard-photo-ring {
+    width: 112px;
+    height: 112px;
+    padding: 5px;
+    box-shadow: 0 0 0 4px rgba(32, 211, 238, 0.07), 0 0 26px rgba(32, 211, 238, 0.22);
+  }
+
+  .dashboard-top-grid .dashboard-photo-ring img {
+    border-width: 3px;
+  }
+
+  .dashboard-top-grid .dashboard-greeting {
+    min-height: 22px;
+    margin-bottom: 1px;
+    font-size: 14px;
+  }
+
+  .dashboard-top-grid .dashboard-hero h1 {
+    font-size: clamp(29px, 2.35vw, 39px);
+  }
+
+  .dashboard-top-grid .dashboard-role {
+    margin-top: 7px;
+    font-size: clamp(15px, 1.2vw, 19px);
+  }
+
+  .dashboard-top-grid .dashboard-summary {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .dashboard-top-grid .dashboard-actions {
+    gap: 7px;
+    margin-top: 12px;
+  }
+
+  .dashboard-top-grid .dashboard-actions a {
+    padding: 7px 11px;
+    font-size: 11px;
+  }
+
+  .dashboard-top-grid .dashboard-opportunity {
+    flex: none;
+    width: 100%;
+    padding: 10px 13px;
+    border-radius: 12px;
+  }
+
+  .dashboard-top-grid .dashboard-opportunity strong {
+    font-size: 12px;
+  }
+
+  .dashboard-top-grid .dashboard-opportunity span {
+    font-size: 10px;
+  }
+
+  .dashboard-top-grid .dashboard-kpis {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 13px;
+    height: 100%;
+    margin: 0;
+  }
+
+  .dashboard-top-grid .kpi-card {
+    min-height: 244px;
+    padding: 17px 12px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .dashboard-top-grid .kpi-card > div {
+    width: 100%;
+  }
+
+  .dashboard-top-grid .kpi-icon {
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+  }
+
+  .dashboard-top-grid .kpi-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .dashboard-top-grid .kpi-card strong {
+    margin: 7px 0 5px;
+    font-size: clamp(28px, 2vw, 35px);
+  }
+
+  .dashboard-top-grid .kpi-card small {
+    min-height: 30px;
+    color: #91a9c1;
+    font-size: 10px;
+    line-height: 1.35;
+    white-space: normal;
+  }
+
+  .dashboard-overview-grid {
+    grid-template-columns: minmax(320px, 0.82fr) minmax(560px, 1.68fr) !important;
+  }
+
+  .dashboard-learning-grid {
+    float: none !important;
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: minmax(360px, 0.82fr) minmax(650px, 1.75fr);
+    gap: 13px;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin: 13px 0 0 !important;
+    padding: 0 !important;
+    clear: both;
+  }
+
+  .dashboard-learning-grid > * {
+    min-width: 0;
+  }
+
+  .learning-summary-panel,
+  .learning-progress-panel {
+    padding: 21px;
+  }
+
+  .learning-radar-chart {
+    min-height: 315px;
+    display: grid;
+    place-items: center;
+  }
+
+  .learning-radar-svg {
+    display: block;
+    width: 100%;
+    max-width: 455px;
+    height: auto;
+    overflow: visible;
+  }
+
+  .learning-radar-grid {
+    fill: none;
+    stroke: rgba(76, 145, 195, 0.24);
+    stroke-width: 1;
+  }
+
+  .learning-radar-axis {
+    stroke: rgba(76, 145, 195, 0.22);
+    stroke-width: 1;
+  }
+
+  .learning-radar-shape {
+    fill: url(#learningRadarFill);
+    stroke: #20d3ee;
+    stroke-width: 2.2;
+    stroke-linejoin: round;
+    filter: url(#learningRadarGlow);
+  }
+
+  .learning-radar-point {
+    fill: #07172c;
+    stroke: #20d3ee;
+    stroke-width: 3;
+    filter: url(#learningRadarGlow);
+  }
+
+  .learning-radar-point-2 {
+    stroke: #f044a4;
+  }
+
+  .learning-radar-point-3 {
+    stroke: #f5c84c;
+  }
+
+  .learning-radar-label {
+    fill: #dcecff;
+    font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .learning-radar-value {
+    fill: #4cdef3;
+    font-size: 10px;
+    font-weight: 650;
+  }
+
+  .learning-radar-note,
+  .learning-progress-note {
+    margin: 2px 0 0;
+    color: #7795ad;
+    font-size: 9px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .learning-progress-chart {
+    min-height: 315px;
+  }
+
+  .learning-progress-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 9px 20px;
+    margin: -2px 0 7px;
+    color: #b9cde0;
+    font-size: 10px;
+    font-weight: 650;
+  }
+
+  .learning-progress-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .learning-progress-legend i {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--series-color);
+    box-shadow: 0 0 8px rgba(32, 211, 238, 0.34);
+  }
+
+  .learning-progress-legend i::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 7px;
+    height: 7px;
+    border: 2px solid #07172c;
+    border-radius: 50%;
+    background: var(--series-color);
+    transform: translate(25%, -50%);
+  }
+
+  .learning-progress-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 250px;
+    overflow: visible;
+  }
+
+  .learning-progress-grid-line {
+    stroke: rgba(94, 145, 184, 0.19);
+    stroke-width: 1;
+  }
+
+  .learning-progress-vertical-line {
+    stroke: rgba(94, 145, 184, 0.08);
+    stroke-width: 1;
+  }
+
+  .learning-progress-axis-label {
+    fill: #829eb5;
+    font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 10px;
+  }
+
+  .learning-progress-line {
+    fill: none;
+    stroke: var(--series-color);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 4px rgba(32, 211, 238, 0.24));
+  }
+
+  .learning-progress-point {
+    fill: var(--series-color);
+    stroke: #07172c;
+    stroke-width: 2;
+  }
+
+  .learning-progress-end-label {
+    fill: var(--series-color);
+    font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+  }
+}
+
+@media screen and (max-width: 1360px) {
+  .home-dashboard-page {
+    .dashboard-top-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .dashboard-top-grid .dashboard-hero {
+      min-height: 220px;
+    }
+
+    .dashboard-top-grid .dashboard-kpis {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .dashboard-top-grid .kpi-card {
+      min-height: 145px;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .home-dashboard-page {
+    .dashboard-overview-grid,
+    .dashboard-learning-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    .learning-radar-svg {
+      max-width: 500px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .home-dashboard-page {
+    .dashboard-top-grid .dashboard-kpis {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .dashboard-top-grid .kpi-card {
+      min-height: 135px;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .home-dashboard-page {
+    .dashboard-top-grid .dashboard-identity {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .dashboard-top-grid .dashboard-photo-ring {
+      width: 100px;
+      height: 100px;
+    }
+
+    .dashboard-top-grid .dashboard-kpis {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .learning-summary-panel,
+    .learning-progress-panel {
+      padding: 17px;
+    }
+
+    .learning-progress-legend {
+      gap: 8px 14px;
+    }
+
+    .learning-progress-svg {
+      min-width: 690px;
+    }
+
+    .learning-progress-chart {
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .home-dashboard-page {
+    .dashboard-top-grid .dashboard-kpis {
+      grid-template-columns: 1fr;
+    }
+
+    .dashboard-top-grid .kpi-card {
+      min-height: 120px;
+    }
+
+    .learning-radar-svg {
+      min-width: 390px;
+    }
+
+    .learning-radar-chart {
+      overflow-x: auto;
+      justify-content: start;
+    }
+  }
+}
