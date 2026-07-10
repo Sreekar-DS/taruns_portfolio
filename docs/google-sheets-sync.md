@@ -20,6 +20,41 @@ The Apps Script reads these tabs and creates one GitHub commit that updates:
 - `assets/data/certifications.json`
 - `assets/data/professional-development.json`
 
+The deployed website reads these committed JSON files directly.
+
+## Sorting rules
+
+- `Currently Working On`: sorted by `priority` on the homepage: High, then Medium, then Low.
+- `Projects`: sorted manually using `display_order`.
+- `Certifications`: sorted by `issue_date` descending on the Certifications page.
+- `Professional Development`: sorted by `completion_date` descending on the Professional Development page.
+
+## Required sheet headers
+
+### Currently Working On
+
+```text
+title, type, status, start_date, expected_finish_date, priority, skills, short_description, progress, github_link, demo_link, display_on_home
+```
+
+### Projects
+
+```text
+title, type, status, start_date, completion_date, skills, short_description, long_description, github_link, demo_link, image_url, display_on_projects, display_order
+```
+
+### Certifications
+
+```text
+title, issuer, issue_date, expiry_date, credential_id, credential_url, skills, display_on_certifications
+```
+
+### Professional Development
+
+```text
+title, provider, type, status, start_date, completion_date, skills, short_description, certificate_link, display_on_professional_development
+```
+
 ## Files in this repo
 
 - `tools/google-sheets-sync/Code.gs` - copy this code into Google Sheets Apps Script.
@@ -99,7 +134,8 @@ The script will create one commit on `main` and update all JSON data files toget
 ## Important notes
 
 - Edit the Google Sheet as much as you want. GitHub is not touched until you click **Publish to GitHub**.
-- The `.xlsx` file is no longer the best live source because Excel files are binary and do not show clean Git diffs.
+- The Google Sheet and committed JSON files are now the live data source for the website.
+- The old Excel export script is kept only as a legacy helper and is no longer run during GitHub Pages deployment.
 - JSON is better for the portfolio because it is readable, version-controlled, and loaded directly by the website.
 - If publishing fails with a GitHub API permission error, create a new fine-grained token and confirm that `Contents: Read and write` is enabled for this repository.
 - If publishing fails because the branch moved, simply run Publish again after checking that the repo looks correct.
