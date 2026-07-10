@@ -1,0 +1,102 @@
+[
+  {
+    "company": "Excelerate",
+    "role": "Data Analyst – Data Visualization Early Internship",
+    "experience_type": "Internship",
+    "location": "Remote, India",
+    "start_date": "Jan 2025",
+    "end_date": "Feb 2025",
+    "status": "Completed",
+    "summary": "Analyzed marketing campaign performance and created dashboards/reports to support data-driven campaign decisions.",
+    "highlights": [
+      "Investigated marketing campaign data and recommended 4–5 underperforming campaigns for discontinuation.",
+      "Engineered analytical reports and dashboards for the marketing team, helping save 30% of the campaign budget."
+    ],
+    "tools": [
+      "Data Visualization",
+      "Dashboarding",
+      "Marketing Analytics",
+      "Analytical Reporting"
+    ],
+    "project_link": "",
+    "image_url": "",
+    "display_on_experience": true,
+    "display_order": 1
+  },
+  {
+    "company": "Excelerate",
+    "role": "Social Media Analyst – Digital Marketing Early Internship",
+    "experience_type": "Internship",
+    "location": "Remote, India",
+    "start_date": "Jan 2025",
+    "end_date": "Feb 2025",
+    "status": "Completed",
+    "summary": "Audited Excelerate's social media activity and compared platform practices against best-practice benchmarks.",
+    "highlights": [
+      "Performed a social media audit across Facebook, Instagram, and LinkedIn.",
+      "Identified that 90% of content was not reaching followers and proposed strategic content improvements.",
+      "Crafted 9 brand key messages for 3 audience groups."
+    ],
+    "tools": [
+      "Social Media Analytics",
+      "Digital Marketing",
+      "Content Strategy",
+      "Comparative Analysis"
+    ],
+    "project_link": "",
+    "image_url": "",
+    "display_on_experience": true,
+    "display_order": 2
+  },
+  {
+    "company": "Excelerate",
+    "role": "Project Manager – Project Management Early Internship",
+    "experience_type": "Internship",
+    "location": "Remote, India",
+    "start_date": "Jan 2025",
+    "end_date": "Feb 2025",
+    "status": "Completed",
+    "summary": "Built a structured project plan for a 3-day virtual event to promote Excelerate's experiential learning platform.",
+    "highlights": [
+      "Formulated a detailed project plan for a 3-day virtual event with a $30,000 budget.",
+      "Defined roles and responsibilities, created a Gantt chart with 10 milestones, and developed a risk register with 3 major and 7 minor risks."
+    ],
+    "tools": [
+      "Project Planning",
+      "Gantt Chart",
+      "Risk Management",
+      "Documentation"
+    ],
+    "project_link": "",
+    "image_url": "",
+    "display_on_experience": true,
+    "display_order": 3
+  },
+  {
+    "company": "Sokrati Technologies Pvt. Ltd.",
+    "role": "Associate Business Analyst – Internship",
+    "experience_type": "Internship",
+    "location": "Pune, India",
+    "start_date": "Jun 2022",
+    "end_date": "Aug 2022",
+    "status": "Completed",
+    "summary": "Processed and analyzed large e-commerce datasets to support performance insights and client reporting.",
+    "highlights": [
+      "Used Google BigQuery, Python, and Excel/Google Sheets to process and analyze large e-commerce data.",
+      "Created 3 Looker Studio dashboards to support client decision-making.",
+      "Formulated hypotheses and weekly analytical reports based on client requirements."
+    ],
+    "tools": [
+      "Google BigQuery",
+      "Python",
+      "Excel",
+      "Google Sheets",
+      "Looker Studio",
+      "E-commerce Analytics"
+    ],
+    "project_link": "",
+    "image_url": "",
+    "display_on_experience": true,
+    "display_order": 4
+  }
+]
