@@ -6,4 +6,6 @@ description: >
 theme: jekyll-theme-minimal
 font: Arial
 include: ["_pages"]
+exclude:
+  - README.md
 base url: 
