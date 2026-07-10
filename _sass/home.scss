@@ -1,0 +1,190 @@
+/* Homepage styles */
+.home-section {
+  margin-bottom: 30px;
+}
+
+.home-section h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.home-section p {
+  line-height: 1.55;
+}
+
+.home-link-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.home-link-badges a {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: #24292f;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.home-link-badges a:hover {
+  background: #0366d6;
+  color: #fff;
+}
+
+.home-work-scroll {
+  height: 430px;
+  overflow-y: scroll;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  padding: 12px;
+  margin-top: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.home-work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+}
+
+.home-work-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-work-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.home-work-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.home-work-type,
+.home-work-status {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.home-work-type {
+  background: #eef6ff;
+  color: #24527a;
+}
+
+.home-work-status {
+  background: #ecfdf3;
+  color: #166534;
+  white-space: nowrap;
+}
+
+.home-work-card h3 {
+  margin: 8px 0 12px;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.home-work-description {
+  margin: 8px 0 12px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.home-work-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 16px;
+  margin: 12px 0;
+}
+
+.home-work-meta p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.home-work-progress-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 12px 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.home-work-progress-bar {
+  height: 8px;
+  background: #eeeeee;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.home-work-progress-bar div {
+  height: 100%;
+  background: #2f80ed;
+  border-radius: 999px;
+}
+
+.home-work-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.home-work-skills span {
+  background: #f2f2f2;
+  border: 1px solid #e0e0e0;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.home-work-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.home-work-links a {
+  font-weight: 600;
+}
+
+.home-loading-message {
+  margin: 0;
+  padding: 12px;
+}
+
+@media screen and (max-width: 640px) {
+  .home-work-scroll {
+    height: 520px;
+  }
+
+  .home-work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-work-meta {
+    grid-template-columns: 1fr;
+  }
+}
