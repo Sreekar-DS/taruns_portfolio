@@ -4,18 +4,18 @@ title: Education
 permalink: /education/
 ---
 
-## Education
-<!-- ### Master of Science in Computer Science: Machine Learning and Artificial Intelligence
-**Woolf University (AlmaBetter Innovarsity) - Remote, India**
+<h2>Education</h2>
 
-*December 2023 - Expected in November 2024* -->
+<p class="page-intro">
+  Academic background in data analytics, artificial intelligence, machine learning, and electronics and communication engineering.
+</p>
 
-### Bachelor of Technology: Electronics and Communication Engineering
-**Lovely Professional University (LPU) - Punjab, India**
+<div
+  id="education"
+  class="portfolio-card-grid"
+  data-source="{{ '/assets/data/education.json' | relative_url }}?v={{ site.github.build_revision }}"
+  aria-live="polite">
+  <p>Loading education...</p>
+</div>
 
-*August 2018 - July 2024*
-- GPA: 7.27
-
-
-
-
+<script src="{{ '/assets/js/education.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
