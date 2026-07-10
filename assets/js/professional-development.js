@@ -5,6 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const dataUrl = container.dataset.source;
   const typeFilters = Array.from(document.querySelectorAll(".professional-filter"));
 
+  const canonicalCareerTracks = [
+    "Data Analyst Career Track",
+    "Business Analyst Career Track"
+  ];
+
   function escapeHtml(value) {
     return String(value || "")
       .replace(/&/g, "&amp;")
@@ -128,13 +133,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getCareerTrackNames(item) {
-    const trackText = item.career_track_name || item.short_description || "Other Career Track Courses";
-    const trackNames = String(trackText)
-      .split(/[,;|]/)
-      .map(track => track.trim())
-      .filter(Boolean);
+    const trackText = String(item.career_track_name || item.short_description || "").toLowerCase();
+    const matchedTracks = [];
 
-    return trackNames.length ? trackNames : ["Other Career Track Courses"];
+    if (trackText.includes("data analyst")) matchedTracks.push("Data Analyst Career Track");
+    if (trackText.includes("business analyst")) matchedTracks.push("Business Analyst Career Track");
+
+    if (matchedTracks.length) return matchedTracks;
+
+    return ["Other Career Track Courses"];
   }
 
   function groupCareerTrackCourses(items) {
@@ -150,24 +157,49 @@ document.addEventListener("DOMContentLoaded", () => {
     }, {});
   }
 
+  function orderedCareerTrackEntries(groups) {
+    const ordered = [];
+
+    canonicalCareerTracks.forEach(trackName => {
+      if (groups[trackName] && groups[trackName].length) ordered.push([trackName, groups[trackName]]);
+    });
+
+    Object.entries(groups)
+      .filter(([trackName]) => !canonicalCareerTracks.includes(trackName))
+      .sort(([a], [b]) => a.localeCompare(b))
+      .forEach(entry => ordered.push(entry));
+
+    return ordered;
+  }
+
+  function createDetailsGroup(title, items, options = {}) {
+    if (!items.length) return "";
+
+    const sortedItems = sortByDateDesc(items);
+    const open = options.open ? "open" : "";
+
+    return `
+      <details class="career-track-group" ${open}>
+        <summary>
+          <span>${escapeHtml(title)}</span>
+          <small>${sortedItems.length} course${sortedItems.length === 1 ? "" : "s"}</small>
+        </summary>
+        <div class="portfolio-card-grid professional-course-grid">
+          ${sortedItems.map(createCard).join("\n")}
+        </div>
+      </details>
+    `;
+  }
+
   function createCareerTrackGroups(items) {
     if (!items.length) return "";
 
     const groups = groupCareerTrackCourses(sortByDateDesc(items));
+    const entries = orderedCareerTrackEntries(groups);
 
     return `
       <div class="career-track-groups">
-        ${Object.entries(groups).map(([trackName, courses], index) => `
-          <details class="career-track-group" ${index === 0 ? "open" : ""}>
-            <summary>
-              <span>${escapeHtml(trackName)}</span>
-              <small>${courses.length} course${courses.length === 1 ? "" : "s"}</small>
-            </summary>
-            <div class="portfolio-card-grid professional-course-grid">
-              ${courses.map(createCard).join("\n")}
-            </div>
-          </details>
-        `).join("\n")}
+        ${entries.map(([trackName, courses], index) => createDetailsGroup(trackName, courses, { open: index === 0 })).join("\n")}
       </div>
     `;
   }
@@ -186,17 +218,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (selectedType === "all" || selectedType === "independent-course") {
-      const sortedIndependent = sortByDateDesc(independentCourses);
-      if (sortedIndependent.length) {
-        html += `
-          <section class="professional-section">
-            <h3>Independent Courses</h3>
-            <div class="portfolio-card-grid professional-course-grid">
-              ${sortedIndependent.map(createCard).join("\n")}
-            </div>
-          </section>
-        `;
-      }
+      html += `
+        <div class="career-track-groups">
+          ${createDetailsGroup("Independent Courses", independentCourses, { open: selectedType === "independent-course" })}
+        </div>
+      `;
     }
 
     if (!html.trim()) {
