@@ -17,7 +17,7 @@ const CONFIG = {
       headers: [
         "title", "type", "status", "start_date", "expected_finish_date", "priority",
         "skills", "short_description", "progress", "github_link", "demo_link",
-        "display_on_home", "display_order"
+        "display_on_home"
       ]
     },
     {
@@ -34,7 +34,7 @@ const CONFIG = {
       outputPath: "assets/data/certifications.json",
       headers: [
         "title", "issuer", "issue_date", "expiry_date", "credential_id",
-        "credential_url", "skills", "display_on_certifications", "display_order"
+        "credential_url", "skills", "display_on_certifications"
       ]
     },
     {
@@ -43,7 +43,7 @@ const CONFIG = {
       headers: [
         "title", "provider", "type", "status", "start_date", "completion_date",
         "skills", "short_description", "certificate_link",
-        "display_on_professional_development", "display_order"
+        "display_on_professional_development"
       ]
     }
   ]
