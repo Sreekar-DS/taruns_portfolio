@@ -4,46 +4,213 @@ title: Home
 permalink: /
 ---
 
-<section class="home-section home-intro">
-  <h2>Welcome</h2>
-  <p>
-    Welcome to my portfolio. I am <strong>Tarun Sreekar Parasa</strong>, an MSc Data Analytics
-    student based in Germany, building practical projects across data analytics, business
-    intelligence, SQL, Python, machine learning, and applied AI.
-  </p>
-  <p>
-    This portfolio highlights my projects, internship experience, education, certifications,
-    professional development, and current work as I grow toward data analyst, business analyst,
-    BI analyst, and analytics-focused AI roles.
-  </p>
-</section>
+<div
+  id="portfolio-dashboard"
+  class="portfolio-dashboard"
+  data-projects-source="{{ '/assets/data/projects.json' | relative_url }}?v={{ site.github.build_revision }}"
+  data-current-work-source="{{ '/assets/data/currently-working-on.json' | relative_url }}?v={{ site.github.build_revision }}"
+  data-skills-source="{{ '/assets/data/skills.json' | relative_url }}?v={{ site.github.build_revision }}"
+  data-certifications-source="{{ '/assets/data/certifications.json' | relative_url }}?v={{ site.github.build_revision }}"
+  data-learning-source="{{ '/assets/data/professional-development.json' | relative_url }}?v={{ site.github.build_revision }}">
 
-<section class="home-section home-connect">
-  <h2>Connect with Me</h2>
-  <div class="home-link-badges">
-    <a href="https://www.linkedin.com/in/sreekar-ai" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://www.datascienceportfol.io/taruns_portfolio" target="_blank" rel="noopener">Projects Portfolio</a>
-    <a href="https://github.com/Sreekar-DS" target="_blank" rel="noopener">GitHub Profile</a>
-  </div>
-</section>
+  <section class="dashboard-panel dashboard-hero" aria-labelledby="dashboard-name">
+    <div class="dashboard-identity">
+      <div class="dashboard-photo-ring">
+        <img src="{{ site.logo | relative_url }}" alt="Portrait of Tarun Sreekar Parasa">
+      </div>
 
-<section class="home-section home-current-work">
-  <h2>Currently Working On</h2>
-  <p>
-    These are the projects and learning items I am actively working on. The cards below are loaded
-    from portfolio data, so I can keep this section updated from the Google Sheet instead of
-    manually editing the page.
-  </p>
+      <div class="dashboard-identity-copy">
+        <p id="rotating-greeting" class="dashboard-greeting" aria-live="polite">Hi, this is Tarun.</p>
+        <h1 id="dashboard-name">Tarun Sreekar Parasa</h1>
+        <p class="dashboard-role">Data Analyst <span aria-hidden="true">|</span> Business Analyst</p>
+        <p class="dashboard-summary">
+          Turning data into practical insights, business decisions, and analytics-focused solutions.
+        </p>
 
-  <div class="home-work-scroll" aria-label="Scrollable currently working on section">
-    <div
-      id="currently-working-on"
-      class="home-work-grid"
-      data-source="{{ '/assets/data/currently-working-on.json' | relative_url }}?v={{ site.github.build_revision }}"
-      aria-live="polite">
-      <p class="home-loading-message">Loading current work...</p>
+        <div class="dashboard-actions" aria-label="Portfolio links">
+          <a href="https://www.linkedin.com/in/sreekar-ai" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/Sreekar-DS" target="_blank" rel="noopener">GitHub</a>
+          <a href="{{ '/projects/' | relative_url }}">View Projects</a>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+
+    <div class="dashboard-opportunity">
+      <span class="dashboard-live-dot" aria-hidden="true"></span>
+      <div>
+        <strong>Open to opportunities</strong>
+        <span>Data Analyst · Business Analyst · BI Analyst</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="dashboard-kpis" aria-label="Portfolio summary">
+    <article class="dashboard-panel kpi-card">
+      <span class="kpi-icon" aria-hidden="true">P</span>
+      <div>
+        <span class="kpi-label">Projects</span>
+        <strong id="kpi-projects">—</strong>
+        <small id="kpi-projects-note">Loading portfolio data</small>
+      </div>
+    </article>
+
+    <article class="dashboard-panel kpi-card">
+      <span class="kpi-icon" aria-hidden="true">C</span>
+      <div>
+        <span class="kpi-label">Courses</span>
+        <strong id="kpi-courses">—</strong>
+        <small>Completed learning items</small>
+      </div>
+    </article>
+
+    <article class="dashboard-panel kpi-card">
+      <span class="kpi-icon" aria-hidden="true">A</span>
+      <div>
+        <span class="kpi-label">Certifications</span>
+        <strong id="kpi-certifications">—</strong>
+        <small>Verified credentials</small>
+      </div>
+    </article>
+
+    <article class="dashboard-panel kpi-card">
+      <span class="kpi-icon" aria-hidden="true">S</span>
+      <div>
+        <span class="kpi-label">Skills</span>
+        <strong id="kpi-skills">—</strong>
+        <small>Listed across skill groups</small>
+      </div>
+    </article>
+
+    <article class="dashboard-panel kpi-card">
+      <span class="kpi-icon" aria-hidden="true">W</span>
+      <div>
+        <span class="kpi-label">Current Work</span>
+        <strong id="kpi-current-work">—</strong>
+        <small>Active projects</small>
+      </div>
+    </article>
+  </section>
+
+  <section class="dashboard-chart-grid" aria-label="Portfolio charts">
+    <article class="dashboard-panel dashboard-chart-panel project-status-panel">
+      <div class="dashboard-panel-heading">
+        <div>
+          <span class="dashboard-eyebrow">Portfolio overview</span>
+          <h2>Project Status</h2>
+        </div>
+      </div>
+
+      <div class="project-status-content">
+        <div id="project-status-donut" class="project-status-donut" role="img" aria-label="Project status chart">
+          <div>
+            <strong id="project-status-total">—</strong>
+            <span>Total</span>
+          </div>
+        </div>
+
+        <div class="project-status-legend">
+          <p><span class="legend-dot legend-completed"></span>Completed <strong id="project-completed-count">—</strong></p>
+          <p><span class="legend-dot legend-active"></span>In progress <strong id="project-active-count">—</strong></p>
+        </div>
+      </div>
+    </article>
+
+    <article class="dashboard-panel dashboard-chart-panel skills-category-panel">
+      <div class="dashboard-panel-heading">
+        <div>
+          <span class="dashboard-eyebrow">Count, not proficiency</span>
+          <h2>Skills by Category</h2>
+        </div>
+        <a href="{{ '/skills/' | relative_url }}">View all</a>
+      </div>
+      <div id="skills-category-chart" class="horizontal-bar-chart" aria-live="polite">
+        <p class="dashboard-loading">Loading skill categories…</p>
+      </div>
+    </article>
+
+    <article class="dashboard-panel dashboard-chart-panel learning-focus-panel">
+      <div class="dashboard-panel-heading">
+        <div>
+          <span class="dashboard-eyebrow">Course-backed data</span>
+          <h2>Learning Focus</h2>
+        </div>
+        <a href="{{ '/professional development/' | relative_url }}">View courses</a>
+      </div>
+      <div id="learning-focus-chart" class="learning-focus-chart" aria-live="polite">
+        <p class="dashboard-loading">Loading course topics…</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="dashboard-main-grid">
+    <article class="dashboard-panel dashboard-projects-panel">
+      <div class="dashboard-panel-heading">
+        <div>
+          <span class="dashboard-eyebrow">Live progress</span>
+          <h2>Currently Working On</h2>
+        </div>
+        <a href="{{ '/projects/' | relative_url }}">All projects</a>
+      </div>
+
+      <div id="dashboard-current-projects" class="dashboard-project-grid" aria-live="polite">
+        <p class="dashboard-loading">Loading current projects…</p>
+      </div>
+    </article>
+
+    <aside class="dashboard-side-stack" aria-label="Portfolio details">
+      <article class="dashboard-panel dashboard-side-panel">
+        <div class="dashboard-panel-heading">
+          <div>
+            <span class="dashboard-eyebrow">Tools and platforms</span>
+            <h2>Tech Stack</h2>
+          </div>
+        </div>
+        <div id="dashboard-tech-stack" class="dashboard-tech-stack" aria-live="polite">
+          <p class="dashboard-loading">Loading tools…</p>
+        </div>
+      </article>
+
+      <article class="dashboard-panel dashboard-side-panel">
+        <div class="dashboard-panel-heading">
+          <div>
+            <span class="dashboard-eyebrow">Credentials</span>
+            <h2>Certifications</h2>
+          </div>
+          <a href="{{ '/certifications/' | relative_url }}">View all</a>
+        </div>
+        <div id="dashboard-certifications" class="dashboard-certification-list" aria-live="polite">
+          <p class="dashboard-loading">Loading certifications…</p>
+        </div>
+      </article>
+
+      <article class="dashboard-panel dashboard-side-panel publication-panel">
+        <div class="publication-icon" aria-hidden="true">R</div>
+        <div>
+          <span class="dashboard-eyebrow">Publication</span>
+          <h2>Real Time Home Safety and Surveillance</h2>
+          <p>Raspberry Pi and Artificial Intelligence · IJCRT · May 2022</p>
+          <a href="https://ijcrt.org/papers/IJCRT2205995.pdf" target="_blank" rel="noopener">Read publication</a>
+        </div>
+      </article>
+    </aside>
+  </section>
+
+  <section class="dashboard-panel dashboard-footer-strip">
+    <div class="dashboard-footer-statement">
+      <span class="dashboard-target" aria-hidden="true">◎</span>
+      <strong>I turn data into decisions and ideas into impact.</strong>
+    </div>
+    <div class="dashboard-traits" aria-label="Professional strengths">
+      <span><strong>Problem Solver</strong><small>Data-driven</small></span>
+      <span><strong>Business Focused</strong><small>Insight-led</small></span>
+      <span><strong>Continuous Learner</strong><small>Always growing</small></span>
+      <span><strong>Impact Oriented</strong><small>Results focused</small></span>
+    </div>
+  </section>
+
+  <p id="dashboard-error" class="dashboard-error" hidden>
+    Some dashboard data could not be loaded. The navigation and portfolio pages remain available above.
+  </p>
+</div>
 
 <script src="{{ '/assets/js/home.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
