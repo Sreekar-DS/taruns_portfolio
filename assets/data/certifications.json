@@ -2,7 +2,7 @@
   {
     "title": "English Proficiency Certificate",
     "issuer": "Duolingo English Test",
-    "issue_date": "Sep 2024",
+    "issue_date": "2024-09-01",
     "expiry_date": "No expiry",
     "credential_id": "098nyig5biu94s07",
     "credential_url": "https://certs.duolingo.com/098nyig5biu94s07",
@@ -14,8 +14,8 @@
   {
     "title": "SQL Associate",
     "issuer": "Datacamp",
-    "issue_date": "Jan 2024",
-    "expiry_date": "Jan 2026",
+    "issue_date": "2024-01-01",
+    "expiry_date": "2026-01-01",
     "credential_id": "SQA0013570873781",
     "credential_url": "https://www.datacamp.com/certificate/SQA0013570873781",
     "skills": [
@@ -26,7 +26,7 @@
   {
     "title": "Certificate of achievement - Data Analyst",
     "issuer": "365 Data Science",
-    "issue_date": "Nov 2023",
+    "issue_date": "2023-11-01",
     "expiry_date": "No expiry",
     "credential_id": "DD-3DF0FA5ED4",
     "credential_url": "https://learn.365datascience.com/c/17752ebc10",
@@ -38,7 +38,7 @@
   {
     "title": "Certificate of achievement - Business Analyst",
     "issuer": "365 Data Science",
-    "issue_date": "Nov 2023",
+    "issue_date": "2023-11-01",
     "expiry_date": "No expiry",
     "credential_id": "DD-43238FF645",
     "credential_url": "https://learn.365datascience.com/c/0eb1f58bb1",
@@ -50,7 +50,7 @@
   {
     "title": "PCAP: Programming Essentials in Python",
     "issuer": "Cisco Networking Academy",
-    "issue_date": "Jun 2023",
+    "issue_date": "2023-06-01",
     "expiry_date": "No expiry",
     "credential_id": "985eec45a",
     "credential_url": "https://www.credly.com/badges/92bae892-812d-4e4a-be1c-c7b985eec45a/public_url",
