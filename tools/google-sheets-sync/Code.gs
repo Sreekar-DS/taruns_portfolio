@@ -34,7 +34,7 @@ const CONFIG = {
       outputPath: "assets/data/certifications.json",
       headers: [
         "title", "issuer", "issue_date", "expiry_date", "credential_id",
-        "credential_url", "skills", "display_on_certifications"
+        "credential_url", "image_url", "display_on_certifications"
       ]
     },
     {
@@ -42,7 +42,7 @@ const CONFIG = {
       outputPath: "assets/data/professional-development.json",
       headers: [
         "title", "provider", "type", "status", "start_date", "completion_date",
-        "skills", "short_description", "certificate_link",
+        "career_track_name", "skills", "short_description", "certificate_link", "image_url",
         "display_on_professional_development"
       ]
     }
