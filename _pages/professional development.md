@@ -18,9 +18,9 @@ permalink: /professional development/
 
 <div
   id="professional-development"
-  data-source="{{ '/assets/data/professional-development.json' | relative_url }}"
+  data-source="{{ '/assets/data/professional-development.json' | relative_url }}?v={{ site.github.build_revision }}"
   aria-live="polite">
   <p>Loading professional development courses...</p>
 </div>
 
-<script src="{{ '/assets/js/professional-development.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/professional-development.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
