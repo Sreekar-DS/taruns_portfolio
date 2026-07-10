@@ -1,0 +1,111 @@
+/*
+ * Homepage dashboard layout corrections.
+ *
+ * jekyll-theme-minimal applies width and float rules to every <section>.
+ * The dashboard uses semantic nested <section> elements, so those theme rules
+ * must be reset inside the homepage before the dashboard grids can span the
+ * available width correctly.
+ */
+
+.home-dashboard-page {
+  .dashboard-wrapper {
+    display: block !important;
+    width: calc(100% - 48px) !important;
+    max-width: 1680px !important;
+    margin: 84px auto 32px !important;
+    padding: 0 !important;
+  }
+
+  .dashboard-wrapper > .dashboard-content {
+    float: none !important;
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .portfolio-dashboard,
+  .portfolio-dashboard *,
+  .portfolio-dashboard *::before,
+  .portfolio-dashboard *::after {
+    box-sizing: border-box;
+  }
+
+  .portfolio-dashboard {
+    display: block;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  /* Reset the minimal theme's generic section width/float styles. */
+  .portfolio-dashboard > section {
+    float: none !important;
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    display: initial;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Restore the display modes intentionally assigned by dashboard classes. */
+  .portfolio-dashboard > .dashboard-hero {
+    display: flex;
+  }
+
+  .portfolio-dashboard > .dashboard-kpis,
+  .portfolio-dashboard > .dashboard-chart-grid,
+  .portfolio-dashboard > .dashboard-main-grid {
+    display: grid;
+  }
+
+  .portfolio-dashboard > .dashboard-footer-strip {
+    display: flex;
+  }
+
+  .dashboard-hero,
+  .dashboard-kpis,
+  .dashboard-chart-grid,
+  .dashboard-main-grid,
+  .dashboard-footer-strip {
+    clear: both;
+  }
+
+  .dashboard-kpis > *,
+  .dashboard-chart-grid > *,
+  .dashboard-main-grid > *,
+  .dashboard-project-grid > *,
+  .dashboard-side-stack > * {
+    min-width: 0;
+  }
+
+  /* The old decorative widgets sit outside the dashboard and caused the
+     large loose donut visible on the left of the page. Keep the grid/orbs,
+     but remove those competing chart decorations on the dashboard homepage. */
+  .analytics-bars,
+  .analytics-pie,
+  .analytics-scatter {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .home-dashboard-page .dashboard-wrapper {
+    width: calc(100% - 28px) !important;
+    margin-top: 104px !important;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .home-dashboard-page .dashboard-wrapper {
+    width: calc(100% - 18px) !important;
+    margin-top: 124px !important;
+  }
+}
