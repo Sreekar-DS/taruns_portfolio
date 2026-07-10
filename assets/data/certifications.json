@@ -1,80 +1,62 @@
 [
   {
+    "title": "English Proficiency Certificate",
+    "issuer": "Duolingo English Test",
+    "issue_date": "Sep 2024",
+    "expiry_date": "No expiry",
+    "credential_id": "098nyig5biu94s07",
+    "credential_url": "https://certs.duolingo.com/098nyig5biu94s07",
+    "skills": [
+      "English Language"
+    ],
+    "display_on_certifications": true
+  },
+  {
     "title": "SQL Associate",
     "issuer": "Datacamp",
-    "issue_date": "2024-01-01",
-    "expiry_date": "2026-01-01",
+    "issue_date": "Jan 2024",
+    "expiry_date": "Jan 2026",
     "credential_id": "SQA0013570873781",
-    "credential_url": "",
+    "credential_url": "https://www.datacamp.com/certificate/SQA0013570873781",
     "skills": [
       "sql"
     ],
-    "display_on_certifications": true,
-    "display_order": 1
+    "display_on_certifications": true
   },
   {
     "title": "Certificate of achievement - Data Analyst",
     "issuer": "365 Data Science",
-    "issue_date": "2023-11-01",
+    "issue_date": "Nov 2023",
     "expiry_date": "No expiry",
     "credential_id": "DD-3DF0FA5ED4",
-    "credential_url": "",
+    "credential_url": "https://learn.365datascience.com/c/17752ebc10",
     "skills": [
       "dataanalysis"
     ],
-    "display_on_certifications": true,
-    "display_order": 2
+    "display_on_certifications": true
   },
   {
     "title": "Certificate of achievement - Business Analyst",
     "issuer": "365 Data Science",
-    "issue_date": "2023-11-01",
+    "issue_date": "Nov 2023",
     "expiry_date": "No expiry",
     "credential_id": "DD-43238FF645",
-    "credential_url": "",
+    "credential_url": "https://learn.365datascience.com/c/0eb1f58bb1",
     "skills": [
       "businessanalysis"
     ],
-    "display_on_certifications": true,
-    "display_order": 3
-  },
-  {
-    "title": "EF SET English Certification",
-    "issuer": "EF Education First",
-    "issue_date": "2023-01-01",
-    "expiry_date": "No expiry",
-    "credential_id": "ZEKp5E",
-    "credential_url": "",
-    "skills": [
-      "dataanalysis"
-    ],
-    "display_on_certifications": true,
-    "display_order": 4
-  },
-  {
-    "title": "Introduction to AWS",
-    "issuer": "Datacamp",
-    "issue_date": "2024-06-01",
-    "expiry_date": "No expiry",
-    "credential_id": "d0d755bdaa5",
-    "credential_url": "",
-    "skills": [
-      "python"
-    ],
-    "display_on_certifications": true,
-    "display_order": 5
+    "display_on_certifications": true
   },
   {
     "title": "PCAP: Programming Essentials in Python",
     "issuer": "Cisco Networking Academy",
-    "issue_date": "2023-06-01",
+    "issue_date": "Jun 2023",
     "expiry_date": "No expiry",
     "credential_id": "985eec45a",
-    "credential_url": "",
+    "credential_url": "https://www.credly.com/badges/92bae892-812d-4e4a-be1c-c7b985eec45a/public_url",
     "skills": [
       "python"
     ],
-    "display_on_certifications": true,
-    "display_order": 6
+    "display_on_certifications": true
   }
 ]
