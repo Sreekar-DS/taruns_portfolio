@@ -45,6 +45,23 @@ const CONFIG = {
         "career_track_name", "skills", "short_description", "certificate_link", "image_url",
         "display_on_professional_development"
       ]
+    },
+    {
+      name: "Experience",
+      outputPath: "assets/data/experience.json",
+      headers: [
+        "company", "role", "experience_type", "location", "start_date", "end_date",
+        "status", "summary", "highlights", "tools", "project_link", "image_url",
+        "display_on_experience", "display_order"
+      ]
+    },
+    {
+      name: "Education",
+      outputPath: "assets/data/education.json",
+      headers: [
+        "institution", "degree", "field_of_study", "location", "start_date", "end_date",
+        "status", "details", "image_url", "display_on_education", "display_order"
+      ]
     }
   ]
 };
@@ -232,11 +249,19 @@ function normalizeValue_(header, value, timezone) {
     return ["true", "yes", "y", "1"].includes(text);
   }
 
-  if (header === "skills") {
+  if (["skills", "tools"].includes(header)) {
     if (Array.isArray(value)) return value;
     return String(value || "")
       .split(/[,;|]/)
-      .map(skill => skill.trim())
+      .map(item => item.trim())
+      .filter(Boolean);
+  }
+
+  if (header === "highlights") {
+    if (Array.isArray(value)) return value;
+    return String(value || "")
+      .split(/[|;]/)
+      .map(item => item.trim())
       .filter(Boolean);
   }
 
