@@ -1,0 +1,49 @@
+---
+layout: default
+title: Home
+permalink: /
+---
+
+<section class="home-section home-intro">
+  <h2>Welcome</h2>
+  <p>
+    Welcome to my data analytics portfolio. I am <strong>Tarun Sreekar Parasa</strong>,
+    a data analyst and machine learning enthusiast focused on turning raw data into
+    clear business insights using Python, SQL, Tableau, Excel, and machine learning.
+  </p>
+  <p>
+    This portfolio brings together my academic projects, analytics case studies,
+    certifications, and professional development work as I build toward data analyst,
+    business analyst, and analytics-focused roles.
+  </p>
+</section>
+
+<section class="home-section home-connect">
+  <h2>Connect with Me</h2>
+  <div class="home-link-badges">
+    <a href="https://www.linkedin.com/in/sreekar-ai" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.datascienceportfol.io/taruns_portfolio" target="_blank" rel="noopener">Projects Portfolio</a>
+    <a href="https://github.com/Sreekar-DS" target="_blank" rel="noopener">GitHub Profile</a>
+  </div>
+</section>
+
+<section class="home-section home-current-work">
+  <h2>Currently Working On</h2>
+  <p>
+    These are the projects and learning items I am actively working on. The cards below
+    are loaded from portfolio data, so I can update them from the Excel workbook instead
+    of manually editing this page.
+  </p>
+
+  <div class="home-work-scroll" aria-label="Scrollable currently working on section">
+    <div
+      id="currently-working-on"
+      class="home-work-grid"
+      data-source="{{ '/assets/data/currently-working-on.json' | relative_url }}"
+      aria-live="polite">
+      <p class="home-loading-message">Loading current work...</p>
+    </div>
+  </div>
+</section>
+
+<script src="{{ '/assets/js/home.js' | relative_url }}" defer></script>
