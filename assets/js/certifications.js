@@ -13,6 +13,28 @@ document.addEventListener("DOMContentLoaded", () => {
       .replace(/'/g, "&#039;");
   }
 
+  function normalizeImageUrl(value) {
+    const url = String(value || "").trim();
+    if (!url) return "";
+
+    const driveFileMatch = url.match(/drive\.google\.com\/file\/d\/([^/?#]+)/);
+    if (driveFileMatch) {
+      return `https://drive.google.com/thumbnail?id=${driveFileMatch[1]}&sz=w1000`;
+    }
+
+    const driveOpenMatch = url.match(/drive\.google\.com\/open\?id=([^&#]+)/);
+    if (driveOpenMatch) {
+      return `https://drive.google.com/thumbnail?id=${driveOpenMatch[1]}&sz=w1000`;
+    }
+
+    const driveUcMatch = url.match(/drive\.google\.com\/uc\?(?:export=view&)?id=([^&#]+)/);
+    if (driveUcMatch) {
+      return `https://drive.google.com/thumbnail?id=${driveUcMatch[1]}&sz=w1000`;
+    }
+
+    return url;
+  }
+
   function parseDateValue(value) {
     if (!value) return 0;
 
@@ -45,11 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function createImage(item) {
-    if (!item.image_url) return "";
+    const imageUrl = normalizeImageUrl(item.image_url);
+    if (!imageUrl) return "";
 
     return `
       <div class="portfolio-card-image-wrap">
-        <img class="portfolio-card-image" src="${escapeHtml(item.image_url)}" alt="${escapeHtml(item.title)} certificate image">
+        <img class="portfolio-card-image" src="${escapeHtml(imageUrl)}" alt="${escapeHtml(item.title)} certificate image" loading="lazy" onerror="this.closest('.portfolio-card-image-wrap').style.display='none';">
       </div>
     `;
   }
