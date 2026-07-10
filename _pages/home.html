@@ -13,85 +13,87 @@ permalink: /
   data-certifications-source="{{ '/assets/data/certifications.json' | relative_url }}?v={{ site.github.build_revision }}"
   data-learning-source="{{ '/assets/data/professional-development.json' | relative_url }}?v={{ site.github.build_revision }}">
 
-  <section class="dashboard-panel dashboard-hero" aria-labelledby="dashboard-name">
-    <div class="dashboard-identity">
-      <div class="dashboard-photo-ring">
-        <img src="{{ site.logo | relative_url }}" alt="Portrait of Tarun Sreekar Parasa">
+  <div class="dashboard-top-grid">
+    <div class="dashboard-panel dashboard-hero" role="region" aria-labelledby="dashboard-name">
+      <div class="dashboard-identity">
+        <div class="dashboard-photo-ring">
+          <img src="{{ site.logo | relative_url }}" alt="Portrait of Tarun Sreekar Parasa">
+        </div>
+
+        <div class="dashboard-identity-copy">
+          <p id="rotating-greeting" class="dashboard-greeting" aria-live="polite">Hi, this is Tarun.</p>
+          <h1 id="dashboard-name">Tarun Sreekar Parasa</h1>
+          <p class="dashboard-role">Data Analyst <span aria-hidden="true">|</span> Business Analyst</p>
+          <p class="dashboard-summary">
+            Turning data into practical insights, business decisions, and analytics-focused solutions.
+          </p>
+
+          <div class="dashboard-actions" aria-label="Portfolio links">
+            <a href="https://www.linkedin.com/in/sreekar-ai" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/Sreekar-DS" target="_blank" rel="noopener">GitHub</a>
+            <a href="{{ '/projects/' | relative_url }}">View Projects</a>
+          </div>
+        </div>
       </div>
 
-      <div class="dashboard-identity-copy">
-        <p id="rotating-greeting" class="dashboard-greeting" aria-live="polite">Hi, this is Tarun.</p>
-        <h1 id="dashboard-name">Tarun Sreekar Parasa</h1>
-        <p class="dashboard-role">Data Analyst <span aria-hidden="true">|</span> Business Analyst</p>
-        <p class="dashboard-summary">
-          Turning data into practical insights, business decisions, and analytics-focused solutions.
-        </p>
-
-        <div class="dashboard-actions" aria-label="Portfolio links">
-          <a href="https://www.linkedin.com/in/sreekar-ai" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/Sreekar-DS" target="_blank" rel="noopener">GitHub</a>
-          <a href="{{ '/projects/' | relative_url }}">View Projects</a>
+      <div class="dashboard-opportunity">
+        <span class="dashboard-live-dot" aria-hidden="true"></span>
+        <div>
+          <strong>Open to opportunities</strong>
+          <span>Data Analyst · Business Analyst · BI Analyst</span>
         </div>
       </div>
     </div>
 
-    <div class="dashboard-opportunity">
-      <span class="dashboard-live-dot" aria-hidden="true"></span>
-      <div>
-        <strong>Open to opportunities</strong>
-        <span>Data Analyst · Business Analyst · BI Analyst</span>
-      </div>
+    <div class="dashboard-kpis" role="list" aria-label="Portfolio summary">
+      <article class="dashboard-panel kpi-card" role="listitem">
+        <span class="kpi-icon" aria-hidden="true">P</span>
+        <div>
+          <span class="kpi-label">Projects</span>
+          <strong id="kpi-projects">—</strong>
+          <small id="kpi-projects-note">Loading portfolio data</small>
+        </div>
+      </article>
+
+      <article class="dashboard-panel kpi-card" role="listitem">
+        <span class="kpi-icon" aria-hidden="true">C</span>
+        <div>
+          <span class="kpi-label">Courses</span>
+          <strong id="kpi-courses">—</strong>
+          <small>Completed learning items</small>
+        </div>
+      </article>
+
+      <article class="dashboard-panel kpi-card" role="listitem">
+        <span class="kpi-icon" aria-hidden="true">A</span>
+        <div>
+          <span class="kpi-label">Certifications</span>
+          <strong id="kpi-certifications">—</strong>
+          <small>Verified credentials</small>
+        </div>
+      </article>
+
+      <article class="dashboard-panel kpi-card" role="listitem">
+        <span class="kpi-icon" aria-hidden="true">S</span>
+        <div>
+          <span class="kpi-label">Skills</span>
+          <strong id="kpi-skills">—</strong>
+          <small>Listed across skill groups</small>
+        </div>
+      </article>
+
+      <article class="dashboard-panel kpi-card" role="listitem">
+        <span class="kpi-icon" aria-hidden="true">W</span>
+        <div>
+          <span class="kpi-label">Current Work</span>
+          <strong id="kpi-current-work">—</strong>
+          <small>Active projects</small>
+        </div>
+      </article>
     </div>
-  </section>
+  </div>
 
-  <section class="dashboard-kpis" aria-label="Portfolio summary">
-    <article class="dashboard-panel kpi-card">
-      <span class="kpi-icon" aria-hidden="true">P</span>
-      <div>
-        <span class="kpi-label">Projects</span>
-        <strong id="kpi-projects">—</strong>
-        <small id="kpi-projects-note">Loading portfolio data</small>
-      </div>
-    </article>
-
-    <article class="dashboard-panel kpi-card">
-      <span class="kpi-icon" aria-hidden="true">C</span>
-      <div>
-        <span class="kpi-label">Courses</span>
-        <strong id="kpi-courses">—</strong>
-        <small>Completed learning items</small>
-      </div>
-    </article>
-
-    <article class="dashboard-panel kpi-card">
-      <span class="kpi-icon" aria-hidden="true">A</span>
-      <div>
-        <span class="kpi-label">Certifications</span>
-        <strong id="kpi-certifications">—</strong>
-        <small>Verified credentials</small>
-      </div>
-    </article>
-
-    <article class="dashboard-panel kpi-card">
-      <span class="kpi-icon" aria-hidden="true">S</span>
-      <div>
-        <span class="kpi-label">Skills</span>
-        <strong id="kpi-skills">—</strong>
-        <small>Listed across skill groups</small>
-      </div>
-    </article>
-
-    <article class="dashboard-panel kpi-card">
-      <span class="kpi-icon" aria-hidden="true">W</span>
-      <div>
-        <span class="kpi-label">Current Work</span>
-        <strong id="kpi-current-work">—</strong>
-        <small>Active projects</small>
-      </div>
-    </article>
-  </section>
-
-  <section class="dashboard-chart-grid" aria-label="Portfolio charts">
+  <section class="dashboard-chart-grid dashboard-overview-grid" aria-label="Portfolio overview charts">
     <article class="dashboard-panel dashboard-chart-panel project-status-panel">
       <div class="dashboard-panel-heading">
         <div>
@@ -127,17 +129,31 @@ permalink: /
         <p class="dashboard-loading">Loading skill categories…</p>
       </div>
     </article>
+  </section>
 
-    <article class="dashboard-panel dashboard-chart-panel learning-focus-panel">
+  <section class="dashboard-learning-grid" aria-label="Learning analytics">
+    <article class="dashboard-panel dashboard-chart-panel learning-summary-panel">
       <div class="dashboard-panel-heading">
         <div>
-          <span class="dashboard-eyebrow">Course-backed data</span>
-          <h2>Learning Focus</h2>
+          <span class="dashboard-eyebrow">Completed course coverage</span>
+          <h2>Learning Summary</h2>
         </div>
         <a href="{{ '/professional development/' | relative_url }}">View courses</a>
       </div>
-      <div id="learning-focus-chart" class="learning-focus-chart" aria-live="polite">
-        <p class="dashboard-loading">Loading course topics…</p>
+      <div id="learning-summary-chart" class="learning-radar-chart" aria-live="polite">
+        <p class="dashboard-loading">Loading learning summary…</p>
+      </div>
+    </article>
+
+    <article class="dashboard-panel dashboard-chart-panel learning-progress-panel">
+      <div class="dashboard-panel-heading">
+        <div>
+          <span class="dashboard-eyebrow">Milestone-based cumulative view</span>
+          <h2>Learning Progress Over Time</h2>
+        </div>
+      </div>
+      <div id="learning-progress-chart" class="learning-progress-chart" aria-live="polite">
+        <p class="dashboard-loading">Loading progress timeline…</p>
       </div>
     </article>
   </section>
@@ -214,4 +230,5 @@ permalink: /
 </div>
 
 <script src="{{ '/assets/js/home.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
+<script src="{{ '/assets/js/home-charts.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
 <script src="{{ '/assets/js/home-icons.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
