@@ -14,6 +14,7 @@ Expected sheet tabs:
 - `Professional Development`
 - `Experience`
 - `Education`
+- `Skills`
 
 The Apps Script reads these tabs and creates one GitHub commit that updates:
 
@@ -23,6 +24,7 @@ The Apps Script reads these tabs and creates one GitHub commit that updates:
 - `assets/data/professional-development.json`
 - `assets/data/experience.json`
 - `assets/data/education.json`
+- `assets/data/skills.json`
 
 The deployed website reads these committed JSON files directly.
 
@@ -34,6 +36,7 @@ The deployed website reads these committed JSON files directly.
 - `Professional Development`: sorted by `completion_date` descending on the Professional Development page.
 - `Experience`: sorted manually using `display_order`.
 - `Education`: sorted manually using `display_order`.
+- `Skills`: grouped by `category` and sorted using `display_order`.
 
 ## Required sheet headers
 
@@ -71,6 +74,12 @@ company, role, experience_type, location, start_date, end_date, status, summary,
 
 ```text
 institution, degree, field_of_study, location, start_date, end_date, status, details, image_url, display_on_education, display_order
+```
+
+### Skills
+
+```text
+category, skill, display_on_skills, display_order
 ```
 
 ## Files in this repo
