@@ -17,8 +17,7 @@
     "progress": 70,
     "github_link": "",
     "demo_link": "",
-    "display_on_home": true,
-    "display_order": 1
+    "display_on_home": true
   },
   {
     "title": "Google Play Store EDA & Tableau Dashboard",
@@ -37,8 +36,7 @@
     "progress": 80,
     "github_link": "",
     "demo_link": "",
-    "display_on_home": true,
-    "display_order": 2
+    "display_on_home": true
   },
   {
     "title": "Online Retail Customer Segmentation",
@@ -57,7 +55,6 @@
     "progress": 60,
     "github_link": "",
     "demo_link": "",
-    "display_on_home": true,
-    "display_order": 3
+    "display_on_home": true
   }
 ]
