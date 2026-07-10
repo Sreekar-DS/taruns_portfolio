@@ -127,11 +127,25 @@ document.addEventListener("DOMContentLoaded", () => {
     return checked ? checked.value : "all";
   }
 
+  function getCareerTrackNames(item) {
+    const trackText = item.career_track_name || item.short_description || "Other Career Track Courses";
+    const trackNames = String(trackText)
+      .split(/[,;|]/)
+      .map(track => track.trim())
+      .filter(Boolean);
+
+    return trackNames.length ? trackNames : ["Other Career Track Courses"];
+  }
+
   function groupCareerTrackCourses(items) {
     return items.reduce((groups, item) => {
-      const trackName = item.career_track_name || item.short_description || "Other Career Track Courses";
-      if (!groups[trackName]) groups[trackName] = [];
-      groups[trackName].push(item);
+      getCareerTrackNames(item).forEach(trackName => {
+        if (!groups[trackName]) groups[trackName] = [];
+
+        const alreadyAdded = groups[trackName].some(course => course.title === item.title && course.provider === item.provider);
+        if (!alreadyAdded) groups[trackName].push(item);
+      });
+
       return groups;
     }, {});
   }
