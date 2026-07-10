@@ -1,14 +1,14 @@
-# Portfolio Data Workbook
+# Portfolio data workbook
 
-Upload the Excel workbook as `data/portfolio_data.xlsx`.
+Edit `portfolio_data.xlsx` to maintain small portfolio datasets from Excel.
 
-The GitHub Actions workflow runs `scripts/export_portfolio_data.py` before the Jekyll build. The script reads the workbook sheets and exports JSON files to `assets/data/`.
+The GitHub Actions workflow runs `scripts/export_portfolio_data.py` before the Jekyll build. The script converts workbook sheets into JSON files under `assets/data/`.
 
-Expected sheets:
+Current supported sheets:
 
-- `Currently Working On`
-- `Projects`
-- `Certifications`
-- `Professional Development`
+- Currently Working On → `assets/data/currently-working-on.json`
+- Projects → `assets/data/projects.json`
+- Certifications → `assets/data/certifications.json`
+- Professional Development → `assets/data/professional-development.json`
 
-For the homepage, the most important sheet is `Currently Working On`.
+For now, the homepage uses only the `Currently Working On` sheet.
