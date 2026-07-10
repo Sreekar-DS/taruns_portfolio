@@ -62,6 +62,13 @@ const CONFIG = {
         "institution", "degree", "field_of_study", "location", "start_date", "end_date",
         "status", "details", "image_url", "display_on_education", "display_order"
       ]
+    },
+    {
+      name: "Skills",
+      outputPath: "assets/data/skills.json",
+      headers: [
+        "category", "skill", "display_on_skills", "display_order"
+      ]
     }
   ]
 };
