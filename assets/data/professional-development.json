@@ -1,297 +1,17 @@
 [
   {
-    "title": "Certificate of Achievement - Business Analyst",
-    "provider": "365 Data Science",
-    "type": "Career Track",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-11-07",
-    "skills": [
-      "Excel",
-      "Tableau",
-      "Power BI"
-    ],
-    "short_description": "Business Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/0eb1f58bb1",
-    "display_on_professional_development": true,
-    "display_order": 1
-  },
-  {
-    "title": "Certificate of Achievement - Data Analyst",
-    "provider": "365 Data Science",
-    "type": "Career Track",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-11-17",
-    "skills": [
-      "Python",
-      "SQL",
-      "Tableau",
-      "Excel"
-    ],
-    "short_description": "Data Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/17752ebc10",
-    "display_on_professional_development": true,
-    "display_order": 2
-  },
-  {
-    "title": "Introduction to Data and Data Science",
-    "provider": "365 Data Science",
-    "type": "Career Track Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-07-14",
-    "skills": [
-      "Data Analytics"
-    ],
-    "short_description": "Business Analyst Career Track, Data Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/6f5978aeda/",
-    "display_on_professional_development": true,
-    "display_order": 3
-  },
-  {
-    "title": "Data Literacy",
-    "provider": "365 Data Science",
-    "type": "Career Track Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-10-05",
-    "skills": [
-      "Data Analytics"
-    ],
-    "short_description": "Business Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/6db05dc3a7/",
-    "display_on_professional_development": true,
-    "display_order": 4
-  },
-  {
-    "title": "Data Strategy",
-    "provider": "365 Data Science",
-    "type": "Career Track Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-10-05",
-    "skills": [
-      "Data Analytics"
-    ],
-    "short_description": "Business Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/64eec437c8/",
-    "display_on_professional_development": true,
-    "display_order": 5
-  },
-  {
-    "title": "Introduction to Excel",
-    "provider": "365 Data Science",
-    "type": "Career Track Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-10-06",
-    "skills": [
-      "Excel"
-    ],
-    "short_description": "Business Analyst Career Track, Data Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/8da8503ba3/",
-    "display_on_professional_development": true,
-    "display_order": 6
-  },
-  {
-    "title": "Data Analysis with Excel Pivot Tables",
-    "provider": "365 Data Science",
-    "type": "Career Track Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-02-17",
-    "skills": [
-      "Excel"
-    ],
-    "short_description": "Business Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/2b335f1f52/",
-    "display_on_professional_development": true,
-    "display_order": 7
-  },
-  {
-    "title": "Advanced Microsoft Excel",
-    "provider": "365 Data Science",
-    "type": "Career Track Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-10-09",
-    "skills": [
-      "Excel"
-    ],
-    "short_description": "Business Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/255d164eeb/",
-    "display_on_professional_development": true,
-    "display_order": 8
-  },
-  {
-    "title": "Statistics",
-    "provider": "365 Data Science",
-    "type": "Career Track Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-11-07",
-    "skills": [
-      "Data Analytics"
-    ],
-    "short_description": "Business Analyst Career Track, Data Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/736582a118/",
-    "display_on_professional_development": true,
-    "display_order": 9
-  },
-  {
-    "title": "The Complete Data Visualization Course with Python, Tableau and Excel",
-    "provider": "366 Data Science",
-    "type": "Career Track Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-11-07",
-    "skills": [
-      "Python",
-      "Tableau",
-      "Excel"
-    ],
-    "short_description": "Business Analyst Career Track, Data Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/4d91236ea0/",
-    "display_on_professional_development": true,
-    "display_order": 10
-  },
-  {
-    "title": "Data Analysis in Power BI with Chat",
-    "provider": "365 Data Science",
-    "type": "Career Track Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-11-07",
-    "skills": [
-      "Power BI"
-    ],
-    "short_description": "Business Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/87105a7da5/",
-    "display_on_professional_development": true,
-    "display_order": 11
-  },
-  {
-    "title": "Introduction to Tableau",
-    "provider": "365 Data Science",
-    "type": "Career Track Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-11-07",
-    "skills": [
-      "Tableau"
-    ],
-    "short_description": "Business Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/9c6c126052/",
-    "display_on_professional_development": true,
-    "display_order": 12
-  },
-  {
-    "title": "SQL",
-    "provider": "365 Data Science",
-    "type": "Career Track Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-11-17",
-    "skills": [
-      "SQL"
-    ],
-    "short_description": "Data Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/530bf4031c/",
-    "display_on_professional_development": true,
-    "display_order": 13
-  },
-  {
-    "title": "Introduction to Python",
-    "provider": "365 Data Science",
-    "type": "Career Track Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-10-05",
-    "skills": [
-      "Python"
-    ],
-    "short_description": "Data Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/4d5ad50261/",
-    "display_on_professional_development": true,
-    "display_order": 14
-  },
-  {
-    "title": "Data Preprocessing with NumPy",
-    "provider": "365 Data Science",
-    "type": "Career Track Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-11-17",
-    "skills": [
-      "Python"
-    ],
-    "short_description": "Data Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/88f4fbb331/",
-    "display_on_professional_development": true,
-    "display_order": 15
-  },
-  {
-    "title": "Data Cleaning and Preprocessing with pandas",
-    "provider": "365 Data Science",
-    "type": "Career Track Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-11-17",
-    "skills": [
-      "Python"
-    ],
-    "short_description": "Data Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/6309dd39c2/",
-    "display_on_professional_development": true,
-    "display_order": 16
-  },
-  {
-    "title": "SQL + Tableau + Python",
-    "provider": "365 Data Science",
-    "type": "Career Track Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-11-17",
-    "skills": [
-      "SQL",
-      "Tableau",
-      "Python"
-    ],
-    "short_description": "Data Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/1c9276c34b/",
-    "display_on_professional_development": true,
-    "display_order": 17
-  },
-  {
-    "title": "Time series Analysis with Python",
-    "provider": "365 Data Science",
-    "type": "Career Track Course",
-    "status": "Completed",
-    "start_date": "",
-    "completion_date": "2023-11-17",
-    "skills": [
-      "Python"
-    ],
-    "short_description": "Data Analyst Career Track",
-    "certificate_link": "https://learn.365datascience.com/c/9605f4c08d/",
-    "display_on_professional_development": true,
-    "display_order": 18
-  },
-  {
-    "title": "PCAP: Programming Essentials in Python",
-    "provider": "Cisco networking academy",
+    "title": "Introduction to AWS",
+    "provider": "Datacamp",
     "type": "Independent Course",
     "status": "Completed",
     "start_date": "",
-    "completion_date": "2023-06-02",
+    "completion_date": "Jun 2024",
     "skills": [
-      "Python"
+      "AWS"
     ],
     "short_description": "",
-    "certificate_link": "https://www.credly.com/badges/92bae892-812d-4e4a-be1c-c7b985eec45a/public_url",
-    "display_on_professional_development": true,
-    "display_order": 19
+    "certificate_link": "https://www.datacamp.com/completed/statement-of-accomplishment/course/b974104db717bc96dc1cf3455a2a1d0d755bdaa5",
+    "display_on_professional_development": true
   },
   {
     "title": "Prompt Engineering for Everyone",
@@ -299,14 +19,13 @@
     "type": "Independent Course",
     "status": "Completed",
     "start_date": "",
-    "completion_date": "2024-03-20",
+    "completion_date": "Mar 2024",
     "skills": [
       "Generative AI"
     ],
     "short_description": "",
     "certificate_link": "https://courses.cognitiveclass.ai/certificates/4d786e91a9b845c8b76dfaf192a8ff51",
-    "display_on_professional_development": true,
-    "display_order": 20
+    "display_on_professional_development": true
   },
   {
     "title": "ChatGPT for Everyone",
@@ -314,28 +33,240 @@
     "type": "Independent Course",
     "status": "Completed",
     "start_date": "",
-    "completion_date": "2024-03-16",
+    "completion_date": "Mar 2024",
     "skills": [
       "Generative AI"
     ],
     "short_description": "",
     "certificate_link": "https://learnprompting.thinkific.com/certificates/304kkwxncu",
-    "display_on_professional_development": true,
-    "display_order": 21
+    "display_on_professional_development": true
   },
   {
-    "title": "Introduction to AWS",
-    "provider": "Datacamp",
-    "type": "Independent Course",
+    "title": "SQL",
+    "provider": "365 Data Science",
+    "type": "Career Track Course",
     "status": "Completed",
     "start_date": "",
-    "completion_date": "2024-06-01",
+    "completion_date": "Nov 2023",
     "skills": [
-      "AWS"
+      "SQL"
     ],
-    "short_description": "",
-    "certificate_link": "https://www.datacamp.com/completed/statement-of-accomplishment/course/b974104db717bc96dc1cf3455a2a1d0d755bdaa5",
-    "display_on_professional_development": true,
-    "display_order": 22
+    "short_description": "Data Analyst Career Track",
+    "certificate_link": "https://learn.365datascience.com/c/530bf4031c/",
+    "display_on_professional_development": true
+  },
+  {
+    "title": "Data Preprocessing with NumPy",
+    "provider": "365 Data Science",
+    "type": "Career Track Course",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "Nov 2023",
+    "skills": [
+      "Python"
+    ],
+    "short_description": "Data Analyst Career Track",
+    "certificate_link": "https://learn.365datascience.com/c/88f4fbb331/",
+    "display_on_professional_development": true
+  },
+  {
+    "title": "Data Cleaning and Preprocessing with pandas",
+    "provider": "365 Data Science",
+    "type": "Career Track Course",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "Nov 2023",
+    "skills": [
+      "Python"
+    ],
+    "short_description": "Data Analyst Career Track",
+    "certificate_link": "https://learn.365datascience.com/c/6309dd39c2/",
+    "display_on_professional_development": true
+  },
+  {
+    "title": "SQL + Tableau + Python",
+    "provider": "365 Data Science",
+    "type": "Career Track Course",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "Nov 2023",
+    "skills": [
+      "SQL",
+      "Tableau",
+      "Python"
+    ],
+    "short_description": "Data Analyst Career Track",
+    "certificate_link": "https://learn.365datascience.com/c/1c9276c34b/",
+    "display_on_professional_development": true
+  },
+  {
+    "title": "Time series Analysis with Python",
+    "provider": "365 Data Science",
+    "type": "Career Track Course",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "Nov 2023",
+    "skills": [
+      "Python"
+    ],
+    "short_description": "Data Analyst Career Track",
+    "certificate_link": "https://learn.365datascience.com/c/9605f4c08d/",
+    "display_on_professional_development": true
+  },
+  {
+    "title": "Statistics",
+    "provider": "365 Data Science",
+    "type": "Career Track Course",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "Nov 2023",
+    "skills": [
+      "Data Analytics"
+    ],
+    "short_description": "Business Analyst Career Track, Data Analyst Career Track",
+    "certificate_link": "https://learn.365datascience.com/c/736582a118/",
+    "display_on_professional_development": true
+  },
+  {
+    "title": "The Complete Data Visualization Course with Python, Tableau and Excel",
+    "provider": "366 Data Science",
+    "type": "Career Track Course",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "Nov 2023",
+    "skills": [
+      "Python",
+      "Tableau",
+      "Excel"
+    ],
+    "short_description": "Business Analyst Career Track, Data Analyst Career Track",
+    "certificate_link": "https://learn.365datascience.com/c/4d91236ea0/",
+    "display_on_professional_development": true
+  },
+  {
+    "title": "Data Analysis in Power BI with Chat",
+    "provider": "365 Data Science",
+    "type": "Career Track Course",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "Nov 2023",
+    "skills": [
+      "Power BI"
+    ],
+    "short_description": "Business Analyst Career Track",
+    "certificate_link": "https://learn.365datascience.com/c/87105a7da5/",
+    "display_on_professional_development": true
+  },
+  {
+    "title": "Introduction to Tableau",
+    "provider": "365 Data Science",
+    "type": "Career Track Course",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "Nov 2023",
+    "skills": [
+      "Tableau"
+    ],
+    "short_description": "Business Analyst Career Track",
+    "certificate_link": "https://learn.365datascience.com/c/9c6c126052/",
+    "display_on_professional_development": true
+  },
+  {
+    "title": "Advanced Microsoft Excel",
+    "provider": "365 Data Science",
+    "type": "Career Track Course",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "Oct 2023",
+    "skills": [
+      "Excel"
+    ],
+    "short_description": "Business Analyst Career Track",
+    "certificate_link": "https://learn.365datascience.com/c/255d164eeb/",
+    "display_on_professional_development": true
+  },
+  {
+    "title": "Introduction to Excel",
+    "provider": "365 Data Science",
+    "type": "Career Track Course",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "Oct 2023",
+    "skills": [
+      "Excel"
+    ],
+    "short_description": "Business Analyst Career Track, Data Analyst Career Track",
+    "certificate_link": "https://learn.365datascience.com/c/8da8503ba3/",
+    "display_on_professional_development": true
+  },
+  {
+    "title": "Data Literacy",
+    "provider": "365 Data Science",
+    "type": "Career Track Course",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "Oct 2023",
+    "skills": [
+      "Data Analytics"
+    ],
+    "short_description": "Business Analyst Career Track",
+    "certificate_link": "https://learn.365datascience.com/c/6db05dc3a7/",
+    "display_on_professional_development": true
+  },
+  {
+    "title": "Data Strategy",
+    "provider": "365 Data Science",
+    "type": "Career Track Course",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "Oct 2023",
+    "skills": [
+      "Data Analytics"
+    ],
+    "short_description": "Business Analyst Career Track",
+    "certificate_link": "https://learn.365datascience.com/c/64eec437c8/",
+    "display_on_professional_development": true
+  },
+  {
+    "title": "Introduction to Python",
+    "provider": "365 Data Science",
+    "type": "Career Track Course",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "Oct 2023",
+    "skills": [
+      "Python"
+    ],
+    "short_description": "Data Analyst Career Track",
+    "certificate_link": "https://learn.365datascience.com/c/4d5ad50261/",
+    "display_on_professional_development": true
+  },
+  {
+    "title": "Introduction to Data and Data Science",
+    "provider": "365 Data Science",
+    "type": "Career Track Course",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "Jul 2023",
+    "skills": [
+      "Data Analytics"
+    ],
+    "short_description": "Business Analyst Career Track, Data Analyst Career Track",
+    "certificate_link": "https://learn.365datascience.com/c/6f5978aeda/",
+    "display_on_professional_development": true
+  },
+  {
+    "title": "Data Analysis with Excel Pivot Tables",
+    "provider": "365 Data Science",
+    "type": "Career Track Course",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "Feb 2023",
+    "skills": [
+      "Excel"
+    ],
+    "short_description": "Business Analyst Career Track",
+    "certificate_link": "https://learn.365datascience.com/c/2b335f1f52/",
+    "display_on_professional_development": true
   }
 ]
