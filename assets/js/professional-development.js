@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("professional-development");
-  const skillsFilterBox = document.getElementById("skills-filter-box");
   if (!container) return;
 
   const dataUrl = container.dataset.source;
@@ -35,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function parseDateValue(value) {
     if (!value) return 0;
 
-    const text = String(value).trim();
+    const text = String(value).trim().replace(/^[-/\s]+/, "");
     const iso = text.match(/^(\d{4})-(\d{1,2})(?:-(\d{1,2}))?$/);
     if (iso) {
       return new Date(Number(iso[1]), Number(iso[2]) - 1, Number(iso[3] || 1)).getTime();
@@ -46,10 +45,17 @@ document.addEventListener("DOMContentLoaded", () => {
       return new Date(Number(monthYearNumeric[2]), Number(monthYearNumeric[1]) - 1, 1).getTime();
     }
 
+    const monthYearText = text.match(/^([A-Za-z]{3,})\s+(\d{4})$/);
+    if (monthYearText) {
+      const parsed = new Date(`${monthYearText[1]} 1, ${monthYearText[2]}`);
+      return Number.isNaN(parsed.getTime()) ? 0 : parsed.getTime();
+    }
+
     const dayMonthYear = text.match(/^(\d{1,2})[-\s]([A-Za-z]{3,})[-\s](\d{2,4})$/);
     if (dayMonthYear) {
       const year = Number(dayMonthYear[3].length === 2 ? `20${dayMonthYear[3]}` : dayMonthYear[3]);
-      return new Date(`${dayMonthYear[2]} ${dayMonthYear[1]}, ${year}`).getTime() || 0;
+      const parsed = new Date(`${dayMonthYear[2]} ${dayMonthYear[1]}, ${year}`);
+      return Number.isNaN(parsed.getTime()) ? 0 : parsed.getTime();
     }
 
     const parsed = new Date(text);
@@ -67,11 +73,21 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
+  function createImage(item) {
+    if (!item.image_url) return "";
+
+    return `
+      <div class="portfolio-card-image-wrap">
+        <img class="portfolio-card-image" src="${escapeHtml(item.image_url)}" alt="${escapeHtml(item.title)} course image">
+      </div>
+    `;
+  }
+
   function createCertificateLink(item) {
     if (!item.certificate_link) return "";
 
     return `
-      <p>
+      <p class="portfolio-card-link">
         <a href="${escapeHtml(item.certificate_link)}" target="_blank" rel="noopener">
           View certificate →
         </a>
@@ -81,41 +97,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createCard(item) {
     return `
-      <article class="certification-box ${escapeHtml(slug(item.type))}">
-        <h3>${escapeHtml(item.title)}</h3>
+      <article class="certification-box portfolio-card ${escapeHtml(slug(item.type))}">
+        ${createImage(item)}
 
-        <div class="course-org-date">
-          <p><strong>Provider:</strong> ${escapeHtml(item.provider || "")}</p>
-          <p><strong>Type:</strong> ${escapeHtml(item.type || "")}</p>
-          <p><strong>Status:</strong> ${escapeHtml(item.status || "")}</p>
-          <p><strong>Completed:</strong> ${escapeHtml(item.completion_date || "Not set")}</p>
+        <div class="portfolio-card-body">
+          <h3>${escapeHtml(item.title)}</h3>
+
+          <div class="course-org-date portfolio-card-meta">
+            <p><strong>Provider:</strong> ${escapeHtml(item.provider || "")}</p>
+            <p><strong>Type:</strong> ${escapeHtml(item.type || "")}</p>
+            <p><strong>Status:</strong> ${escapeHtml(item.status || "")}</p>
+            <p><strong>Completed:</strong> ${escapeHtml(item.completion_date || "Not set")}</p>
+          </div>
+
+          ${item.short_description ? `<p>${escapeHtml(item.short_description)}</p>` : ""}
+          ${createSkillTags(item.skills)}
+          ${createCertificateLink(item)}
         </div>
-
-        ${item.short_description ? `<p>${escapeHtml(item.short_description)}</p>` : ""}
-        ${createSkillTags(item.skills)}
-        ${createCertificateLink(item)}
       </article>
     `;
   }
 
-  function buildSkillFilters(items) {
-    const skills = new Set();
-
-    items.forEach(item => {
-      normalizeSkills(item.skills).forEach(skill => skills.add(skill));
-    });
-
-    if (!skills.size || !skillsFilterBox) return;
-
-    skillsFilterBox.innerHTML = Array.from(skills)
-      .sort((a, b) => a.localeCompare(b))
-      .map(skill => `
-        <label>
-          <input type="checkbox" name="skill-filter" class="skill-filter" value="${escapeHtml(skill.toLowerCase())}">
-          ${escapeHtml(skill)}
-        </label>
-      `)
-      .join("\n");
+  function sortByDateDesc(items) {
+    return items.slice().sort((a, b) => parseDateValue(b.completion_date || b.start_date) - parseDateValue(a.completion_date || a.start_date));
   }
 
   function selectedTypeFilter() {
@@ -123,31 +127,70 @@ document.addEventListener("DOMContentLoaded", () => {
     return checked ? checked.value : "all";
   }
 
-  function selectedSkillFilters() {
-    return Array.from(document.querySelectorAll(".skill-filter:checked"))
-      .map(input => input.value.toLowerCase());
+  function groupCareerTrackCourses(items) {
+    return items.reduce((groups, item) => {
+      const trackName = item.career_track_name || item.short_description || "Other Career Track Courses";
+      if (!groups[trackName]) groups[trackName] = [];
+      groups[trackName].push(item);
+      return groups;
+    }, {});
+  }
+
+  function createCareerTrackGroups(items) {
+    if (!items.length) return "";
+
+    const groups = groupCareerTrackCourses(sortByDateDesc(items));
+
+    return `
+      <div class="career-track-groups">
+        ${Object.entries(groups).map(([trackName, courses], index) => `
+          <details class="career-track-group" ${index === 0 ? "open" : ""}>
+            <summary>
+              <span>${escapeHtml(trackName)}</span>
+              <small>${courses.length} course${courses.length === 1 ? "" : "s"}</small>
+            </summary>
+            <div class="portfolio-card-grid professional-course-grid">
+              ${courses.map(createCard).join("\n")}
+            </div>
+          </details>
+        `).join("\n")}
+      </div>
+    `;
   }
 
   function render(items) {
     const selectedType = selectedTypeFilter();
-    const selectedSkills = selectedSkillFilters();
+    const visibleItems = items.filter(item => item.display_on_professional_development !== false);
 
-    const visibleItems = items
-      .filter(item => item.display_on_professional_development !== false)
-      .filter(item => selectedType === "all" || slug(item.type) === selectedType)
-      .filter(item => {
-        if (!selectedSkills.length) return true;
-        const skills = normalizeSkills(item.skills).map(skill => skill.toLowerCase());
-        return selectedSkills.every(filterValue => skills.some(skill => skill.includes(filterValue) || filterValue.includes(skill)));
-      })
-      .sort((a, b) => parseDateValue(b.completion_date || b.start_date) - parseDateValue(a.completion_date || a.start_date));
+    const careerTrackCourses = visibleItems.filter(item => slug(item.type) === "career-track-course");
+    const independentCourses = visibleItems.filter(item => slug(item.type) === "independent-course");
 
-    if (!visibleItems.length) {
-      container.innerHTML = "<p>No professional development courses match the selected filters.</p>";
+    let html = "";
+
+    if (selectedType === "all" || selectedType === "career-track-course") {
+      html += createCareerTrackGroups(careerTrackCourses);
+    }
+
+    if (selectedType === "all" || selectedType === "independent-course") {
+      const sortedIndependent = sortByDateDesc(independentCourses);
+      if (sortedIndependent.length) {
+        html += `
+          <section class="professional-section">
+            <h3>Independent Courses</h3>
+            <div class="portfolio-card-grid professional-course-grid">
+              ${sortedIndependent.map(createCard).join("\n")}
+            </div>
+          </section>
+        `;
+      }
+    }
+
+    if (!html.trim()) {
+      container.innerHTML = "<p>No professional development courses match the selected filter.</p>";
       return;
     }
 
-    container.innerHTML = visibleItems.map(createCard).join("\n");
+    container.innerHTML = html;
   }
 
   fetch(dataUrl)
@@ -156,11 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return response.json();
     })
     .then(items => {
-      buildSkillFilters(items);
-
       typeFilters.forEach(filter => filter.addEventListener("change", () => render(items)));
-      document.querySelectorAll(".skill-filter").forEach(filter => filter.addEventListener("change", () => render(items)));
-
       render(items);
     })
     .catch(error => {
