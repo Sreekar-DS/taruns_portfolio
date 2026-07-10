@@ -6,11 +6,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Jun 2024",
+    "career_track_name": "",
     "skills": [
       "AWS"
     ],
     "short_description": "",
     "certificate_link": "https://www.datacamp.com/completed/statement-of-accomplishment/course/b974104db717bc96dc1cf3455a2a1d0d755bdaa5",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -20,11 +22,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Mar 2024",
+    "career_track_name": "",
     "skills": [
       "Generative AI"
     ],
     "short_description": "",
     "certificate_link": "https://courses.cognitiveclass.ai/certificates/4d786e91a9b845c8b76dfaf192a8ff51",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -34,11 +38,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Mar 2024",
+    "career_track_name": "",
     "skills": [
       "Generative AI"
     ],
     "short_description": "",
     "certificate_link": "https://learnprompting.thinkific.com/certificates/304kkwxncu",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -48,11 +54,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Nov 2023",
+    "career_track_name": "Data Analyst Career Track",
     "skills": [
       "SQL"
     ],
-    "short_description": "Data Analyst Career Track",
+    "short_description": "",
     "certificate_link": "https://learn.365datascience.com/c/530bf4031c/",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -62,11 +70,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Nov 2023",
+    "career_track_name": "Data Analyst Career Track",
     "skills": [
       "Python"
     ],
-    "short_description": "Data Analyst Career Track",
+    "short_description": "",
     "certificate_link": "https://learn.365datascience.com/c/88f4fbb331/",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -76,11 +86,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Nov 2023",
+    "career_track_name": "Data Analyst Career Track",
     "skills": [
       "Python"
     ],
-    "short_description": "Data Analyst Career Track",
+    "short_description": "",
     "certificate_link": "https://learn.365datascience.com/c/6309dd39c2/",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -90,13 +102,15 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Nov 2023",
+    "career_track_name": "Data Analyst Career Track",
     "skills": [
       "SQL",
       "Tableau",
       "Python"
     ],
-    "short_description": "Data Analyst Career Track",
+    "short_description": "",
     "certificate_link": "https://learn.365datascience.com/c/1c9276c34b/",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -106,11 +120,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Nov 2023",
+    "career_track_name": "Data Analyst Career Track",
     "skills": [
       "Python"
     ],
-    "short_description": "Data Analyst Career Track",
+    "short_description": "",
     "certificate_link": "https://learn.365datascience.com/c/9605f4c08d/",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -120,11 +136,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Nov 2023",
+    "career_track_name": "Business Analyst Career Track, Data Analyst Career Track",
     "skills": [
       "Data Analytics"
     ],
-    "short_description": "Business Analyst Career Track, Data Analyst Career Track",
+    "short_description": "",
     "certificate_link": "https://learn.365datascience.com/c/736582a118/",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -134,13 +152,15 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Nov 2023",
+    "career_track_name": "Business Analyst Career Track, Data Analyst Career Track",
     "skills": [
       "Python",
       "Tableau",
       "Excel"
     ],
-    "short_description": "Business Analyst Career Track, Data Analyst Career Track",
+    "short_description": "",
     "certificate_link": "https://learn.365datascience.com/c/4d91236ea0/",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -150,11 +170,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Nov 2023",
+    "career_track_name": "Business Analyst Career Track",
     "skills": [
       "Power BI"
     ],
-    "short_description": "Business Analyst Career Track",
+    "short_description": "",
     "certificate_link": "https://learn.365datascience.com/c/87105a7da5/",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -164,11 +186,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Nov 2023",
+    "career_track_name": "Business Analyst Career Track",
     "skills": [
       "Tableau"
     ],
-    "short_description": "Business Analyst Career Track",
+    "short_description": "",
     "certificate_link": "https://learn.365datascience.com/c/9c6c126052/",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -178,11 +202,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Oct 2023",
+    "career_track_name": "Business Analyst Career Track",
     "skills": [
       "Excel"
     ],
-    "short_description": "Business Analyst Career Track",
+    "short_description": "",
     "certificate_link": "https://learn.365datascience.com/c/255d164eeb/",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -192,11 +218,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Oct 2023",
+    "career_track_name": "Business Analyst Career Track, Data Analyst Career Track",
     "skills": [
       "Excel"
     ],
-    "short_description": "Business Analyst Career Track, Data Analyst Career Track",
+    "short_description": "",
     "certificate_link": "https://learn.365datascience.com/c/8da8503ba3/",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -206,11 +234,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Oct 2023",
+    "career_track_name": "Business Analyst Career Track",
     "skills": [
       "Data Analytics"
     ],
-    "short_description": "Business Analyst Career Track",
+    "short_description": "",
     "certificate_link": "https://learn.365datascience.com/c/6db05dc3a7/",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -220,11 +250,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Oct 2023",
+    "career_track_name": "Business Analyst Career Track",
     "skills": [
       "Data Analytics"
     ],
-    "short_description": "Business Analyst Career Track",
+    "short_description": "",
     "certificate_link": "https://learn.365datascience.com/c/64eec437c8/",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -234,11 +266,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Oct 2023",
+    "career_track_name": "Data Analyst Career Track",
     "skills": [
       "Python"
     ],
-    "short_description": "Data Analyst Career Track",
+    "short_description": "",
     "certificate_link": "https://learn.365datascience.com/c/4d5ad50261/",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -248,11 +282,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Jul 2023",
+    "career_track_name": "Business Analyst Career Track, Data Analyst Career Track",
     "skills": [
       "Data Analytics"
     ],
-    "short_description": "Business Analyst Career Track, Data Analyst Career Track",
+    "short_description": "",
     "certificate_link": "https://learn.365datascience.com/c/6f5978aeda/",
+    "image_url": "",
     "display_on_professional_development": true
   },
   {
@@ -262,11 +298,13 @@
     "status": "Completed",
     "start_date": "",
     "completion_date": "Feb 2023",
+    "career_track_name": "Business Analyst Career Track",
     "skills": [
       "Excel"
     ],
-    "short_description": "Business Analyst Career Track",
+    "short_description": "",
     "certificate_link": "https://learn.365datascience.com/c/2b335f1f52/",
+    "image_url": "",
     "display_on_professional_development": true
   }
 ]
