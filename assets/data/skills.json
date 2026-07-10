@@ -1,0 +1,242 @@
+[
+  {
+    "category": "Programming & Development",
+    "skill": "Python",
+    "display_on_skills": true,
+    "display_order": 1
+  },
+  {
+    "category": "Programming & Development",
+    "skill": "SQL",
+    "display_on_skills": true,
+    "display_order": 2
+  },
+  {
+    "category": "Databases & Cloud Infrastructure",
+    "skill": "PostgreSQL",
+    "display_on_skills": true,
+    "display_order": 3
+  },
+  {
+    "category": "Databases & Cloud Infrastructure",
+    "skill": "MySQL",
+    "display_on_skills": true,
+    "display_order": 4
+  },
+  {
+    "category": "Databases & Cloud Infrastructure",
+    "skill": "Google BigQuery",
+    "display_on_skills": true,
+    "display_order": 5
+  },
+  {
+    "category": "Databases & Cloud Infrastructure",
+    "skill": "GCP",
+    "display_on_skills": true,
+    "display_order": 6
+  },
+  {
+    "category": "Databases & Cloud Infrastructure",
+    "skill": "AWS",
+    "display_on_skills": true,
+    "display_order": 7
+  },
+  {
+    "category": "Databases & Cloud Infrastructure",
+    "skill": "Azure",
+    "display_on_skills": true,
+    "display_order": 8
+  },
+  {
+    "category": "Databases & Cloud Infrastructure",
+    "skill": "Oracle",
+    "display_on_skills": true,
+    "display_order": 9
+  },
+  {
+    "category": "Visualization & BI",
+    "skill": "Tableau",
+    "display_on_skills": true,
+    "display_order": 10
+  },
+  {
+    "category": "Visualization & BI",
+    "skill": "Looker Studio",
+    "display_on_skills": true,
+    "display_order": 11
+  },
+  {
+    "category": "Visualization & BI",
+    "skill": "Microsoft Excel",
+    "display_on_skills": true,
+    "display_order": 12
+  },
+  {
+    "category": "Visualization & BI",
+    "skill": "Google Spreadsheets",
+    "display_on_skills": true,
+    "display_order": 13
+  },
+  {
+    "category": "Big Data Technologies",
+    "skill": "Apache Spark",
+    "display_on_skills": true,
+    "display_order": 14
+  },
+  {
+    "category": "Big Data Technologies",
+    "skill": "Apache Hadoop",
+    "display_on_skills": true,
+    "display_order": 15
+  },
+  {
+    "category": "Big Data Technologies",
+    "skill": "Databricks",
+    "display_on_skills": true,
+    "display_order": 16
+  },
+  {
+    "category": "Data Engineering & Analytics Techniques",
+    "skill": "Data Modelling",
+    "display_on_skills": true,
+    "display_order": 17
+  },
+  {
+    "category": "Data Engineering & Analytics Techniques",
+    "skill": "Database Design & Normalization",
+    "display_on_skills": true,
+    "display_order": 18
+  },
+  {
+    "category": "Data Engineering & Analytics Techniques",
+    "skill": "ETL/ELT",
+    "display_on_skills": true,
+    "display_order": 19
+  },
+  {
+    "category": "Data Engineering & Analytics Techniques",
+    "skill": "Distributed Data Storage and Processing",
+    "display_on_skills": true,
+    "display_order": 20
+  },
+  {
+    "category": "Data Engineering & Analytics Techniques",
+    "skill": "Data Pre-processing",
+    "display_on_skills": true,
+    "display_order": 21
+  },
+  {
+    "category": "Data Engineering & Analytics Techniques",
+    "skill": "Exploratory Data Analysis (EDA)",
+    "display_on_skills": true,
+    "display_order": 22
+  },
+  {
+    "category": "Data Engineering & Analytics Techniques",
+    "skill": "Data Visualization & Dashboarding",
+    "display_on_skills": true,
+    "display_order": 23
+  },
+  {
+    "category": "Data Engineering & Analytics Techniques",
+    "skill": "KPI Development",
+    "display_on_skills": true,
+    "display_order": 24
+  },
+  {
+    "category": "Data Engineering & Analytics Techniques",
+    "skill": "Hypothesis & A/B Testing",
+    "display_on_skills": true,
+    "display_order": 25
+  },
+  {
+    "category": "Data Engineering & Analytics Techniques",
+    "skill": "ML Model Building and Evaluation",
+    "display_on_skills": true,
+    "display_order": 26
+  },
+  {
+    "category": "Analytics Tools & Environments",
+    "skill": "Google Colab",
+    "display_on_skills": true,
+    "display_order": 27
+  },
+  {
+    "category": "Analytics Tools & Environments",
+    "skill": "Jupyter Notebook",
+    "display_on_skills": true,
+    "display_order": 28
+  },
+  {
+    "category": "Analytics Tools & Environments",
+    "skill": "Git/GitHub",
+    "display_on_skills": true,
+    "display_order": 29
+  },
+  {
+    "category": "Project Management",
+    "skill": "Project Planning",
+    "display_on_skills": true,
+    "display_order": 30
+  },
+  {
+    "category": "Project Management",
+    "skill": "Documentation",
+    "display_on_skills": true,
+    "display_order": 31
+  },
+  {
+    "category": "Project Management",
+    "skill": "Gantt Chart",
+    "display_on_skills": true,
+    "display_order": 32
+  },
+  {
+    "category": "Project Management",
+    "skill": "Risk Management",
+    "display_on_skills": true,
+    "display_order": 33
+  },
+  {
+    "category": "Soft Skills",
+    "skill": "Communication & Presentation",
+    "display_on_skills": true,
+    "display_order": 34
+  },
+  {
+    "category": "Soft Skills",
+    "skill": "Business Reporting",
+    "display_on_skills": true,
+    "display_order": 35
+  },
+  {
+    "category": "Soft Skills",
+    "skill": "Client and Stakeholder Collaboration",
+    "display_on_skills": true,
+    "display_order": 36
+  },
+  {
+    "category": "Soft Skills",
+    "skill": "Time Management",
+    "display_on_skills": true,
+    "display_order": 37
+  },
+  {
+    "category": "Soft Skills",
+    "skill": "Analytical Thinking",
+    "display_on_skills": true,
+    "display_order": 38
+  },
+  {
+    "category": "Soft Skills",
+    "skill": "Process Optimization",
+    "display_on_skills": true,
+    "display_order": 39
+  },
+  {
+    "category": "Languages",
+    "skill": "English – Advanced: CEFR C1",
+    "display_on_skills": true,
+    "display_order": 40
+  }
+]
