@@ -10,15 +10,10 @@ permalink: /professional development/
   Courses and learning activities that support my development in analytics, business intelligence, programming, and related tools.
 </p>
 
-<div class="filter-box">
+<div class="filter-box professional-type-filters" aria-label="Professional development type filters">
   <label><input type="radio" name="professional-filter" class="professional-filter" value="all" checked> All</label>
-  <label><input type="radio" name="professional-filter" class="professional-filter" value="career-track"> Career Track</label>
-  <label><input type="radio" name="professional-filter" class="professional-filter" value="career-track-course"> Career Track Course</label>
-  <label><input type="radio" name="professional-filter" class="professional-filter" value="independent-course"> Independent Course</label>
-</div>
-
-<div id="skills-filter-box" class="filter-box hidden" aria-label="Skill filters">
-  <!-- Skill checkboxes are loaded from JSON. -->
+  <label><input type="radio" name="professional-filter" class="professional-filter" value="career-track-course"> Career Track Courses</label>
+  <label><input type="radio" name="professional-filter" class="professional-filter" value="independent-course"> Independent Courses</label>
 </div>
 
 <div
