@@ -220,10 +220,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 18px;
+  align-items: start;
   margin-top: 18px;
 }
 
 .skill-category-card {
+  align-self: start;
   border: 1px solid #ddd;
   border-radius: 10px;
   background: #fff;
