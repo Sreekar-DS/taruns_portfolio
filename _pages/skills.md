@@ -4,20 +4,18 @@ title: Skills
 permalink: /skills/
 ---
 
+<h2>Skills</h2>
 
-## Skills
-### Technical Skills
-- **Cloud:** GCP, AWS
-- **Programming Languages:** Python, SQL, VBA
-- **Python Libraries:** Pandas, NumPy, Matplotlib, Seaborn
-- **Analytics Tools/Software:** Microsoft Excel, Spreadsheets, BigQuery, Tableau, Power BI, Postgres SQL, MySQL, Looker Studio, Jupyter Notebook, Google Colab
-- **Analytics Techniques:** Data Importing, Data Wrangling, Data Manipulation, Data Modelling, Data Processing, Data Visualization, ETL/ELT, Exploratory Data Analysis (EDA), Data Analysis, Statistical Analysis, Hypothesis Testing, A/B Testing
+<p class="page-intro">
+  A structured view of the technical, analytical, business, and communication skills I use across data analytics, business intelligence, SQL, Python, and applied AI projects.
+</p>
 
-### Generative AI
-- ChatGPT, Gemini, Copilot, Prompt Engineering.
+<div
+  id="skills"
+  class="skills-category-grid"
+  data-source="{{ '/assets/data/skills.json' | relative_url }}?v={{ site.github.build_revision }}"
+  aria-live="polite">
+  <p>Loading skills...</p>
+</div>
 
-### Soft Skills
-- Communication and Presentation Skills, Adaptability and Learning Agility, Client/Stakeholder Collaboration, Attention to Detail, Critical Thinking, Problem Solving, Defining Requirements, Knowledge Acquisition, Research Skills, Task Management, Business Reporting
-
-### Others
-- Business Intelligence (BI), Large-scale Data Analysis, Customer Relationship Management (CRM)
+<script src="{{ '/assets/js/skills.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
