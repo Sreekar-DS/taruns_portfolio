@@ -11,97 +11,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
     {% include head-custom.html %}
-
-    <style>
-      .filter-box, .project-box, .certification-box {
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin: 10px 0;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
-        display: flex;
-      }
-      .filter-box {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-        background: #f9f9f9;
-      }
-      .filter-box label {
-        margin-right: 10px;
-      }
-      .hidden {
-        display: none;
-      }
-      .project-box:hover, .certification-box:hover, .filter-box:hover {
-        transform: scale(1.02);
-      }
-      .project-content {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-      }
-      .project-image {
-        max-width: 200px;
-        margin-right: 20px;
-      }
-      .project-details {
-        flex-grow: 1;
-      }
-      .project-skills {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 10px 0;
-      }
-      .project-skills span {
-        background: #e0e0e0;
-        border-radius: 12px;
-        padding: 5px 10px;
-        margin: 5px;
-      }
-      .project-description {
-        margin: 10px 0;
-      }
-
-      #certifications {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-      }
-      .certification-box {
-      border: 1px solid #ddd;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      flex-direction: column;
-    }
-    .certification-box h3 {
-      margin: 0 0 10px 0;
-    }
-    .certification-box p {
-      margin: 5px 0;
-    }
-
-    .certification-org-cred, .certification-dates {
-      display:flex;
-    }
-
-    .certification-dates {
-      flex-direction: row;
-      gap: 35px;
-    }
-
-    .certification-org-cred {
-      flex-direction: column;
-    }
-    </style>
-
-
-    
   </head>
   <body>
+    <div class="analytics-background" aria-hidden="true">
+      <div class="analytics-grid"></div>
+      <div class="analytics-orb analytics-orb-one"></div>
+      <div class="analytics-orb analytics-orb-two"></div>
+
+      <div class="analytics-bars analytics-widget">
+        <span style="--height: 42%; --delay: 0s;"></span>
+        <span style="--height: 70%; --delay: .25s;"></span>
+        <span style="--height: 52%; --delay: .5s;"></span>
+        <span style="--height: 86%; --delay: .75s;"></span>
+        <span style="--height: 62%; --delay: 1s;"></span>
+      </div>
+
+      <div class="analytics-pie analytics-widget"></div>
+
+      <div class="analytics-scatter analytics-widget">
+        <span style="--x: 10%; --y: 68%; --delay: 0s;"></span>
+        <span style="--x: 23%; --y: 42%; --delay: .4s;"></span>
+        <span style="--x: 39%; --y: 76%; --delay: .8s;"></span>
+        <span style="--x: 51%; --y: 34%; --delay: 1.2s;"></span>
+        <span style="--x: 66%; --y: 58%; --delay: 1.6s;"></span>
+        <span style="--x: 82%; --y: 26%; --delay: 2s;"></span>
+      </div>
+    </div>
+
     <nav class="navbar">
       <ul>
         <li><a href="{{ "/" | absolute_url }}">Home</a></li>
@@ -115,15 +51,14 @@
         <li><a href="{{ "/publication/" | relative_url }}">Publication</a></li>
       </ul>
     </nav>
-    
+
     <div class="wrapper">
-      <!-- Navbar -->      
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
         {% if site.logo %}
           <img class="photo" src="{{ site.logo | relative_url }}" alt="Logo" />
         {% endif %}
-      
+
         <p class="jobtitle">{{ site.description | default: site.github.project_tagline }}</p>
 
         {% if site.show_downloads %}
@@ -134,11 +69,11 @@
         </ul>
         {% endif %}
       </header>
-      
+
       <section>
         {{ content }}
       </section>
-      
+
       <footer>
         {% if site.github.is_project_page %}
         <p>This portfolio is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
@@ -147,23 +82,5 @@
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-
-    <script>
-      document.querySelectorAll('.filter').forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-          const filters = Array.from(document.querySelectorAll('.filter:checked')).map(cb => cb.value);
-          document.querySelectorAll('.project-box, .certification-box').forEach(box => {
-            const matches = filters.every(filter => box.classList.contains(filter));
-            box.classList.toggle('hidden', !matches);
-          });
-        });
-      });
-  
-      document.querySelectorAll('.project-box, .certification-box').forEach(box => {
-        box.addEventListener('click', () => {
-          box.querySelector('.details-content').classList.toggle('active');
-        });
-      });
-  </script>
   </body>
 </html>
