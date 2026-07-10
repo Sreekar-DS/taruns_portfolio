@@ -12,7 +12,7 @@ permalink: /education/
 
 <div
   id="education"
-  class="portfolio-card-grid"
+  class="portfolio-card-list-layout"
   data-source="{{ '/assets/data/education.json' | relative_url }}?v={{ site.github.build_revision }}"
   aria-live="polite">
   <p>Loading education...</p>
