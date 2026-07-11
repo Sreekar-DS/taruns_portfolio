@@ -7,6 +7,10 @@ permalink: /
 <div
   id="portfolio-dashboard"
   class="portfolio-dashboard"
+  data-profile-source="{{ '/assets/data/profile.json' | relative_url }}?v={{ site.github.build_revision }}"
+  data-links-source="{{ '/assets/data/links.json' | relative_url }}?v={{ site.github.build_revision }}"
+  data-publications-source="{{ '/assets/data/publications.json' | relative_url }}?v={{ site.github.build_revision }}"
+  data-experience-source="{{ '/assets/data/experience.json' | relative_url }}?v={{ site.github.build_revision }}"
   data-projects-source="{{ '/assets/data/projects.json' | relative_url }}?v={{ site.github.build_revision }}"
   data-current-work-source="{{ '/assets/data/currently-working-on.json' | relative_url }}?v={{ site.github.build_revision }}"
   data-skills-source="{{ '/assets/data/skills.json' | relative_url }}?v={{ site.github.build_revision }}"
@@ -14,7 +18,7 @@ permalink: /
   data-learning-source="{{ '/assets/data/professional-development.json' | relative_url }}?v={{ site.github.build_revision }}"
   data-awards-source="{{ '/assets/data/awards.json' | relative_url }}?v={{ site.github.build_revision }}">
 
-  <div class="dashboard-top-grid">
+  <div class="dashboard-top-grid dashboard-profile-experience-grid">
     <div class="dashboard-panel dashboard-hero" role="region" aria-labelledby="dashboard-name">
       <div class="dashboard-identity">
         <div class="dashboard-photo-ring">
@@ -24,12 +28,16 @@ permalink: /
         <div class="dashboard-identity-copy">
           <p id="rotating-greeting" class="dashboard-greeting" aria-live="polite">Hi, this is Tarun.</p>
           <h1 id="dashboard-name">Tarun Sreekar Parasa</h1>
-          <p class="dashboard-role">Data Analyst <span aria-hidden="true">|</span> Business Analyst</p>
-          <p class="dashboard-summary">
+          <p class="dashboard-role">
+            <span id="dashboard-primary-role">Data Analyst</span>
+            <span class="dashboard-role-separator" aria-hidden="true">|</span>
+            <span id="dashboard-secondary-role">Business Analyst</span>
+          </p>
+          <p id="dashboard-profile-summary" class="dashboard-summary">
             Turning data into practical insights, business decisions, and analytics-focused solutions.
           </p>
 
-          <div class="dashboard-actions" aria-label="Portfolio links">
+          <div id="dashboard-actions" class="dashboard-actions" aria-label="Portfolio links">
             <a href="https://www.linkedin.com/in/sreekar-ai" target="_blank" rel="noopener">LinkedIn</a>
             <a href="https://github.com/Sreekar-DS" target="_blank" rel="noopener">GitHub</a>
             <a href="{{ '/projects/' | relative_url }}">View Projects</a>
@@ -40,92 +48,105 @@ permalink: /
       <div class="dashboard-opportunity">
         <span class="dashboard-live-dot" aria-hidden="true"></span>
         <div>
-          <strong>Open to opportunities</strong>
-          <span>Data Analyst · Business Analyst · BI Analyst</span>
+          <strong id="dashboard-opportunity-label">Open to opportunities</strong>
+          <span id="dashboard-opportunity-roles">Data Analyst · Business Analyst · BI Analyst</span>
         </div>
       </div>
     </div>
 
-    <div class="dashboard-kpis" role="list" aria-label="Portfolio summary">
-      <article class="dashboard-panel kpi-card" role="listitem">
-        <div class="kpi-heading-row">
-          <span class="kpi-icon" aria-hidden="true">P</span>
-          <span class="kpi-label">Projects</span>
+    <article class="dashboard-panel dashboard-experience-panel">
+      <div class="dashboard-panel-heading">
+        <div>
+          <span class="dashboard-eyebrow">Career experience</span>
+          <h2>Experience &amp; Internships</h2>
         </div>
-        <div class="kpi-metric">
-          <strong id="kpi-projects">—</strong>
-          <span class="kpi-info-line">Total Projects</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <small id="kpi-projects-note">Loading portfolio data</small>
-      </article>
-
-      <article class="dashboard-panel kpi-card" role="listitem">
-        <div class="kpi-heading-row">
-          <span class="kpi-icon" aria-hidden="true">C</span>
-          <span class="kpi-label">Courses</span>
-        </div>
-        <div class="kpi-metric">
-          <strong id="kpi-courses">—</strong>
-          <span class="kpi-info-line">Completed</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <small>Learning items</small>
-      </article>
-
-      <article class="dashboard-panel kpi-card" role="listitem">
-        <div class="kpi-heading-row">
-          <span class="kpi-icon" aria-hidden="true">A</span>
-          <span class="kpi-label">Certifications</span>
-        </div>
-        <div class="kpi-metric">
-          <strong id="kpi-certifications">—</strong>
-          <span class="kpi-info-line">Earned</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <small>Verified credentials</small>
-      </article>
-
-      <article class="dashboard-panel kpi-card" role="listitem">
-        <div class="kpi-heading-row">
-          <span class="kpi-icon" aria-hidden="true">S</span>
-          <span class="kpi-label">Skills</span>
-        </div>
-        <div class="kpi-metric">
-          <strong id="kpi-skills">—</strong>
-          <span class="kpi-info-line">Listed Skills</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <small>Across skill groups</small>
-      </article>
-
-      <article class="dashboard-panel kpi-card" role="listitem">
-        <div class="kpi-heading-row">
-          <span class="kpi-icon" aria-hidden="true">W</span>
-          <span class="kpi-label">Current Work</span>
-        </div>
-        <div class="kpi-metric">
-          <strong id="kpi-current-work">—</strong>
-          <span class="kpi-info-line">Active Projects</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <small>In progress now</small>
-      </article>
-
-      <article class="dashboard-panel kpi-card awards-kpi-card" role="listitem">
-        <div class="kpi-heading-row">
-          <span class="kpi-icon" aria-hidden="true">T</span>
-          <span class="kpi-label">Awards</span>
-        </div>
-        <div class="kpi-metric">
-          <strong id="kpi-awards">—</strong>
-          <span class="kpi-info-line">Recognitions</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <small id="kpi-awards-note">Star Performer recognitions</small>
-      </article>
-    </div>
+        <a href="{{ '/experience/' | relative_url }}">View all</a>
+      </div>
+      <div id="dashboard-experience-list" class="dashboard-experience-list" aria-live="polite">
+        <p class="dashboard-loading">Loading experience…</p>
+      </div>
+    </article>
   </div>
+
+  <section class="dashboard-kpis dashboard-kpi-strip" role="list" aria-label="Portfolio summary">
+    <article class="dashboard-panel kpi-card" role="listitem">
+      <div class="kpi-heading-row">
+        <span class="kpi-icon" aria-hidden="true">P</span>
+        <span class="kpi-label">Projects</span>
+      </div>
+      <div class="kpi-metric">
+        <strong id="kpi-projects">—</strong>
+        <span class="kpi-info-line">Total Projects</span>
+      </div>
+      <div class="kpi-divider" aria-hidden="true"></div>
+      <small id="kpi-projects-note">Loading portfolio data</small>
+    </article>
+
+    <article class="dashboard-panel kpi-card" role="listitem">
+      <div class="kpi-heading-row">
+        <span class="kpi-icon" aria-hidden="true">C</span>
+        <span class="kpi-label">Courses</span>
+      </div>
+      <div class="kpi-metric">
+        <strong id="kpi-courses">—</strong>
+        <span class="kpi-info-line">Completed</span>
+      </div>
+      <div class="kpi-divider" aria-hidden="true"></div>
+      <small>Learning items</small>
+    </article>
+
+    <article class="dashboard-panel kpi-card" role="listitem">
+      <div class="kpi-heading-row">
+        <span class="kpi-icon" aria-hidden="true">A</span>
+        <span class="kpi-label">Certifications</span>
+      </div>
+      <div class="kpi-metric">
+        <strong id="kpi-certifications">—</strong>
+        <span class="kpi-info-line">Earned</span>
+      </div>
+      <div class="kpi-divider" aria-hidden="true"></div>
+      <small>Verified credentials</small>
+    </article>
+
+    <article class="dashboard-panel kpi-card" role="listitem">
+      <div class="kpi-heading-row">
+        <span class="kpi-icon" aria-hidden="true">S</span>
+        <span class="kpi-label">Skills</span>
+      </div>
+      <div class="kpi-metric">
+        <strong id="kpi-skills">—</strong>
+        <span class="kpi-info-line">Listed Skills</span>
+      </div>
+      <div class="kpi-divider" aria-hidden="true"></div>
+      <small>Across skill groups</small>
+    </article>
+
+    <article class="dashboard-panel kpi-card" role="listitem">
+      <div class="kpi-heading-row">
+        <span class="kpi-icon" aria-hidden="true">W</span>
+        <span class="kpi-label">Current Work</span>
+      </div>
+      <div class="kpi-metric">
+        <strong id="kpi-current-work">—</strong>
+        <span class="kpi-info-line">Active Projects</span>
+      </div>
+      <div class="kpi-divider" aria-hidden="true"></div>
+      <small>In progress now</small>
+    </article>
+
+    <article class="dashboard-panel kpi-card awards-kpi-card" role="listitem">
+      <div class="kpi-heading-row">
+        <span class="kpi-icon" aria-hidden="true">T</span>
+        <span class="kpi-label">Awards</span>
+      </div>
+      <div class="kpi-metric">
+        <strong id="kpi-awards">—</strong>
+        <span class="kpi-info-line">Recognitions</span>
+      </div>
+      <div class="kpi-divider" aria-hidden="true"></div>
+      <small id="kpi-awards-note">Star Performer recognitions</small>
+    </article>
+  </section>
 
   <section class="dashboard-chart-grid dashboard-overview-grid" aria-label="Portfolio overview charts">
     <article class="dashboard-panel dashboard-chart-panel overview-certifications-panel">
@@ -214,9 +235,9 @@ permalink: /
         <div class="publication-icon" aria-hidden="true">R</div>
         <div>
           <span class="dashboard-eyebrow">Publication</span>
-          <h2>Real Time Home Safety and Surveillance</h2>
-          <p>Raspberry Pi and Artificial Intelligence · IJCRT · May 2022</p>
-          <a href="https://ijcrt.org/papers/IJCRT2205995.pdf" target="_blank" rel="noopener">Read publication</a>
+          <h2 id="dashboard-publication-title">Real Time Home Safety and Surveillance using Raspberry Pi and Artificial Intelligence</h2>
+          <p id="dashboard-publication-meta">Raspberry Pi and Artificial Intelligence · IJCRT · May 2022</p>
+          <a id="dashboard-publication-link" href="https://ijcrt.org/papers/IJCRT2205995.pdf" target="_blank" rel="noopener">Read publication</a>
         </div>
       </article>
     </aside>
@@ -243,4 +264,5 @@ permalink: /
 <script src="{{ '/assets/js/home.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
 <script src="{{ '/assets/js/home-charts.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
 <script src="{{ '/assets/js/home-awards.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
+<script src="{{ '/assets/js/home-content.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
 <script src="{{ '/assets/js/home-icons.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
