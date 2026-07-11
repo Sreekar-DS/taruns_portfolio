@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Data Visualization Trainee Early Remote Internship Star Performer",
+    "organization": "Excelerate",
+    "award_date": "2025-02-01",
+    "category": "Star Performer",
+    "display_on_home": true,
+    "display_order": 1
+  },
+  {
+    "title": "Digital Marketing Early Remote Internship Star Performer",
+    "organization": "Excelerate",
+    "award_date": "2025-02-01",
+    "category": "Star Performer",
+    "display_on_home": true,
+    "display_order": 2
+  },
+  {
+    "title": "Project Management Trainee Remote Internship Star Performer",
+    "organization": "Excelerate",
+    "award_date": "2025-02-01",
+    "category": "Star Performer",
+    "display_on_home": true,
+    "display_order": 3
+  }
+]
