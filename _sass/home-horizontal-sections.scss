@@ -1,0 +1,336 @@
+/* Horizontal dashboard rows, accent-matched KPI labels, and scroll controls. */
+
+.home-dashboard-page {
+  /* KPI headings now use the same color as each card's icon and bottom accent dot. */
+  .dashboard-kpi-strip .kpi-label {
+    color: var(--kpi-accent) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.055em !important;
+    text-shadow: 0 0 16px var(--kpi-accent);
+  }
+
+  /* Certification dates inherit the same row accent as the title and dot. */
+  .overview-certifications-panel .dashboard-certification-item time {
+    color: var(--cert-accent) !important;
+    text-shadow: 0 0 10px var(--cert-accent);
+  }
+
+  /* Current Work, Tech Stack, and Publications align to the same full-width frame as the footer. */
+  .dashboard-wide-section {
+    width: 100%;
+    margin: 13px 0 0 !important;
+    padding: 23px 25px;
+  }
+
+  .dashboard-scroll-heading {
+    align-items: center;
+    margin-bottom: 17px;
+  }
+
+  .dashboard-heading-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .dashboard-heading-actions > a,
+  .dashboard-scroll-heading > a {
+    color: #8cecff;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .dashboard-heading-actions > a:hover,
+  .dashboard-scroll-heading > a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  .dashboard-scroll-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .dashboard-scroll-button {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid rgba(32, 211, 238, 0.38);
+    border-radius: 50%;
+    color: #dffaff;
+    background: rgba(7, 45, 75, 0.78);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 18px rgba(32, 211, 238, 0.08);
+    font-family: Inter, "Segoe UI", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1;
+    cursor: pointer;
+    transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease, transform 0.18s ease, opacity 0.18s ease;
+  }
+
+  .dashboard-scroll-button:hover:not(:disabled) {
+    color: #ffffff;
+    border-color: #20d3ee;
+    background: rgba(19, 99, 139, 0.72);
+    transform: translateY(-1px);
+  }
+
+  .dashboard-scroll-button:focus-visible {
+    outline: 2px solid #20d3ee;
+    outline-offset: 3px;
+  }
+
+  .dashboard-scroll-button:disabled {
+    opacity: 0.28;
+    cursor: default;
+  }
+
+  .dashboard-horizontal-viewport {
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(32, 211, 238, 0.34) rgba(7, 30, 55, 0.35);
+    overscroll-behavior-inline: contain;
+  }
+
+  .dashboard-horizontal-viewport::-webkit-scrollbar {
+    height: 7px;
+  }
+
+  .dashboard-horizontal-viewport::-webkit-scrollbar-track {
+    border-radius: 999px;
+    background: rgba(7, 30, 55, 0.35);
+  }
+
+  .dashboard-horizontal-viewport::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(32, 211, 238, 0.34);
+  }
+
+  .dashboard-horizontal-track {
+    width: max-content;
+    min-width: 100%;
+  }
+
+  /* Current project cards form a left-to-right row with equal card widths. */
+  .dashboard-projects-panel .dashboard-project-grid {
+    display: flex !important;
+    align-items: stretch;
+    gap: 13px;
+    padding: 1px 1px 9px;
+  }
+
+  .dashboard-projects-panel .dashboard-project-card {
+    flex: 0 0 clamp(320px, 28vw, 410px);
+    width: clamp(320px, 28vw, 410px);
+    min-height: 100%;
+    scroll-snap-align: start;
+  }
+
+  /* Tech Stack becomes one horizontal row, matching the footer's left-to-right structure. */
+  .dashboard-tech-panel .dashboard-tech-stack {
+    display: flex !important;
+    align-items: stretch;
+    gap: 11px;
+    padding: 2px 2px 9px;
+  }
+
+  .dashboard-tech-panel .dashboard-tech-item {
+    --tech-accent: #35d9f2;
+    position: relative;
+    flex: 0 0 142px;
+    width: 142px;
+    min-height: 118px;
+    padding: 15px 10px 13px;
+    overflow: visible;
+    border: 1px solid rgba(83, 151, 199, 0.22);
+    border-radius: 14px;
+    background: linear-gradient(145deg, rgba(10, 39, 70, 0.76), rgba(4, 22, 43, 0.88));
+    scroll-snap-align: start;
+  }
+
+  .dashboard-tech-panel .dashboard-tech-item[data-tool="python"],
+  .dashboard-tech-panel .dashboard-tech-item[data-tool="tableau"],
+  .dashboard-tech-panel .dashboard-tech-item[data-tool="google-bigquery"] { --tech-accent: #35d9f2; }
+
+  .dashboard-tech-panel .dashboard-tech-item[data-tool="sql"],
+  .dashboard-tech-panel .dashboard-tech-item[data-tool="postgresql"],
+  .dashboard-tech-panel .dashboard-tech-item[data-tool="mysql"] { --tech-accent: #62a8ff; }
+
+  .dashboard-tech-panel .dashboard-tech-item[data-tool="power-bi"],
+  .dashboard-tech-panel .dashboard-tech-item[data-tool="microsoft-excel"] { --tech-accent: #f5c84c; }
+
+  .dashboard-tech-panel .dashboard-tech-item[data-tool="pandas"],
+  .dashboard-tech-panel .dashboard-tech-item[data-tool="scikit-learn"] { --tech-accent: #f06aae; }
+
+  .dashboard-tech-panel .dashboard-tech-item[data-tool="jupyter-notebook"],
+  .dashboard-tech-panel .dashboard-tech-item[data-tool="flask"] { --tech-accent: #ff9b55; }
+
+  .dashboard-tech-panel .dashboard-tech-item[data-tool="git-github"],
+  .dashboard-tech-panel .dashboard-tech-item[data-tool="aws"],
+  .dashboard-tech-panel .dashboard-tech-item[data-tool="gcp"] { --tech-accent: #9f86ff; }
+
+  .dashboard-tech-panel .dashboard-tech-item > strong {
+    position: relative;
+    isolation: isolate;
+    width: 52px;
+    height: 52px;
+    padding: 10px;
+    color: var(--tech-accent) !important;
+    border-color: color-mix(in srgb, var(--tech-accent) 46%, transparent) !important;
+    background: rgba(7, 33, 59, 0.82) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 0 0 5px rgba(255, 255, 255, 0.018),
+      0 0 24px color-mix(in srgb, var(--tech-accent) 38%, transparent) !important;
+  }
+
+  .dashboard-tech-panel .dashboard-tech-item > strong::before {
+    content: "";
+    position: absolute;
+    inset: -11px;
+    z-index: -1;
+    border-radius: 50%;
+    background: var(--tech-accent);
+    opacity: 0.16;
+    filter: blur(15px);
+    pointer-events: none;
+  }
+
+  .dashboard-tech-panel .dashboard-tech-item > strong .dashboard-icon-svg {
+    width: 29px;
+    height: 29px;
+  }
+
+  .dashboard-tech-panel .dashboard-tech-item > span:last-child {
+    color: #eef8ff !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    line-height: 1.3;
+  }
+
+  /* Publications also run left-to-right and support future multiple records from the Publications sheet. */
+  .dashboard-publication-list {
+    display: flex !important;
+    align-items: stretch;
+    gap: 13px;
+    padding: 1px 1px 9px;
+  }
+
+  .dashboard-publication-card {
+    --publication-accent: #f044a4;
+    flex: 0 0 clamp(430px, 44vw, 620px);
+    width: clamp(430px, 44vw, 620px);
+    min-height: 150px;
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    align-items: center;
+    gap: 17px;
+    padding: 19px 21px;
+    border: 1px solid rgba(113, 79, 154, 0.32);
+    border-radius: 15px;
+    background:
+      radial-gradient(circle at 8% 50%, rgba(240, 68, 164, 0.10), transparent 32%),
+      linear-gradient(145deg, rgba(18, 36, 70, 0.82), rgba(5, 21, 43, 0.90));
+    scroll-snap-align: start;
+  }
+
+  .dashboard-publication-card:nth-child(2n) { --publication-accent: #20d3ee; }
+  .dashboard-publication-card:nth-child(3n) { --publication-accent: #f5c84c; }
+  .dashboard-publication-card:nth-child(4n) { --publication-accent: #9b6cff; }
+
+  .dashboard-publication-card .publication-icon {
+    position: relative;
+    width: 54px;
+    height: 54px;
+    color: var(--publication-accent) !important;
+    border-color: color-mix(in srgb, var(--publication-accent) 48%, transparent) !important;
+    background: rgba(12, 29, 57, 0.78) !important;
+    box-shadow: 0 0 25px color-mix(in srgb, var(--publication-accent) 30%, transparent);
+  }
+
+  .dashboard-publication-copy {
+    min-width: 0;
+  }
+
+  .dashboard-publication-copy h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .dashboard-publication-copy p {
+    margin: 7px 0 8px;
+    color: #b8cee1;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .dashboard-publication-copy a {
+    color: var(--publication-accent);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .dashboard-publication-copy a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .home-dashboard-page {
+    .dashboard-wide-section {
+      padding: 18px;
+    }
+
+    .dashboard-scroll-heading {
+      align-items: flex-start;
+    }
+
+    .dashboard-heading-actions {
+      align-items: flex-end;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .dashboard-scroll-button {
+      width: 34px;
+      height: 34px;
+    }
+
+    .dashboard-projects-panel .dashboard-project-card {
+      flex-basis: min(84vw, 360px);
+      width: min(84vw, 360px);
+    }
+
+    .dashboard-publication-card {
+      flex-basis: min(86vw, 500px);
+      width: min(86vw, 500px);
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-dashboard-page {
+    .dashboard-scroll-heading {
+      gap: 12px;
+    }
+
+    .dashboard-publication-card {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+  }
+}
