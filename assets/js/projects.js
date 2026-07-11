@@ -6,6 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const dataUrl = container.dataset.source;
   let filters = [];
 
+  const curatedSkillFilters = [
+    { key: "sql", label: "SQL", aliases: ["sql"] },
+    { key: "python", label: "Python", aliases: ["python"] },
+    { key: "excel", label: "Excel", aliases: ["excel", "microsoft-excel"] },
+    { key: "tableau", label: "Tableau", aliases: ["tableau"] },
+    { key: "power-bi", label: "Power BI", aliases: ["power-bi", "powerbi"] },
+    { key: "looker-studio", label: "Looker Studio", aliases: ["looker-studio", "google-looker-studio"] },
+    { key: "google-sheets", label: "Google Sheets", aliases: ["google-sheets", "google-spreadsheets"] },
+    { key: "bigquery", label: "BigQuery", aliases: ["bigquery", "google-bigquery"] },
+    { key: "postgresql", label: "PostgreSQL", aliases: ["postgresql"] },
+    { key: "mysql", label: "MySQL", aliases: ["mysql"] }
+  ];
+
   function escapeHtml(value) {
     return String(value || "")
       .replace(/&/g, "&amp;")
@@ -82,46 +95,43 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
-  function projectSkillKeys(item) {
-    return normalizeTags(item.skills)
-      .map(slug)
-      .filter(Boolean);
+  function normalizedSkillSlugs(item) {
+    return new Set(normalizeTags(item.skills).map(slug).filter(Boolean));
+  }
+
+  function projectFilterKeys(item) {
+    const skillSlugs = normalizedSkillSlugs(item);
+
+    return curatedSkillFilters
+      .filter(filter => filter.aliases.some(alias => skillSlugs.has(alias)))
+      .map(filter => filter.key);
   }
 
   function buildSkillFilterOptions(items) {
-    const skillMap = new Map();
+    const availableKeys = new Set();
 
     items.forEach(item => {
-      normalizeTags(item.skills).forEach(skill => {
-        const key = slug(skill);
-        if (!key) return;
-
-        const existing = skillMap.get(key) || { label: skill, count: 0 };
-        existing.count += 1;
-        skillMap.set(key, existing);
-      });
+      projectFilterKeys(item).forEach(key => availableKeys.add(key));
     });
 
-    return Array.from(skillMap.entries())
-      .map(([key, value]) => ({ key, label: value.label, count: value.count }))
-      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+    return curatedSkillFilters.filter(filter => availableKeys.has(filter.key));
   }
 
   function renderSkillFilters(items) {
     if (!filterBox) return;
 
-    const skills = buildSkillFilterOptions(items);
-    if (!skills.length) {
+    const skillFilters = buildSkillFilterOptions(items);
+    if (!skillFilters.length) {
       filterBox.hidden = true;
       filters = [];
       return;
     }
 
     filterBox.hidden = false;
-    filterBox.innerHTML = skills.map(skill => `
+    filterBox.innerHTML = skillFilters.map(filter => `
       <label>
-        <input type="checkbox" class="filter project-filter" value="${escapeHtml(skill.key)}">
-        ${escapeHtml(skill.label)}
+        <input type="checkbox" class="filter project-filter" value="${escapeHtml(filter.key)}">
+        ${escapeHtml(filter.label)}
       </label>
     `).join("\n");
 
@@ -141,11 +151,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function createCard(item) {
-    const skillKeys = projectSkillKeys(item);
+    const filterKeys = projectFilterKeys(item);
     const description = item.long_description || item.short_description || "";
 
     return `
-      <article class="project-box dynamic-project-box" data-skill-keys="${escapeHtml(skillKeys.join("|"))}">
+      <article class="project-box dynamic-project-box" data-filter-keys="${escapeHtml(filterKeys.join("|"))}">
         <div class="project-content">
           ${createImage(item)}
           <div class="project-details">
@@ -175,11 +185,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     cards.forEach(card => {
-      const skillKeys = String(card.dataset.skillKeys || "")
+      const filterKeys = String(card.dataset.filterKeys || "")
         .split("|")
         .filter(Boolean);
-      const matches = activeFilters.length === 0 || activeFilters.some(filter => skillKeys.includes(filter));
-      card.hidden = !matches;
+
+      const matchesAllSelectedSkills = activeFilters.length === 0
+        || activeFilters.every(filter => filterKeys.includes(filter));
+
+      card.hidden = !matchesAllSelectedSkills;
     });
   }
 

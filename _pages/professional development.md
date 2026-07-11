@@ -14,17 +14,16 @@ permalink: /professional development/
     <span class="inner-page-hero-mark" aria-hidden="true">PD</span>
   </section>
 
-  <div class="filter-box professional-type-filters" aria-label="Professional development type filters">
-    <label><input type="radio" name="professional-filter" class="professional-filter" value="all" checked> All</label>
-    <label><input type="radio" name="professional-filter" class="professional-filter" value="career-track-course"> Career Track Courses</label>
-    <label><input type="radio" name="professional-filter" class="professional-filter" value="independent-course"> Independent Courses</label>
-  </div>
-
   <section aria-labelledby="professional-development-list-title">
-    <div class="inner-page-section-heading">
+    <div class="inner-page-section-heading inner-page-section-heading-with-filter">
       <div>
         <span class="inner-page-eyebrow">Learning pathways</span>
         <h2 id="professional-development-list-title">Courses &amp; Career Tracks</h2>
+      </div>
+      <div class="filter-box professional-type-filters heading-filter-box" aria-label="Professional development type filters">
+        <label><input type="radio" name="professional-filter" class="professional-filter" value="all" checked> All</label>
+        <label><input type="radio" name="professional-filter" class="professional-filter" value="career-track-course"> Career Track Courses</label>
+        <label><input type="radio" name="professional-filter" class="professional-filter" value="independent-course"> Independent Courses</label>
       </div>
     </div>
 

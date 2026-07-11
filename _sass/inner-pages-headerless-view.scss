@@ -1,12 +1,50 @@
-/* Temporary headerless inner-page view plus the next round of About and project refinements. */
+/* Headerless inner-page view plus layout refinements. */
 
-/* Hide the large hero/header blocks so the content sections become the visual starting point. */
+/* Hide the large hero/header blocks so page-specific content becomes the visual starting point. */
 .portfolio-inner-page .inner-page-hero {
   display: none !important;
 }
 
+/* Keep the content close to the fixed navbar instead of preserving the old hero spacing. */
+.portfolio-inner-page .inner-page-wrapper {
+  margin: 68px auto 38px !important;
+}
+
+/* Use one spacing rhythm between direct page rows and between card columns. */
 .portfolio-inner-page .inner-dashboard-page {
+  gap: 18px !important;
+}
+
+.portfolio-inner-page .inner-dashboard-page > section,
+.portfolio-inner-page .inner-dashboard-page > div {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.portfolio-inner-page .inner-page-section-heading {
+  margin-bottom: 18px;
+}
+
+/* Place compact filters on the right side of the same line as the section heading. */
+.portfolio-inner-page .inner-page-section-heading-with-filter {
+  align-items: center;
   gap: 18px;
+}
+
+.portfolio-inner-page .heading-filter-box {
+  flex: 0 1 auto;
+  width: auto !important;
+  max-width: min(72%, 980px);
+  margin: 0 0 0 auto !important;
+  padding: 8px 10px !important;
+  justify-content: flex-end;
+  align-content: center;
+  gap: 8px !important;
+  border-radius: 14px !important;
+}
+
+.portfolio-inner-page .heading-filter-box label {
+  white-space: nowrap;
 }
 
 /* ABOUT: one three-card row followed by one full-width analytics journey block. */
@@ -43,6 +81,7 @@
 .about-dashboard-page .about-journey-section .inner-story-card {
   width: 100%;
   box-sizing: border-box;
+  margin: 0 !important;
 }
 
 /* Match emphasized identity text to the cyan eyebrow label in the same card. */
@@ -58,7 +97,7 @@
   font-weight: 750;
 }
 
-/* Dynamic project skill filters. */
+/* Curated project skill filters. */
 .projects-dashboard-page .project-filter-loading {
   color: #9eb5c9;
   font-size: 12px;
@@ -76,6 +115,28 @@
   .about-dashboard-page .about-direction-card {
     grid-column: 1 / -1;
   }
+
+  .portfolio-inner-page .heading-filter-box {
+    max-width: 64%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .portfolio-inner-page .inner-page-wrapper {
+    margin-top: 88px !important;
+  }
+
+  .portfolio-inner-page .inner-page-section-heading-with-filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .portfolio-inner-page .heading-filter-box {
+    width: 100% !important;
+    max-width: none;
+    margin-left: 0 !important;
+    justify-content: flex-start;
+  }
 }
 
 @media screen and (max-width: 760px) {
@@ -85,5 +146,11 @@
 
   .about-dashboard-page .about-direction-card {
     grid-column: auto;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .portfolio-inner-page .inner-page-wrapper {
+    margin-top: 112px !important;
   }
 }
