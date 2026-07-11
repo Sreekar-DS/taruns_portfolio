@@ -15,7 +15,7 @@
     <![endif]-->
     {% include head-custom.html %}
   </head>
-  <body class="{% if page.url == '/' %}home-dashboard-page{% endif %}">
+  <body class="{% if page.url == '/' %}home-dashboard-page{% else %}portfolio-inner-page page-{{ page.title | slugify }}{% endif %}">
     <div class="analytics-background" aria-hidden="true">
       <div class="analytics-grid"></div>
       <div class="analytics-orb analytics-orb-one"></div>
@@ -43,50 +43,22 @@
 
     <nav class="navbar" aria-label="Primary navigation">
       <ul>
-        <li><a href="{{ "/" | absolute_url }}">Home</a></li>
-        <li><a href="{{ "/about/" | relative_url }}">About</a></li>
-        <li><a href="{{ "/experience/" | relative_url }}">Experience</a></li>
-        <li><a href="{{ "/education/" | relative_url }}">Education</a></li>
-        <li><a href="{{ "/projects/" | relative_url }}">Projects</a></li>
-        <li><a href="{{ "/skills/" | relative_url }}">Skills</a></li>
-        <li><a href="{{ "/certifications/" | relative_url }}">Certifications</a></li>
-        <li><a href="{{ "/professional development/" | relative_url }}">Professional Development</a></li>
-        <li><a href="{{ "/publication/" | relative_url }}">Publication</a></li>
+        <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="nav-active" aria-current="page"{% endif %}>Home</a></li>
+        <li><a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} class="nav-active" aria-current="page"{% endif %}>About</a></li>
+        <li><a href="{{ '/experience/' | relative_url }}"{% if page.url == '/experience/' %} class="nav-active" aria-current="page"{% endif %}>Experience</a></li>
+        <li><a href="{{ '/education/' | relative_url }}"{% if page.url == '/education/' %} class="nav-active" aria-current="page"{% endif %}>Education</a></li>
+        <li><a href="{{ '/projects/' | relative_url }}"{% if page.url == '/projects/' %} class="nav-active" aria-current="page"{% endif %}>Projects</a></li>
+        <li><a href="{{ '/skills/' | relative_url }}"{% if page.url == '/skills/' %} class="nav-active" aria-current="page"{% endif %}>Skills</a></li>
+        <li><a href="{{ '/certifications/' | relative_url }}"{% if page.url == '/certifications/' %} class="nav-active" aria-current="page"{% endif %}>Certifications</a></li>
+        <li><a href="{{ '/professional development/' | relative_url }}"{% if page.url == '/professional development/' %} class="nav-active" aria-current="page"{% endif %}>Professional Development</a></li>
+        <li><a href="{{ '/publication/' | relative_url }}"{% if page.url == '/publication/' %} class="nav-active" aria-current="page"{% endif %}>Publication</a></li>
       </ul>
     </nav>
 
-    <div class="wrapper{% if page.url == '/' %} dashboard-wrapper{% endif %}">
-      {% unless page.url == '/' %}
-      <header>
-        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-        {% if site.logo %}
-          <img class="photo" src="{{ site.logo | relative_url }}" alt="Logo" />
-        {% endif %}
-
-        <p class="jobtitle">{{ site.description | default: site.github.project_tagline }}</p>
-
-        {% if site.show_downloads %}
-        <ul class="downloads">
-          <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
-          <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
-        </ul>
-        {% endif %}
-      </header>
-      {% endunless %}
-
-      <section{% if page.url == '/' %} class="dashboard-content"{% endif %}>
+    <div class="wrapper{% if page.url == '/' %} dashboard-wrapper{% else %} inner-page-wrapper{% endif %}">
+      <section class="{% if page.url == '/' %}dashboard-content{% else %}inner-page-content{% endif %}">
         {{ content }}
       </section>
-
-      {% unless page.url == '/' %}
-      <footer>
-        {% if site.github.is_project_page %}
-        <p>This portfolio is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-        {% endif %}
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-      {% endunless %}
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   </body>
