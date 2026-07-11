@@ -29,33 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .filter(Boolean);
   }
 
-  function normalizeImageUrl(value) {
-    const url = String(value || "").trim();
-    if (!url) return "";
-
-    const driveFileMatch = url.match(/drive\.google\.com\/file\/d\/([^/?#]+)/);
-    if (driveFileMatch) return `https://drive.google.com/thumbnail?id=${driveFileMatch[1]}&sz=w1000`;
-
-    const driveOpenMatch = url.match(/drive\.google\.com\/open\?id=([^&#]+)/);
-    if (driveOpenMatch) return `https://drive.google.com/thumbnail?id=${driveOpenMatch[1]}&sz=w1000`;
-
-    const driveUcMatch = url.match(/drive\.google\.com\/uc\?(?:export=view&)?id=([^&#]+)/);
-    if (driveUcMatch) return `https://drive.google.com/thumbnail?id=${driveUcMatch[1]}&sz=w1000`;
-
-    return url;
-  }
-
-  function createImage(item) {
-    const imageUrl = normalizeImageUrl(item.image_url);
-    if (!imageUrl) return "";
-
-    return `
-      <div class="portfolio-card-image-wrap">
-        <img class="portfolio-card-image" src="${escapeHtml(imageUrl)}" alt="${escapeHtml(item.company)} experience image" loading="lazy" onerror="this.closest('.portfolio-card-image-wrap').style.display='none';">
-      </div>
-    `;
-  }
-
   function createTags(items) {
     const tags = normalizeTags(items);
     if (!tags.length) return "";
@@ -90,19 +63,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createCard(item) {
     const period = [item.start_date, item.end_date].filter(Boolean).join(" – ");
+    const organization = [item.company, item.experience_type || item.status]
+      .filter(Boolean)
+      .join(" · ");
 
     return `
-      <article class="portfolio-card experience-card">
-        ${createImage(item)}
-        <div class="portfolio-card-body">
-          <h3>${escapeHtml(item.role)}</h3>
-          <div class="portfolio-card-meta">
-            <p><strong>Company:</strong> ${escapeHtml(item.company)}</p>
-            <p><strong>Type:</strong> ${escapeHtml(item.experience_type || item.status || "")}</p>
-            <p><strong>Location:</strong> ${escapeHtml(item.location || "")}</p>
-            <p><strong>Period:</strong> ${escapeHtml(period || "Not set")}</p>
+      <article class="portfolio-card experience-card resume-entry-card">
+        <div class="portfolio-card-body resume-entry-body">
+          <div class="resume-entry-line resume-entry-primary-line">
+            <h3>${escapeHtml(item.role || "Experience")}</h3>
+            <span class="resume-entry-location">${escapeHtml(item.location || "")}</span>
           </div>
-          ${item.summary ? `<p>${escapeHtml(item.summary)}</p>` : ""}
+          <div class="resume-entry-line resume-entry-secondary-line">
+            <span class="resume-entry-organization">${escapeHtml(organization)}</span>
+            <span class="resume-entry-period">${escapeHtml(period || "")}</span>
+          </div>
+          ${item.summary ? `<p class="resume-entry-summary">${escapeHtml(item.summary)}</p>` : ""}
           ${createHighlights(item)}
           ${createTags(item.tools)}
           ${createProjectLink(item)}
