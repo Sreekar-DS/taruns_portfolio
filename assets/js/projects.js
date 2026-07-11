@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("projects");
+  const filterBox = document.getElementById("project-skill-filters");
   if (!container) return;
 
   const dataUrl = container.dataset.source;
-  const filters = Array.from(document.querySelectorAll(".project-filter"));
+  let filters = [];
 
   function escapeHtml(value) {
     return String(value || "")
@@ -20,6 +21,15 @@ document.addEventListener("DOMContentLoaded", () => {
       .split(/[,;|]/)
       .map(item => item.trim())
       .filter(Boolean);
+  }
+
+  function slug(value) {
+    return String(value || "")
+      .trim()
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
   }
 
   function assetBase() {
@@ -72,23 +82,51 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
-  function projectFilterClasses(item) {
-    const searchText = [
-      item.title,
-      item.type,
-      item.status,
-      normalizeTags(item.skills).join(" "),
-      item.short_description,
-      item.long_description
-    ].join(" ").toLowerCase();
+  function projectSkillKeys(item) {
+    return normalizeTags(item.skills)
+      .map(slug)
+      .filter(Boolean);
+  }
 
-    const classes = [];
-    if (searchText.includes("python")) classes.push("python");
-    if (searchText.includes("sql") || searchText.includes("mysql") || searchText.includes("postgresql")) classes.push("sql");
-    if (searchText.includes("excel") || searchText.includes("spreadsheet")) classes.push("excel");
-    if (searchText.includes("tableau")) classes.push("tableau");
-    if (searchText.includes("power bi") || searchText.includes("powerbi")) classes.push("powerbi");
-    return classes;
+  function buildSkillFilterOptions(items) {
+    const skillMap = new Map();
+
+    items.forEach(item => {
+      normalizeTags(item.skills).forEach(skill => {
+        const key = slug(skill);
+        if (!key) return;
+
+        const existing = skillMap.get(key) || { label: skill, count: 0 };
+        existing.count += 1;
+        skillMap.set(key, existing);
+      });
+    });
+
+    return Array.from(skillMap.entries())
+      .map(([key, value]) => ({ key, label: value.label, count: value.count }))
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+  }
+
+  function renderSkillFilters(items) {
+    if (!filterBox) return;
+
+    const skills = buildSkillFilterOptions(items);
+    if (!skills.length) {
+      filterBox.hidden = true;
+      filters = [];
+      return;
+    }
+
+    filterBox.hidden = false;
+    filterBox.innerHTML = skills.map(skill => `
+      <label>
+        <input type="checkbox" class="filter project-filter" value="${escapeHtml(skill.key)}">
+        ${escapeHtml(skill.label)}
+      </label>
+    `).join("\n");
+
+    filters = Array.from(filterBox.querySelectorAll(".project-filter"));
+    filters.forEach(filter => filter.addEventListener("change", applyFilters));
   }
 
   function createProjectLink(item) {
@@ -103,10 +141,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function createCard(item) {
-    const filterClasses = projectFilterClasses(item).join(" ");
+    const skillKeys = projectSkillKeys(item);
+    const description = item.long_description || item.short_description || "";
 
     return `
-      <article class="project-box dynamic-project-box ${escapeHtml(filterClasses)}">
+      <article class="project-box dynamic-project-box" data-skill-keys="${escapeHtml(skillKeys.join("|"))}">
         <div class="project-content">
           ${createImage(item)}
           <div class="project-details">
@@ -115,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ${item.type ? `<span>${escapeHtml(item.type)}</span>` : ""}
               ${item.status ? `<span>${escapeHtml(item.status)}</span>` : ""}
             </div>
-            <p class="project-description">${escapeHtml(item.short_description || item.long_description || "")}</p>
+            <p class="project-description">${escapeHtml(description)}</p>
             ${createSkillTags(item.skills)}
             ${createProjectLink(item)}
           </div>
@@ -136,7 +175,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     cards.forEach(card => {
-      const matches = activeFilters.length === 0 || activeFilters.some(filter => card.classList.contains(filter));
+      const skillKeys = String(card.dataset.skillKeys || "")
+        .split("|")
+        .filter(Boolean);
+      const matches = activeFilters.length === 0 || activeFilters.some(filter => skillKeys.includes(filter));
       card.hidden = !matches;
     });
   }
@@ -147,15 +189,15 @@ document.addEventListener("DOMContentLoaded", () => {
       .sort((a, b) => (Number(a.display_order) || 999) - (Number(b.display_order) || 999));
 
     if (!visibleItems.length) {
+      if (filterBox) filterBox.hidden = true;
       container.innerHTML = "<p>No projects are listed yet.</p>";
       return;
     }
 
+    renderSkillFilters(visibleItems);
     container.innerHTML = visibleItems.map(createCard).join("\n");
     applyFilters();
   }
-
-  filters.forEach(filter => filter.addEventListener("change", applyFilters));
 
   fetch(dataUrl)
     .then(response => {
@@ -164,6 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then(render)
     .catch(error => {
+      if (filterBox) filterBox.hidden = true;
       container.innerHTML = "<p>Unable to load projects right now.</p>";
       console.error(error);
     });
