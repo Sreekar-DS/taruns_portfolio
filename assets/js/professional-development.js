@@ -195,14 +195,13 @@ document.addEventListener("DOMContentLoaded", () => {
     return ordered;
   }
 
-  function createDetailsGroup(title, items, options = {}) {
+  function createDetailsGroup(title, items) {
     if (!items.length) return "";
 
     const sortedItems = sortByDateDesc(items);
-    const open = options.open ? "open" : "";
 
     return `
-      <details class="career-track-group" ${open}>
+      <details class="career-track-group">
         <summary>
           <span>${escapeHtml(title)}</span>
           <small>${sortedItems.length} course${sortedItems.length === 1 ? "" : "s"}</small>
@@ -222,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return `
       <div class="career-track-groups">
-        ${entries.map(([trackName, courses], index) => createDetailsGroup(trackName, courses, { open: index === 0 })).join("\n")}
+        ${entries.map(([trackName, courses]) => createDetailsGroup(trackName, courses)).join("\n")}
       </div>
     `;
   }
@@ -243,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (selectedType === "all" || selectedType === "independent-course") {
       html += `
         <div class="career-track-groups">
-          ${createDetailsGroup("Independent Courses", independentCourses, { open: selectedType === "independent-course" })}
+          ${createDetailsGroup("Independent Courses", independentCourses)}
         </div>
       `;
     }
