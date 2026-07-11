@@ -203,44 +203,64 @@ permalink: /
     </article>
   </section>
 
-  <section class="dashboard-main-grid">
-    <article class="dashboard-panel dashboard-projects-panel">
-      <div class="dashboard-panel-heading">
-        <div>
-          <span class="dashboard-eyebrow">Live progress</span>
-          <h2>Currently Working On</h2>
-        </div>
-        <a href="{{ '/projects/' | relative_url }}">All projects</a>
+  <section class="dashboard-panel dashboard-wide-section dashboard-scroll-section dashboard-projects-panel">
+    <div class="dashboard-panel-heading dashboard-scroll-heading">
+      <div>
+        <span class="dashboard-eyebrow">Live progress</span>
+        <h2>Currently Working On</h2>
       </div>
-
-      <div id="dashboard-current-projects" class="dashboard-project-grid" aria-live="polite">
+      <div class="dashboard-heading-actions">
+        <a href="{{ '/projects/' | relative_url }}">All projects</a>
+        <div class="dashboard-scroll-controls" aria-label="Scroll current projects">
+          <button type="button" class="dashboard-scroll-button" data-scroll-target="dashboard-current-projects-viewport" data-scroll-direction="-1" aria-label="Scroll current projects left">‹</button>
+          <button type="button" class="dashboard-scroll-button" data-scroll-target="dashboard-current-projects-viewport" data-scroll-direction="1" aria-label="Scroll current projects right">›</button>
+        </div>
+      </div>
+    </div>
+    <div id="dashboard-current-projects-viewport" class="dashboard-horizontal-viewport">
+      <div id="dashboard-current-projects" class="dashboard-project-grid dashboard-horizontal-track" aria-live="polite">
         <p class="dashboard-loading">Loading current projects…</p>
       </div>
-    </article>
+    </div>
+  </section>
 
-    <aside class="dashboard-side-stack" aria-label="Portfolio details">
-      <article class="dashboard-panel dashboard-side-panel">
-        <div class="dashboard-panel-heading">
-          <div>
-            <span class="dashboard-eyebrow">Tools and platforms</span>
-            <h2>Tech Stack</h2>
-          </div>
-        </div>
-        <div id="dashboard-tech-stack" class="dashboard-tech-stack" aria-live="polite">
-          <p class="dashboard-loading">Loading tools…</p>
-        </div>
-      </article>
+  <section class="dashboard-panel dashboard-wide-section dashboard-scroll-section dashboard-tech-panel">
+    <div class="dashboard-panel-heading dashboard-scroll-heading">
+      <div>
+        <span class="dashboard-eyebrow">Tools and platforms</span>
+        <h2>Tech Stack</h2>
+      </div>
+      <div class="dashboard-scroll-controls" aria-label="Scroll tech stack">
+        <button type="button" class="dashboard-scroll-button" data-scroll-target="dashboard-tech-stack-viewport" data-scroll-direction="-1" aria-label="Scroll tech stack left">‹</button>
+        <button type="button" class="dashboard-scroll-button" data-scroll-target="dashboard-tech-stack-viewport" data-scroll-direction="1" aria-label="Scroll tech stack right">›</button>
+      </div>
+    </div>
+    <div id="dashboard-tech-stack-viewport" class="dashboard-horizontal-viewport">
+      <div id="dashboard-tech-stack" class="dashboard-tech-stack dashboard-horizontal-track" aria-live="polite">
+        <p class="dashboard-loading">Loading tools…</p>
+      </div>
+    </div>
+  </section>
 
-      <article class="dashboard-panel dashboard-side-panel publication-panel">
-        <div class="publication-icon" aria-hidden="true">R</div>
-        <div>
-          <span class="dashboard-eyebrow">Publication</span>
-          <h2 id="dashboard-publication-title">Real Time Home Safety and Surveillance using Raspberry Pi and Artificial Intelligence</h2>
-          <p id="dashboard-publication-meta">Raspberry Pi and Artificial Intelligence · IJCRT · May 2022</p>
-          <a id="dashboard-publication-link" href="https://ijcrt.org/papers/IJCRT2205995.pdf" target="_blank" rel="noopener">Read publication</a>
+  <section class="dashboard-panel dashboard-wide-section dashboard-scroll-section dashboard-publications-panel">
+    <div class="dashboard-panel-heading dashboard-scroll-heading">
+      <div>
+        <span class="dashboard-eyebrow">Research and writing</span>
+        <h2>Publications</h2>
+      </div>
+      <div class="dashboard-heading-actions">
+        <a href="{{ '/publication/' | relative_url }}">View all</a>
+        <div class="dashboard-scroll-controls" aria-label="Scroll publications">
+          <button type="button" class="dashboard-scroll-button" data-scroll-target="dashboard-publications-viewport" data-scroll-direction="-1" aria-label="Scroll publications left">‹</button>
+          <button type="button" class="dashboard-scroll-button" data-scroll-target="dashboard-publications-viewport" data-scroll-direction="1" aria-label="Scroll publications right">›</button>
         </div>
-      </article>
-    </aside>
+      </div>
+    </div>
+    <div id="dashboard-publications-viewport" class="dashboard-horizontal-viewport">
+      <div id="dashboard-publications" class="dashboard-publication-list dashboard-horizontal-track" aria-live="polite">
+        <p class="dashboard-loading">Loading publications…</p>
+      </div>
+    </div>
   </section>
 
   <section class="dashboard-panel dashboard-footer-strip">
@@ -266,3 +286,4 @@ permalink: /
 <script src="{{ '/assets/js/home-awards.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
 <script src="{{ '/assets/js/home-content.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
 <script src="{{ '/assets/js/home-icons.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
+<script src="{{ '/assets/js/home-scroll.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
