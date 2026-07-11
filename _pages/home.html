@@ -68,79 +68,43 @@ permalink: /
 
   <section class="dashboard-kpis dashboard-kpi-strip" role="list" aria-label="Portfolio summary">
     <article class="dashboard-panel kpi-card" role="listitem">
-      <div class="kpi-heading-row">
-        <span class="kpi-icon" aria-hidden="true">P</span>
-        <span class="kpi-label">Projects</span>
-      </div>
-      <div class="kpi-metric">
-        <strong id="kpi-projects">—</strong>
-        <span class="kpi-info-line">Total Projects</span>
-      </div>
+      <div class="kpi-heading-row"><span class="kpi-icon" aria-hidden="true">P</span><span class="kpi-label">Projects</span></div>
+      <div class="kpi-metric"><strong id="kpi-projects">—</strong><span class="kpi-info-line">Total Projects</span></div>
       <div class="kpi-divider" aria-hidden="true"></div>
       <small id="kpi-projects-note">Loading portfolio data</small>
     </article>
 
     <article class="dashboard-panel kpi-card" role="listitem">
-      <div class="kpi-heading-row">
-        <span class="kpi-icon" aria-hidden="true">C</span>
-        <span class="kpi-label">Courses</span>
-      </div>
-      <div class="kpi-metric">
-        <strong id="kpi-courses">—</strong>
-        <span class="kpi-info-line">Completed</span>
-      </div>
+      <div class="kpi-heading-row"><span class="kpi-icon" aria-hidden="true">C</span><span class="kpi-label">Courses</span></div>
+      <div class="kpi-metric"><strong id="kpi-courses">—</strong><span class="kpi-info-line">Completed</span></div>
       <div class="kpi-divider" aria-hidden="true"></div>
       <small>Learning items</small>
     </article>
 
     <article class="dashboard-panel kpi-card" role="listitem">
-      <div class="kpi-heading-row">
-        <span class="kpi-icon" aria-hidden="true">A</span>
-        <span class="kpi-label">Certifications</span>
-      </div>
-      <div class="kpi-metric">
-        <strong id="kpi-certifications">—</strong>
-        <span class="kpi-info-line">Earned</span>
-      </div>
+      <div class="kpi-heading-row"><span class="kpi-icon" aria-hidden="true">A</span><span class="kpi-label">Certifications</span></div>
+      <div class="kpi-metric"><strong id="kpi-certifications">—</strong><span class="kpi-info-line">Earned</span></div>
       <div class="kpi-divider" aria-hidden="true"></div>
       <small>Verified credentials</small>
     </article>
 
     <article class="dashboard-panel kpi-card" role="listitem">
-      <div class="kpi-heading-row">
-        <span class="kpi-icon" aria-hidden="true">S</span>
-        <span class="kpi-label">Skills</span>
-      </div>
-      <div class="kpi-metric">
-        <strong id="kpi-skills">—</strong>
-        <span class="kpi-info-line">Listed Skills</span>
-      </div>
+      <div class="kpi-heading-row"><span class="kpi-icon" aria-hidden="true">S</span><span class="kpi-label">Skills</span></div>
+      <div class="kpi-metric"><strong id="kpi-skills">—</strong><span class="kpi-info-line">Listed Skills</span></div>
       <div class="kpi-divider" aria-hidden="true"></div>
       <small>Across skill groups</small>
     </article>
 
     <article class="dashboard-panel kpi-card" role="listitem">
-      <div class="kpi-heading-row">
-        <span class="kpi-icon" aria-hidden="true">W</span>
-        <span class="kpi-label">Current Work</span>
-      </div>
-      <div class="kpi-metric">
-        <strong id="kpi-current-work">—</strong>
-        <span class="kpi-info-line">Active Projects</span>
-      </div>
+      <div class="kpi-heading-row"><span class="kpi-icon" aria-hidden="true">W</span><span class="kpi-label">Current Work</span></div>
+      <div class="kpi-metric"><strong id="kpi-current-work">—</strong><span class="kpi-info-line">Active Projects</span></div>
       <div class="kpi-divider" aria-hidden="true"></div>
       <small>In progress now</small>
     </article>
 
     <article class="dashboard-panel kpi-card awards-kpi-card" role="listitem">
-      <div class="kpi-heading-row">
-        <span class="kpi-icon" aria-hidden="true">T</span>
-        <span class="kpi-label">Awards</span>
-      </div>
-      <div class="kpi-metric">
-        <strong id="kpi-awards">—</strong>
-        <span class="kpi-info-line">Recognitions</span>
-      </div>
+      <div class="kpi-heading-row"><span class="kpi-icon" aria-hidden="true">T</span><span class="kpi-label">Awards</span></div>
+      <div class="kpi-metric"><strong id="kpi-awards">—</strong><span class="kpi-info-line">Recognitions</span></div>
       <div class="kpi-divider" aria-hidden="true"></div>
       <small id="kpi-awards-note">Star Performer recognitions</small>
     </article>
@@ -149,29 +113,19 @@ permalink: /
   <section class="dashboard-work-cert-grid" aria-label="Certifications and current projects">
     <article class="dashboard-panel dashboard-chart-panel overview-certifications-panel">
       <div class="dashboard-panel-heading">
-        <div>
-          <span class="dashboard-eyebrow">Credentials</span>
-          <h2>Certifications</h2>
-        </div>
+        <div><span class="dashboard-eyebrow">Credentials</span><h2>Certifications</h2></div>
         <a href="{{ '/certifications/' | relative_url }}">View all</a>
       </div>
-      <div id="dashboard-certifications" class="dashboard-certification-list dashboard-vertical-scroll" aria-live="polite">
-        <p class="dashboard-loading">Loading certifications…</p>
-      </div>
+      <div id="dashboard-certifications" class="dashboard-certification-list dashboard-vertical-scroll" aria-live="polite"><p class="dashboard-loading">Loading certifications…</p></div>
     </article>
 
     <article class="dashboard-panel dashboard-chart-panel dashboard-projects-panel dashboard-current-work-panel">
       <div class="dashboard-panel-heading">
-        <div>
-          <span class="dashboard-eyebrow">Live progress</span>
-          <h2>Currently Working On</h2>
-        </div>
+        <div><span class="dashboard-eyebrow">Live progress</span><h2>Currently Working On</h2></div>
         <a href="{{ '/projects/' | relative_url }}">All projects</a>
       </div>
       <div id="dashboard-current-projects-viewport" class="dashboard-current-projects-viewport dashboard-vertical-scroll">
-        <div id="dashboard-current-projects" class="dashboard-project-grid dashboard-current-project-grid" aria-live="polite">
-          <p class="dashboard-loading">Loading current projects…</p>
-        </div>
+        <div id="dashboard-current-projects" class="dashboard-project-grid dashboard-current-project-grid" aria-live="polite"><p class="dashboard-loading">Loading current projects…</p></div>
       </div>
     </article>
   </section>
@@ -179,85 +133,58 @@ permalink: /
   <section class="dashboard-analytics-grid" aria-label="Skills and learning analytics">
     <article class="dashboard-panel dashboard-chart-panel skills-category-panel">
       <div class="dashboard-panel-heading">
-        <div>
-          <span class="dashboard-eyebrow">Count, not proficiency</span>
-          <h2>Skills by Category</h2>
-        </div>
+        <div><span class="dashboard-eyebrow">Count, not proficiency</span><h2>Skills by Category</h2></div>
         <a href="{{ '/skills/' | relative_url }}">View all</a>
       </div>
-      <div id="skills-category-chart" class="horizontal-bar-chart" aria-live="polite">
-        <p class="dashboard-loading">Loading skill categories…</p>
-      </div>
+      <div id="skills-category-chart" class="horizontal-bar-chart" aria-live="polite"><p class="dashboard-loading">Loading skill categories…</p></div>
     </article>
 
     <article class="dashboard-panel dashboard-chart-panel learning-summary-panel">
       <div class="dashboard-panel-heading">
-        <div>
-          <span class="dashboard-eyebrow">Completed course coverage</span>
-          <h2>Learning Summary</h2>
-        </div>
+        <div><span class="dashboard-eyebrow">Completed course coverage</span><h2>Learning Summary</h2></div>
         <a href="{{ '/professional development/' | relative_url }}">View courses</a>
       </div>
-      <div id="learning-summary-chart" class="learning-radar-chart" aria-live="polite">
-        <p class="dashboard-loading">Loading learning summary…</p>
-      </div>
+      <div id="learning-summary-chart" class="learning-radar-chart" aria-live="polite"><p class="dashboard-loading">Loading learning summary…</p></div>
     </article>
 
     <article class="dashboard-panel dashboard-chart-panel learning-progress-panel">
-      <div class="dashboard-panel-heading">
-        <div>
-          <span class="dashboard-eyebrow">Milestone-based cumulative view</span>
-          <h2>Learning Progress Over Time</h2>
-        </div>
-      </div>
-      <div id="learning-progress-chart" class="learning-progress-chart" aria-live="polite">
-        <p class="dashboard-loading">Loading progress timeline…</p>
-      </div>
+      <div class="dashboard-panel-heading"><div><span class="dashboard-eyebrow">Milestone-based cumulative view</span><h2>Learning Progress Over Time</h2></div></div>
+      <div id="learning-progress-chart" class="learning-progress-chart" aria-live="polite"><p class="dashboard-loading">Loading progress timeline…</p></div>
     </article>
   </section>
 
-  <section class="dashboard-publications-tech-grid" aria-label="Publications and tech stack">
-    <article class="dashboard-panel dashboard-chart-panel dashboard-publications-panel">
-      <div class="dashboard-panel-heading">
-        <div>
-          <span class="dashboard-eyebrow">Research and writing</span>
-          <h2>Publications</h2>
+  <section class="dashboard-publications-tech-grid" aria-label="Publications, professional strengths, and tech stack">
+    <div class="dashboard-publications-footer-column">
+      <article class="dashboard-panel dashboard-chart-panel dashboard-publications-panel">
+        <div class="dashboard-panel-heading">
+          <div><span class="dashboard-eyebrow">Research and writing</span><h2>Publications</h2></div>
+          <a href="{{ '/publication/' | relative_url }}">View all</a>
         </div>
-        <a href="{{ '/publication/' | relative_url }}">View all</a>
-      </div>
-      <div id="dashboard-publications-viewport" class="dashboard-publications-viewport dashboard-vertical-scroll">
-        <div id="dashboard-publications" class="dashboard-publication-list" aria-live="polite">
-          <p class="dashboard-loading">Loading publications…</p>
+        <div id="dashboard-publications-viewport" class="dashboard-publications-viewport dashboard-vertical-scroll">
+          <div id="dashboard-publications" class="dashboard-publication-list" aria-live="polite"><p class="dashboard-loading">Loading publications…</p></div>
         </div>
-      </div>
-    </article>
+      </article>
+
+      <section class="dashboard-panel dashboard-footer-strip">
+        <div class="dashboard-footer-statement">
+          <span class="dashboard-target" aria-hidden="true">◎</span>
+          <strong>I turn data into decisions and ideas into impact.</strong>
+        </div>
+        <div class="dashboard-traits" aria-label="Professional strengths">
+          <span><strong>Problem Solver</strong><small>Data-driven</small></span>
+          <span><strong>Business Focused</strong><small>Insight-led</small></span>
+          <span><strong>Continuous Learner</strong><small>Always growing</small></span>
+          <span><strong>Impact Oriented</strong><small>Results focused</small></span>
+        </div>
+      </section>
+    </div>
 
     <article class="dashboard-panel dashboard-chart-panel dashboard-tech-panel">
-      <div class="dashboard-panel-heading">
-        <div>
-          <span class="dashboard-eyebrow">Tools and platforms</span>
-          <h2>Tech Stack</h2>
-        </div>
-      </div>
+      <div class="dashboard-panel-heading"><div><span class="dashboard-eyebrow">Tools and platforms</span><h2>Tech Stack</h2></div></div>
       <div id="dashboard-tech-stack-viewport" class="dashboard-tech-stack-viewport dashboard-vertical-scroll">
-        <div id="dashboard-tech-stack" class="dashboard-tech-stack" aria-live="polite">
-          <p class="dashboard-loading">Loading tools…</p>
-        </div>
+        <div id="dashboard-tech-stack" class="dashboard-tech-stack" aria-live="polite"><p class="dashboard-loading">Loading tools…</p></div>
       </div>
     </article>
-  </section>
-
-  <section class="dashboard-panel dashboard-footer-strip">
-    <div class="dashboard-footer-statement">
-      <span class="dashboard-target" aria-hidden="true">◎</span>
-      <strong>I turn data into decisions and ideas into impact.</strong>
-    </div>
-    <div class="dashboard-traits" aria-label="Professional strengths">
-      <span><strong>Problem Solver</strong><small>Data-driven</small></span>
-      <span><strong>Business Focused</strong><small>Insight-led</small></span>
-      <span><strong>Continuous Learner</strong><small>Always growing</small></span>
-      <span><strong>Impact Oriented</strong><small>Results focused</small></span>
-    </div>
   </section>
 
   <p id="dashboard-error" class="dashboard-error" hidden>
