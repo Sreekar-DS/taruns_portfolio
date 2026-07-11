@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const dashboard = document.getElementById("portfolio-dashboard");
   if (!dashboard) return;
 
+  const dataApi = window.PortfolioData;
+  if (!dataApi || typeof dataApi.load !== "function") return;
+
   const sources = {
     profile: dashboard.dataset.profileSource,
     links: dashboard.dataset.linksSource,
@@ -30,13 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .split(/[,;|]/)
       .map(item => item.trim())
       .filter(Boolean);
-  }
-
-  async function loadJson(url) {
-    if (!url) return [];
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`Unable to load ${url}`);
-    return response.json();
   }
 
   function setText(id, value) {
@@ -128,7 +124,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const text = String(value || "").trim();
     if (!text) return "";
 
-    const iso = new Date(`${text}T00:00:00`);
+    const iso = /^\d{4}-\d{2}-\d{2}$/.test(text)
+      ? new Date(`${text}T00:00:00`)
+      : new Date(text);
+
     if (!Number.isNaN(iso.getTime())) {
       return iso.toLocaleDateString("en-GB", { month: "short", year: "numeric" });
     }
@@ -180,8 +179,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ["experience", sources.experience]
   ];
 
-  Promise.allSettled(requests.map(([, url]) => loadJson(url)))
+  Promise.allSettled(requests.map(([, url]) => dataApi.load(url)))
     .then(results => {
+      let failedCount = 0;
+
       results.forEach((result, index) => {
         const [name] = requests[index];
 
@@ -193,6 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
 
+        failedCount += 1;
         console.error(`Portfolio ${name} data error:`, result.reason);
 
         if (name === "publications") {
@@ -205,6 +207,14 @@ document.addEventListener("DOMContentLoaded", () => {
           if (container) container.innerHTML = '<p class="dashboard-loading">Experience data is temporarily unavailable.</p>';
         }
       });
+
+      if (failedCount) {
+        const errorMessage = document.getElementById("dashboard-error");
+        if (errorMessage) {
+          errorMessage.hidden = false;
+          errorMessage.textContent = "Some dashboard data could not be loaded. The available sections are still shown.";
+        }
+      }
     })
     .catch(error => {
       console.error("Portfolio content rendering error:", error);

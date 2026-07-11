@@ -1,13 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
+  "use strict";
+
   const dashboard = document.getElementById("portfolio-dashboard");
   if (!dashboard) return;
+
+  const dataApi = window.PortfolioData;
+  const warning = document.getElementById("dashboard-error");
+
+  if (!dataApi || typeof dataApi.load !== "function") {
+    if (warning) {
+      warning.hidden = false;
+      warning.textContent = "The dashboard data loader could not start. Refresh the page to try again.";
+    }
+    return;
+  }
 
   const sources = {
     projects: dashboard.dataset.projectsSource,
     currentWork: dashboard.dataset.currentWorkSource,
     skills: dashboard.dataset.skillsSource,
     certifications: dashboard.dataset.certificationsSource,
-    learning: dashboard.dataset.learningSource
+    learning: dashboard.dataset.learningSource,
+    awards: dashboard.dataset.awardsSource
   };
 
   const priorityRank = { high: 1, medium: 2, low: 3 };
@@ -19,6 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
+  }
+
+  function asArray(value) {
+    return Array.isArray(value) ? value : [];
   }
 
   function normalizeSkills(skills) {
@@ -38,15 +56,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function formatDate(value) {
     if (!value) return "Date not set";
-    const isoDate = new Date(`${value}T00:00:00`);
+
+    const text = String(value).trim();
+    const isoDate = /^\d{4}-\d{2}-\d{2}$/.test(text)
+      ? new Date(`${text}T00:00:00`)
+      : new Date(text);
+
     if (!Number.isNaN(isoDate.getTime())) {
       return isoDate.toLocaleDateString("en-GB", {
-        day: "2-digit",
+        day: /^\d{4}-\d{2}-\d{2}$/.test(text) ? "2-digit" : undefined,
         month: "short",
         year: "numeric"
       });
     }
-    return escapeHtml(value);
+
+    return escapeHtml(text);
   }
 
   function setText(id, value) {
@@ -54,11 +78,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (element) element.textContent = value;
   }
 
-  async function loadJson(url) {
-    if (!url) throw new Error("A dashboard data source is missing.");
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`Unable to load ${url}`);
-    return response.json();
+  function showWarning(message) {
+    if (!warning) return;
+    warning.hidden = false;
+    warning.textContent = message;
+  }
+
+  function setUnavailable(containerId, message) {
+    const container = document.getElementById(containerId);
+    if (container) container.innerHTML = `<p class="dashboard-loading">${escapeHtml(message)}</p>`;
   }
 
   function startGreetingAnimation() {
@@ -82,13 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.setTimeout(function typeLoop() {
       const message = messages[messageIndex];
-
-      if (deleting) {
-        characterIndex -= 1;
-      } else {
-        characterIndex += 1;
-      }
-
+      characterIndex += deleting ? -1 : 1;
       greeting.textContent = message.slice(0, Math.max(0, characterIndex));
 
       let delay = deleting ? 38 : 68;
@@ -105,35 +127,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1400);
   }
 
-  function renderProjectStatus(completedCount, activeCount) {
-    const total = completedCount + activeCount;
-    const completedPercentage = total ? (completedCount / total) * 100 : 0;
-    const donut = document.getElementById("project-status-donut");
-
-    if (donut) {
-      donut.style.background = `conic-gradient(#20d3ee 0 ${completedPercentage}%, #f044a4 ${completedPercentage}% 100%)`;
-      donut.setAttribute(
-        "aria-label",
-        `${completedCount} completed projects and ${activeCount} projects in progress`
-      );
-    }
-
-    setText("project-status-total", total);
-    setText("project-completed-count", completedCount);
-    setText("project-active-count", activeCount);
-  }
-
   function renderSkillsByCategory(skills) {
     const container = document.getElementById("skills-category-chart");
     if (!container) return;
 
-    const categoryCounts = skills
-      .filter(item => isVisible(item, "display_on_skills"))
-      .reduce((counts, item) => {
-        const category = String(item.category || "Other").trim() || "Other";
-        counts[category] = (counts[category] || 0) + 1;
-        return counts;
-      }, {});
+    const categoryCounts = skills.reduce((counts, item) => {
+      const category = String(item.category || "Other").trim() || "Other";
+      counts[category] = (counts[category] || 0) + 1;
+      return counts;
+    }, {});
 
     const rows = Object.entries(categoryCounts)
       .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
@@ -144,62 +146,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const maximum = Math.max(...rows.map(([, count]) => count));
-    container.innerHTML = rows
-      .map(([category, count], index) => {
-        const width = Math.max(10, Math.round((count / maximum) * 100));
-        return `
-          <div class="horizontal-bar-row" style="--bar-delay: ${index * 70}ms;">
-            <div class="horizontal-bar-label">
-              <span>${escapeHtml(category)}</span>
-              <strong>${count}</strong>
-            </div>
-            <div class="horizontal-bar-track" aria-label="${escapeHtml(category)}: ${count} skills">
-              <span style="--bar-width: ${width}%;"></span>
-            </div>
+    container.innerHTML = rows.map(([category, count], index) => {
+      const width = Math.max(10, Math.round((count / maximum) * 100));
+      return `
+        <div class="horizontal-bar-row" style="--bar-delay: ${index * 70}ms;">
+          <div class="horizontal-bar-label">
+            <span>${escapeHtml(category)}</span>
+            <strong>${count}</strong>
           </div>
-        `;
-      })
-      .join("");
-  }
-
-  function renderLearningFocus(learningItems) {
-    const container = document.getElementById("learning-focus-chart");
-    if (!container) return;
-
-    const focusCounts = learningItems
-      .filter(item => isVisible(item, "display_on_professional_development"))
-      .reduce((counts, item) => {
-        normalizeSkills(item.skills).forEach(skill => {
-          const normalized = skill === "Microsoft Excel" ? "Excel" : skill;
-          counts[normalized] = (counts[normalized] || 0) + 1;
-        });
-        return counts;
-      }, {});
-
-    const focus = Object.entries(focusCounts)
-      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-      .slice(0, 7);
-
-    if (!focus.length) {
-      container.innerHTML = '<p class="dashboard-loading">No course topics are available.</p>';
-      return;
-    }
-
-    const maximum = Math.max(...focus.map(([, count]) => count));
-    container.innerHTML = focus
-      .map(([name, count], index) => {
-        const height = Math.max(22, Math.round((count / maximum) * 100));
-        return `
-          <div class="learning-focus-column">
-            <div class="learning-focus-value">${count}</div>
-            <div class="learning-focus-track" aria-label="${escapeHtml(name)} appears in ${count} completed courses">
-              <span style="--column-height: ${height}%; --column-delay: ${index * 90}ms;"></span>
-            </div>
-            <span class="learning-focus-label">${escapeHtml(name)}</span>
+          <div class="horizontal-bar-track" aria-label="${escapeHtml(category)}: ${count} skills">
+            <span style="--bar-width: ${width}%;"></span>
           </div>
-        `;
-      })
-      .join("");
+        </div>
+      `;
+    }).join("");
   }
 
   function createProjectLinks(item) {
@@ -216,7 +176,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function createProjectCard(item) {
     const progress = Math.max(0, Math.min(100, Number(item.progress || 0)));
     const skills = normalizeSkills(item.skills).slice(0, 6);
-    const priorityClass = String(item.priority || "medium").toLowerCase();
+    const priorityText = String(item.priority || "Not set");
+    const priorityClass = priorityText.toLowerCase().replace(/[^a-z0-9-]+/g, "-");
 
     return `
       <article class="dashboard-project-card">
@@ -242,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div class="dashboard-project-meta">
           <span>Finish <strong>${formatDate(item.expected_finish_date)}</strong></span>
-          <span>Priority <strong class="priority-${escapeHtml(priorityClass)}">${escapeHtml(item.priority || "Not set")}</strong></span>
+          <span>Priority <strong class="priority-${escapeHtml(priorityClass)}">${escapeHtml(priorityText)}</strong></span>
         </div>
 
         ${createProjectLinks(item)}
@@ -254,14 +215,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("dashboard-current-projects");
     if (!container) return;
 
-    const visibleItems = items
-      .filter(item => isVisible(item, "display_on_home"))
-      .sort((a, b) => {
-        const rankA = priorityRank[String(a.priority || "").toLowerCase()] || 99;
-        const rankB = priorityRank[String(b.priority || "").toLowerCase()] || 99;
-        if (rankA !== rankB) return rankA - rankB;
-        return String(a.title || "").localeCompare(String(b.title || ""));
-      });
+    const visibleItems = items.slice().sort((a, b) => {
+      const rankA = priorityRank[String(a.priority || "").toLowerCase()] || 99;
+      const rankB = priorityRank[String(b.priority || "").toLowerCase()] || 99;
+      if (rankA !== rankB) return rankA - rankB;
+      return String(a.title || "").localeCompare(String(b.title || ""));
+    });
 
     container.innerHTML = visibleItems.length
       ? visibleItems.map(createProjectCard).join("")
@@ -273,31 +232,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!container) return;
 
     const availableSkills = new Set(
-      skills
-        .filter(item => isVisible(item, "display_on_skills"))
-        .map(item => String(item.skill || "").trim())
-        .filter(Boolean)
+      skills.map(item => String(item.skill || "").trim()).filter(Boolean)
     );
 
     currentWork.forEach(item => normalizeSkills(item.skills).forEach(skill => availableSkills.add(skill)));
     learningItems.forEach(item => normalizeSkills(item.skills).forEach(skill => availableSkills.add(skill)));
 
     const preferredTools = [
-      "Python",
-      "SQL",
-      "Tableau",
-      "Power BI",
-      "Microsoft Excel",
-      "PostgreSQL",
-      "MySQL",
-      "Google BigQuery",
-      "Pandas",
-      "Scikit-learn",
-      "Jupyter Notebook",
-      "Git/GitHub",
-      "Flask",
-      "AWS",
-      "GCP"
+      "Python", "SQL", "Tableau", "Power BI", "Microsoft Excel", "PostgreSQL",
+      "MySQL", "Google BigQuery", "Pandas", "Scikit-learn", "Jupyter Notebook",
+      "Git/GitHub", "Flask", "AWS", "GCP"
     ];
 
     const selected = preferredTools.filter(tool => availableSkills.has(tool)).slice(0, 12);
@@ -323,10 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("dashboard-certifications");
     if (!container) return;
 
-    const visibleItems = items
-      .filter(item => isVisible(item, "display_on_certifications"))
-      .slice(0, 5);
-
+    const visibleItems = items.slice(0, 5);
     container.innerHTML = visibleItems.length
       ? visibleItems.map((item, index) => {
           const title = escapeHtml(item.title || "Certification");
@@ -350,50 +291,117 @@ document.addEventListener("DOMContentLoaded", () => {
       : '<p class="dashboard-loading">No certifications are listed.</p>';
   }
 
-  function renderDashboard(data) {
-    const completedProjects = data.projects.filter(item =>
+  function renderAwards(items) {
+    const target = document.getElementById("kpi-awards");
+    const note = document.getElementById("kpi-awards-note");
+    if (!target) return;
+
+    const visibleAwards = items.filter(item => isVisible(item, "display_on_home"));
+    target.textContent = String(visibleAwards.length);
+    if (note) {
+      note.textContent = visibleAwards.length === 1
+        ? "Star Performer recognition"
+        : "Star Performer recognitions";
+    }
+  }
+
+  function renderLoadedData(results, requests) {
+    const values = {};
+    const failed = [];
+
+    results.forEach((result, index) => {
+      const name = requests[index][0];
+      if (result.status === "fulfilled") {
+        values[name] = asArray(result.value);
+      } else {
+        values[name] = [];
+        failed.push(name);
+        console.error(`Portfolio ${name} data error:`, result.reason);
+      }
+    });
+
+    const projects = values.projects;
+    const currentWork = values.currentWork;
+    const skills = values.skills;
+    const certifications = values.certifications;
+    const learning = values.learning;
+    const awards = values.awards;
+
+    const completedProjects = projects.filter(item =>
       isVisible(item, "display_on_projects") && String(item.status || "").toLowerCase() === "completed"
     );
-    const activeProjects = data.currentWork.filter(item => isVisible(item, "display_on_home"));
-    const visibleSkills = data.skills.filter(item => isVisible(item, "display_on_skills"));
-    const visibleCertifications = data.certifications.filter(item => isVisible(item, "display_on_certifications"));
-    const completedLearning = data.learning.filter(item =>
+    const activeProjects = currentWork.filter(item => isVisible(item, "display_on_home"));
+    const visibleSkills = skills.filter(item => isVisible(item, "display_on_skills"));
+    const visibleCertifications = certifications.filter(item => isVisible(item, "display_on_certifications"));
+    const completedLearning = learning.filter(item =>
       isVisible(item, "display_on_professional_development") &&
       String(item.status || "").toLowerCase() === "completed"
     );
 
-    const totalProjects = completedProjects.length + activeProjects.length;
+    if (!failed.includes("projects") && !failed.includes("currentWork")) {
+      setText("kpi-projects", completedProjects.length + activeProjects.length);
+      setText("kpi-projects-note", `${completedProjects.length} completed · ${activeProjects.length} active`);
+    } else {
+      setText("kpi-projects", "—");
+      setText("kpi-projects-note", "Project data unavailable");
+    }
 
-    setText("kpi-projects", totalProjects);
-    setText("kpi-projects-note", `${completedProjects.length} completed · ${activeProjects.length} active`);
-    setText("kpi-courses", completedLearning.length);
-    setText("kpi-certifications", visibleCertifications.length);
-    setText("kpi-skills", visibleSkills.length);
-    setText("kpi-current-work", activeProjects.length);
+    setText("kpi-courses", failed.includes("learning") ? "—" : completedLearning.length);
+    setText("kpi-certifications", failed.includes("certifications") ? "—" : visibleCertifications.length);
+    setText("kpi-skills", failed.includes("skills") ? "—" : visibleSkills.length);
+    setText("kpi-current-work", failed.includes("currentWork") ? "—" : activeProjects.length);
 
-    renderProjectStatus(completedProjects.length, activeProjects.length);
-    renderSkillsByCategory(visibleSkills);
-    renderLearningFocus(completedLearning);
-    renderCurrentProjects(activeProjects);
-    renderTechStack(visibleSkills, activeProjects, completedLearning);
-    renderCertifications(visibleCertifications);
+    if (failed.includes("skills")) {
+      setUnavailable("skills-category-chart", "Skill categories are temporarily unavailable.");
+    } else {
+      renderSkillsByCategory(visibleSkills);
+    }
+
+    if (failed.includes("currentWork")) {
+      setUnavailable("dashboard-current-projects", "Current project data is temporarily unavailable.");
+    } else {
+      renderCurrentProjects(activeProjects);
+    }
+
+    if (failed.includes("certifications")) {
+      setUnavailable("dashboard-certifications", "Certification data is temporarily unavailable.");
+    } else {
+      renderCertifications(visibleCertifications);
+    }
+
+    if (failed.includes("awards")) {
+      setText("kpi-awards", "—");
+      setText("kpi-awards-note", "Awards data unavailable");
+    } else {
+      renderAwards(awards);
+    }
+
+    if (failed.includes("skills") && failed.includes("currentWork") && failed.includes("learning")) {
+      setUnavailable("dashboard-tech-stack", "Tech stack data is temporarily unavailable.");
+    } else {
+      renderTechStack(visibleSkills, activeProjects, completedLearning);
+    }
+
+    if (failed.length) {
+      showWarning("Some dashboard data could not be loaded. The available sections are still shown.");
+    }
   }
 
   startGreetingAnimation();
 
-  Promise.all([
-    loadJson(sources.projects),
-    loadJson(sources.currentWork),
-    loadJson(sources.skills),
-    loadJson(sources.certifications),
-    loadJson(sources.learning)
-  ])
-    .then(([projects, currentWork, skills, certifications, learning]) => {
-      renderDashboard({ projects, currentWork, skills, certifications, learning });
-    })
+  const requests = [
+    ["projects", sources.projects],
+    ["currentWork", sources.currentWork],
+    ["skills", sources.skills],
+    ["certifications", sources.certifications],
+    ["learning", sources.learning],
+    ["awards", sources.awards]
+  ];
+
+  Promise.allSettled(requests.map(([, url]) => dataApi.load(url)))
+    .then(results => renderLoadedData(results, requests))
     .catch(error => {
-      const errorMessage = document.getElementById("dashboard-error");
-      if (errorMessage) errorMessage.hidden = false;
-      console.error("Portfolio dashboard error:", error);
+      showWarning("The dashboard could not finish loading. Refresh the page to try again.");
+      console.error("Portfolio dashboard rendering error:", error);
     });
 });

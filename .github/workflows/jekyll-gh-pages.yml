@@ -1,10 +1,11 @@
-# Build and deploy the Jekyll portfolio site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+# Validate the portfolio on pull requests and deploy main to GitHub Pages.
+name: Validate and deploy Jekyll portfolio
 
 on:
+  pull_request:
+    branches: ["main"]
   push:
     branches: ["main"]
-
   workflow_dispatch:
 
 permissions:
@@ -13,8 +14,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: "pages-${{ github.event_name }}-${{ github.ref }}"
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -22,17 +23,31 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Check homepage JavaScript syntax
+        run: |
+          node --check assets/js/portfolio-data.js
+          node --check assets/js/home.js
+          node --check assets/js/home-charts.js
+          node --check assets/js/home-content.js
+          node --check assets/js/home-icons.js
+          node --check assets/js/home-scroll.js
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
           destination: ./_site
-      - name: Upload artifact
+
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

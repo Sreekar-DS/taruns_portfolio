@@ -1,4 +1,4 @@
-/* Homepage top-row positioning and data-backed learning visualizations. */
+/* Homepage profile positioning and data-backed learning visualizations. */
 
 .home-dashboard-page {
   .dashboard-top-grid {
@@ -82,53 +82,6 @@
 
   .dashboard-top-grid .dashboard-opportunity span {
     font-size: 10px;
-  }
-
-  .dashboard-top-grid .dashboard-kpis {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    align-items: stretch;
-    gap: 13px;
-    height: 100%;
-    margin: 0;
-  }
-
-  .dashboard-top-grid .kpi-card {
-    min-height: 244px;
-    padding: 17px 12px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    text-align: center;
-  }
-
-  .dashboard-top-grid .kpi-card > div {
-    width: 100%;
-  }
-
-  .dashboard-top-grid .kpi-icon {
-    width: 45px;
-    height: 45px;
-    padding: 10px;
-  }
-
-  .dashboard-top-grid .kpi-label {
-    font-size: 10px;
-    letter-spacing: 0.1em;
-  }
-
-  .dashboard-top-grid .kpi-card strong {
-    margin: 7px 0 5px;
-    font-size: clamp(28px, 2vw, 35px);
-  }
-
-  .dashboard-top-grid .kpi-card small {
-    min-height: 30px;
-    color: #91a9c1;
-    font-size: 10px;
-    line-height: 1.35;
-    white-space: normal;
   }
 
   .dashboard-overview-grid {
@@ -328,14 +281,6 @@
     .dashboard-top-grid .dashboard-hero {
       min-height: 220px;
     }
-
-    .dashboard-top-grid .dashboard-kpis {
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-    }
-
-    .dashboard-top-grid .kpi-card {
-      min-height: 145px;
-    }
   }
 }
 
@@ -352,18 +297,6 @@
   }
 }
 
-@media screen and (max-width: 900px) {
-  .home-dashboard-page {
-    .dashboard-top-grid .dashboard-kpis {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .dashboard-top-grid .kpi-card {
-      min-height: 135px;
-    }
-  }
-}
-
 @media screen and (max-width: 640px) {
   .home-dashboard-page {
     .dashboard-top-grid .dashboard-identity {
@@ -374,10 +307,6 @@
     .dashboard-top-grid .dashboard-photo-ring {
       width: 100px;
       height: 100px;
-    }
-
-    .dashboard-top-grid .dashboard-kpis {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .learning-summary-panel,
@@ -402,14 +331,6 @@
 
 @media screen and (max-width: 430px) {
   .home-dashboard-page {
-    .dashboard-top-grid .dashboard-kpis {
-      grid-template-columns: 1fr;
-    }
-
-    .dashboard-top-grid .kpi-card {
-      min-height: 120px;
-    }
-
     .learning-radar-svg {
       min-width: 390px;
     }
