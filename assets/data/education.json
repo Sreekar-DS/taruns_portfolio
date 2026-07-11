@@ -22,7 +22,7 @@
     "status": "Ongoing",
     "details": "MSc Computer Science program focused on Artificial Intelligence and Machine Learning.",
     "image_url": "",
-    "display_on_education": true,
+    "display_on_education": false,
     "display_order": 2
   },
   {
