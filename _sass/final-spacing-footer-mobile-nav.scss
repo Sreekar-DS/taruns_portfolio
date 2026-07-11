@@ -1,6 +1,6 @@
 /* Final layout pass: exact 8px outer gutters, compact footer placement, and consistent mobile nav scrolling. */
 
-/* Remove theme-level mobile body padding so the page wrapper controls the outer gutter consistently. */
+/* Remove theme-level page padding so the wrappers control the outer gutter consistently. */
 .home-dashboard-page,
 .portfolio-inner-page {
   padding: 0 !important;
@@ -12,6 +12,74 @@
   width: calc(100% - 16px) !important;
   max-width: none !important;
   margin: 60px auto 8px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Inner pages use the same full-width 8px layout system as the homepage. */
+.portfolio-inner-page .inner-page-content,
+.portfolio-inner-page .inner-dashboard-page {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.portfolio-inner-page .inner-dashboard-page {
+  gap: 8px !important;
+}
+
+.portfolio-inner-page .inner-dashboard-page > section,
+.portfolio-inner-page .inner-dashboard-page > div {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Standardize block-to-block spacing across every inner page. */
+.portfolio-inner-page .about-profile-grid,
+.portfolio-inner-page .inner-page-two-column,
+.portfolio-inner-page .portfolio-card-list-layout,
+.portfolio-inner-page .project-list-layout,
+.portfolio-inner-page .skills-category-grid,
+.portfolio-inner-page .portfolio-card-grid,
+.portfolio-inner-page .career-track-groups,
+.portfolio-inner-page .professional-course-grid,
+.portfolio-inner-page .publications-data-page,
+.portfolio-inner-page .publication-list,
+.portfolio-inner-page .inner-page-section-heading-with-filter {
+  gap: 8px !important;
+}
+
+.portfolio-inner-page .inner-page-section-heading {
+  margin: 0 0 8px !important;
+}
+
+.portfolio-inner-page .inner-page-section-heading-with-filter {
+  margin: 0 !important;
+}
+
+.portfolio-inner-page .filter-box {
+  margin: 0 !important;
+}
+
+/* Keep About rows and narrative blocks on the same 8px rhythm. */
+.about-dashboard-page .about-profile-grid,
+.about-dashboard-page .about-journey-section {
+  margin: 0 !important;
+}
+
+/* Keep exactly 8px between resume/project/skill/certification/course cards. */
+.experience-dashboard-page .portfolio-card-list-layout,
+.education-dashboard-page .portfolio-card-list-layout,
+.projects-dashboard-page .project-list-layout,
+.skills-dashboard-page .skills-category-grid,
+.certifications-dashboard-page .portfolio-card-grid,
+.professional-development-dashboard-page .career-track-groups,
+.professional-development-dashboard-page .professional-course-grid {
+  gap: 8px !important;
 }
 
 /* Give the fixed navigation a stable height so the 8px top content gap is predictable. */
@@ -40,22 +108,51 @@
   display: none !important;
 }
 
-.home-dashboard-page .portfolio-dashboard > .dashboard-footer-strip {
-  width: calc(63.0435% - 5px) !important;
-  min-height: 0 !important;
+/* Publications and the footer now share one left column, removing the blank stretched area below publication content. */
+.home-dashboard-page .dashboard-publications-tech-grid {
+  align-items: start !important;
+}
+
+.home-dashboard-page .dashboard-publications-footer-column {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  align-content: start;
+  min-width: 0;
+}
+
+.home-dashboard-page .dashboard-publications-footer-column .dashboard-publications-panel,
+.home-dashboard-page .dashboard-publications-footer-column .dashboard-footer-strip {
+  width: 100% !important;
+  min-width: 0;
   margin: 0 !important;
-  padding: 10px 12px !important;
-  grid-template-columns: 1fr !important;
-  gap: 0 !important;
-  justify-self: start;
   box-sizing: border-box;
 }
 
-.home-dashboard-page .dashboard-footer-strip .dashboard-traits {
+.home-dashboard-page .dashboard-publications-footer-column .dashboard-publications-panel {
+  align-self: start;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.home-dashboard-page .dashboard-publications-footer-column .dashboard-publications-viewport {
+  min-height: 0 !important;
+}
+
+.home-dashboard-page .dashboard-publications-footer-column .dashboard-footer-strip {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 0 !important;
+  min-height: 0 !important;
+  padding: 10px 12px !important;
+  overflow: visible;
+}
+
+.home-dashboard-page .dashboard-publications-footer-column .dashboard-footer-strip .dashboard-traits {
   width: 100%;
 }
 
-.home-dashboard-page .dashboard-footer-strip .dashboard-traits > span {
+.home-dashboard-page .dashboard-publications-footer-column .dashboard-footer-strip .dashboard-traits > span {
   min-height: 54px;
   padding: 4px 10px;
 }
@@ -111,7 +208,7 @@
 }
 
 @media screen and (max-width: 820px) {
-  .home-dashboard-page .portfolio-dashboard > .dashboard-footer-strip {
-    width: 100% !important;
+  .home-dashboard-page .dashboard-publications-tech-grid {
+    grid-template-columns: 1fr !important;
   }
 }
