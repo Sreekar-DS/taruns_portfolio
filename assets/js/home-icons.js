@@ -14,6 +14,7 @@
     folder: svg(`${line("M3.5 7.5h6l2-2h9v13h-17z")}${line("M3.5 9.5h17")}`),
     book: svg(`${line("M4 5.5c3.2-.8 5.5-.2 8 1.6v12c-2.5-1.8-4.8-2.4-8-1.6z")}${line("M20 5.5c-3.2-.8-5.5-.2-8 1.6v12c2.5-1.8 4.8-2.4 8-1.6z")}`),
     award: svg(`${circle(12, 9, 4.5)}${line("M9.5 13l-1.2 6 3.7-2 3.7 2-1.2-6")}`),
+    trophy: svg(`${line("M8 4h8v4c0 3-1.8 5-4 5s-4-2-4-5z")}${line("M8 6H5v1c0 2.4 1.4 4 3.6 4.5M16 6h3v1c0 2.4-1.4 4-3.6 4.5M12 13v4M9 20h6M10 17h4")}`),
     layers: svg(`${line("M12 3.5l8 4.5-8 4.5L4 8z")}${line("M4 12l8 4.5 8-4.5")}${line("M4 16l8 4.5 8-4.5")}`),
     activity: svg(`${line("M3 12h4l2-5 4 10 2-5h6")}`),
     code: svg(`${line("M8.5 7L4 12l4.5 5")}${line("M15.5 7L20 12l-4.5 5")}${line("M13.5 4.5l-3 15")}`),
@@ -59,7 +60,7 @@
   }
 
   function enhanceStaticIcons() {
-    const kpiIcons = ["folder", "book", "award", "layers", "activity"];
+    const kpiIcons = ["folder", "book", "award", "layers", "activity", "trophy"];
     document.querySelectorAll(".kpi-icon").forEach((element, index) => {
       element.innerHTML = icons[kpiIcons[index] || "activity"];
     });

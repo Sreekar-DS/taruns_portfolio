@@ -11,7 +11,8 @@ permalink: /
   data-current-work-source="{{ '/assets/data/currently-working-on.json' | relative_url }}?v={{ site.github.build_revision }}"
   data-skills-source="{{ '/assets/data/skills.json' | relative_url }}?v={{ site.github.build_revision }}"
   data-certifications-source="{{ '/assets/data/certifications.json' | relative_url }}?v={{ site.github.build_revision }}"
-  data-learning-source="{{ '/assets/data/professional-development.json' | relative_url }}?v={{ site.github.build_revision }}">
+  data-learning-source="{{ '/assets/data/professional-development.json' | relative_url }}?v={{ site.github.build_revision }}"
+  data-awards-source="{{ '/assets/data/awards.json' | relative_url }}?v={{ site.github.build_revision }}">
 
   <div class="dashboard-top-grid">
     <div class="dashboard-panel dashboard-hero" role="region" aria-labelledby="dashboard-name">
@@ -90,30 +91,29 @@ permalink: /
           <small>Active projects</small>
         </div>
       </article>
+
+      <article class="dashboard-panel kpi-card awards-kpi-card" role="listitem">
+        <span class="kpi-icon" aria-hidden="true">T</span>
+        <div>
+          <span class="kpi-label">Awards</span>
+          <strong id="kpi-awards">—</strong>
+          <small id="kpi-awards-note">Star Performer recognitions</small>
+        </div>
+      </article>
     </div>
   </div>
 
   <section class="dashboard-chart-grid dashboard-overview-grid" aria-label="Portfolio overview charts">
-    <article class="dashboard-panel dashboard-chart-panel project-status-panel">
+    <article class="dashboard-panel dashboard-chart-panel overview-certifications-panel">
       <div class="dashboard-panel-heading">
         <div>
-          <span class="dashboard-eyebrow">Portfolio overview</span>
-          <h2>Project Status</h2>
+          <span class="dashboard-eyebrow">Credentials</span>
+          <h2>Certifications</h2>
         </div>
+        <a href="{{ '/certifications/' | relative_url }}">View all</a>
       </div>
-
-      <div class="project-status-content">
-        <div id="project-status-donut" class="project-status-donut" role="img" aria-label="Project status chart">
-          <div>
-            <strong id="project-status-total">—</strong>
-            <span>Total</span>
-          </div>
-        </div>
-
-        <div class="project-status-legend">
-          <p><span class="legend-dot legend-completed"></span>Completed <strong id="project-completed-count">—</strong></p>
-          <p><span class="legend-dot legend-active"></span>In progress <strong id="project-active-count">—</strong></p>
-        </div>
+      <div id="dashboard-certifications" class="dashboard-certification-list" aria-live="polite">
+        <p class="dashboard-loading">Loading certifications…</p>
       </div>
     </article>
 
@@ -186,19 +186,6 @@ permalink: /
         </div>
       </article>
 
-      <article class="dashboard-panel dashboard-side-panel">
-        <div class="dashboard-panel-heading">
-          <div>
-            <span class="dashboard-eyebrow">Credentials</span>
-            <h2>Certifications</h2>
-          </div>
-          <a href="{{ '/certifications/' | relative_url }}">View all</a>
-        </div>
-        <div id="dashboard-certifications" class="dashboard-certification-list" aria-live="polite">
-          <p class="dashboard-loading">Loading certifications…</p>
-        </div>
-      </article>
-
       <article class="dashboard-panel dashboard-side-panel publication-panel">
         <div class="publication-icon" aria-hidden="true">R</div>
         <div>
@@ -231,4 +218,5 @@ permalink: /
 
 <script src="{{ '/assets/js/home.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
 <script src="{{ '/assets/js/home-charts.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
+<script src="{{ '/assets/js/home-awards.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
 <script src="{{ '/assets/js/home-icons.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
