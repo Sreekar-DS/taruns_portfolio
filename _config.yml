@@ -1,11 +1,11 @@
 title: Tarun Sreekar Parasa
 logo: assets/11162925JhXJ2LhA_2.png
-show_downloads: True
+show_downloads: true
 description: >
   Data Analyst | Business Analyst
 theme: jekyll-theme-minimal
-font: Arial
+url: "https://sreekar-ds.github.io"
+baseurl: "/taruns_portfolio"
 include: ["_pages"]
 exclude:
   - README.md
-base url: 
