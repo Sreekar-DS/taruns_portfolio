@@ -1,0 +1,26 @@
+/* Keep the primary profile portrait consistent between Home and About. */
+.home-dashboard-page .dashboard-top-grid .dashboard-photo-ring {
+  width: 150px;
+  height: 150px;
+  padding: 7px;
+}
+
+.home-dashboard-page .dashboard-top-grid .dashboard-opportunity {
+  width: calc(100% - 166px);
+  margin-left: 166px;
+}
+
+@media screen and (max-width: 700px) {
+  .home-dashboard-page .dashboard-top-grid .dashboard-opportunity {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .home-dashboard-page .dashboard-top-grid .dashboard-photo-ring {
+    width: 112px;
+    height: 112px;
+    padding: 5px;
+  }
+}

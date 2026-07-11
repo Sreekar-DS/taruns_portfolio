@@ -4,26 +4,40 @@ title: Projects
 permalink: /projects/
 ---
 
-<h2>Projects</h2>
+<div class="inner-dashboard-page projects-dashboard-page">
+  <section class="inner-dashboard-panel inner-page-hero" aria-labelledby="projects-page-title">
+    <div class="inner-page-hero-copy">
+      <span class="inner-page-eyebrow">Applied portfolio</span>
+      <h1 id="projects-page-title">Projects</h1>
+      <p>Selected analytics, SQL, customer segmentation, visualization, machine learning, and applied AI projects that show how I approach real business and data problems.</p>
+    </div>
+    <span class="inner-page-hero-mark" aria-hidden="true">PR</span>
+  </section>
 
-<p class="page-intro">
-  Selected analytics, SQL, customer segmentation, and learning analytics projects from my portfolio.
-</p>
+  <div class="filter-box project-filter-box" aria-label="Project skill filters">
+    <label><input type="checkbox" class="filter project-filter" value="python"> Python</label>
+    <label><input type="checkbox" class="filter project-filter" value="sql"> SQL</label>
+    <label><input type="checkbox" class="filter project-filter" value="excel"> Excel</label>
+    <label><input type="checkbox" class="filter project-filter" value="tableau"> Tableau</label>
+    <label><input type="checkbox" class="filter project-filter" value="powerbi"> Power BI</label>
+  </div>
 
-<div class="filter-box project-filter-box" aria-label="Project skill filters">
-  <label><input type="checkbox" class="filter project-filter" value="python"> Python</label>
-  <label><input type="checkbox" class="filter project-filter" value="sql"> SQL</label>
-  <label><input type="checkbox" class="filter project-filter" value="excel"> Excel</label>
-  <label><input type="checkbox" class="filter project-filter" value="tableau"> Tableau</label>
-  <label><input type="checkbox" class="filter project-filter" value="powerbi"> Power BI</label>
-</div>
+  <section aria-labelledby="projects-list-title">
+    <div class="inner-page-section-heading">
+      <div>
+        <span class="inner-page-eyebrow">Case studies &amp; builds</span>
+        <h2 id="projects-list-title">Project Portfolio</h2>
+      </div>
+    </div>
 
-<div
-  id="projects"
-  class="project-list-layout"
-  data-source="{{ '/assets/data/projects.json' | relative_url }}?v={{ site.github.build_revision }}"
-  aria-live="polite">
-  <p>Loading projects...</p>
+    <div
+      id="projects"
+      class="project-list-layout"
+      data-source="{{ '/assets/data/projects.json' | relative_url }}?v={{ site.github.build_revision }}"
+      aria-live="polite">
+      <p>Loading projects...</p>
+    </div>
+  </section>
 </div>
 
 <script src="{{ '/assets/js/projects.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
