@@ -12,6 +12,64 @@ const CONFIG = {
   githubApiVersion: "2022-11-28",
   sheets: [
     {
+      name: "Profile & Opportunity",
+      outputPath: "assets/data/profile.json",
+      headers: [
+        "name", "primary_role", "secondary_role", "profile_summary",
+        "opportunity_label", "opportunity_roles", "display_on_home"
+      ],
+      seedRows: [[
+        "Tarun Sreekar Parasa",
+        "Data Analyst",
+        "Business Analyst",
+        "Turning data into practical insights, business decisions, and analytics-focused solutions.",
+        "Open to opportunities",
+        "Data Analyst, Business Analyst, BI Analyst",
+        true
+      ]]
+    },
+    {
+      name: "Links",
+      outputPath: "assets/data/links.json",
+      headers: [
+        "platform", "label", "url", "external", "display_on_home", "display_order"
+      ],
+      seedRows: [
+        ["LinkedIn", "LinkedIn", "https://www.linkedin.com/in/sreekar-ai", true, true, 1],
+        ["GitHub", "GitHub", "https://github.com/Sreekar-DS", true, true, 2],
+        ["Projects", "View Projects", "projects/", false, true, 3]
+      ]
+    },
+    {
+      name: "Publications",
+      outputPath: "assets/data/publications.json",
+      headers: [
+        "title", "publisher", "publication_date", "short_description",
+        "publication_url", "display_on_home", "display_order"
+      ],
+      seedRows: [[
+        "Real Time Home Safety and Surveillance using Raspberry Pi and Artificial Intelligence",
+        "IJCRT",
+        "2022-05-01",
+        "Raspberry Pi and Artificial Intelligence",
+        "https://ijcrt.org/papers/IJCRT2205995.pdf",
+        true,
+        1
+      ]]
+    },
+    {
+      name: "Awards",
+      outputPath: "assets/data/awards.json",
+      headers: [
+        "title", "organization", "award_date", "category", "display_on_home", "display_order"
+      ],
+      seedRows: [
+        ["Data Visualization Trainee Early Remote Internship Star Performer", "Excelerate", "2025-02-01", "Star Performer", true, 1],
+        ["Digital Marketing Early Remote Internship Star Performer", "Excelerate", "2025-02-01", "Star Performer", true, 2],
+        ["Project Management Trainee Remote Internship Star Performer", "Excelerate", "2025-02-01", "Star Performer", true, 3]
+      ]
+    },
+    {
       name: "Currently Working On",
       outputPath: "assets/data/currently-working-on.json",
       headers: [
@@ -78,6 +136,8 @@ const TOKEN_PROPERTY = "GITHUB_FINE_GRAINED_TOKEN";
 function onOpen() {
   SpreadsheetApp.getUi()
     .createMenu("Portfolio Sync")
+    .addItem("0. Create Missing Sheet Tabs", "createMissingPortfolioSheets")
+    .addSeparator()
     .addItem("1. Save GitHub Token", "saveGitHubToken")
     .addItem("2. Validate Sheet Data", "validatePortfolioData")
     .addItem("3. Preview JSON", "previewPortfolioJson")
@@ -86,6 +146,40 @@ function onOpen() {
     .addSeparator()
     .addItem("Clear Saved Token", "clearGitHubToken")
     .addToUi();
+}
+
+function createMissingPortfolioSheets() {
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const created = [];
+
+  CONFIG.sheets.forEach(config => {
+    if (spreadsheet.getSheetByName(config.name)) return;
+
+    const sheet = spreadsheet.insertSheet(config.name);
+    sheet.getRange(1, 1, 1, config.headers.length).setValues([config.headers]);
+    sheet.getRange(1, 1, 1, config.headers.length).setFontWeight("bold");
+    sheet.setFrozenRows(1);
+
+    if (config.seedRows && config.seedRows.length) {
+      sheet.getRange(2, 1, config.seedRows.length, config.headers.length).setValues(config.seedRows);
+    }
+
+    sheet.autoResizeColumns(1, config.headers.length);
+    created.push(config.name);
+  });
+
+  const ui = SpreadsheetApp.getUi();
+  if (!created.length) {
+    ui.alert("No sheets created", "All configured Portfolio Sync tabs already exist.", ui.ButtonSet.OK);
+    return;
+  }
+
+  ui.alert(
+    "Portfolio sheets created",
+    "Created the following missing tabs:\n\n" + created.join("\n") +
+      "\n\nExisting tabs were not changed. Review the seeded values, then run Validate Sheet Data.",
+    ui.ButtonSet.OK
+  );
 }
 
 function saveGitHubToken() {
@@ -195,7 +289,7 @@ function buildPortfolioFiles() {
   CONFIG.sheets.forEach(config => {
     const sheet = spreadsheet.getSheetByName(config.name);
     if (!sheet) {
-      errors.push("Missing sheet tab: " + config.name);
+      errors.push("Missing sheet tab: " + config.name + ". Run Portfolio Sync -> 0. Create Missing Sheet Tabs.");
       return;
     }
 
@@ -249,14 +343,14 @@ function normalizeValue_(header, value, timezone) {
     return isNaN(numberValue) ? value : numberValue;
   }
 
-  if (header.startsWith("display_on_")) {
+  if (header.startsWith("display_on_") || header === "external") {
     if (value === "") return false;
     if (typeof value === "boolean") return value;
     const text = String(value).trim().toLowerCase();
     return ["true", "yes", "y", "1"].includes(text);
   }
 
-  if (["skills", "tools"].includes(header)) {
+  if (["skills", "tools", "opportunity_roles"].includes(header)) {
     if (Array.isArray(value)) return value;
     return String(value || "")
       .split(/[,;|]/)
