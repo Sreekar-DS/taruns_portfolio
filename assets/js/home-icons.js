@@ -55,8 +55,15 @@
   };
 
   function replaceContent(selector, iconName) {
+    const iconMarkup = icons[iconName];
+    if (!iconMarkup) return;
+
     document.querySelectorAll(selector).forEach(element => {
-      if (icons[iconName]) element.innerHTML = icons[iconName];
+      const existingSvg = element.querySelector(":scope > .dashboard-icon-svg");
+      if (element.dataset.dashboardIcon === iconName && existingSvg) return;
+
+      element.innerHTML = iconMarkup;
+      element.dataset.dashboardIcon = iconName;
     });
   }
 
@@ -101,13 +108,13 @@
     const techStack = document.getElementById("dashboard-tech-stack");
     if (techStack) {
       const observer = new MutationObserver(enhanceTechStack);
-      observer.observe(techStack, { childList: true, subtree: true });
+      observer.observe(techStack, { childList: true });
     }
 
     const publications = document.getElementById("dashboard-publications");
     if (publications) {
       const observer = new MutationObserver(() => replaceContent("#dashboard-publications .publication-icon", "publication"));
-      observer.observe(publications, { childList: true, subtree: true });
+      observer.observe(publications, { childList: true });
     }
   }
 

@@ -10,6 +10,23 @@
     line-height: 1.55;
   }
 
+  /* Keep the two role labels vivid while only the separator remains muted. */
+  .dashboard-top-grid #dashboard-primary-role {
+    margin-left: 0;
+    color: var(--dashboard-cyan) !important;
+    text-shadow: 0 0 14px rgba(32, 211, 238, 0.2);
+  }
+
+  .dashboard-top-grid #dashboard-secondary-role {
+    margin-right: 0;
+    color: var(--dashboard-teal) !important;
+    text-shadow: 0 0 14px rgba(54, 223, 189, 0.18);
+  }
+
+  .dashboard-top-grid .dashboard-role-separator {
+    color: rgba(255, 255, 255, 0.42) !important;
+  }
+
   .dashboard-top-grid .dashboard-actions a {
     font-size: 13px !important;
     font-weight: 700;
