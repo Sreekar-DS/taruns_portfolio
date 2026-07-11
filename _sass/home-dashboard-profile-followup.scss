@@ -1,0 +1,28 @@
+/* Follow-up profile refinements after the compact dashboard reflow. */
+
+.home-dashboard-page {
+  .dashboard-profile-message {
+    max-width: 620px;
+    min-height: 36px;
+    margin: 0 0 2px;
+    color: var(--dashboard-cyan);
+    font-size: 12.5px !important;
+    font-weight: 650;
+    line-height: 1.35;
+  }
+
+  .dashboard-top-grid .dashboard-opportunity {
+    width: 100% !important;
+    margin: 7px 0 0 !important;
+  }
+
+  .dashboard-opportunity-line {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .home-dashboard-page .dashboard-profile-message {
+    min-height: 52px;
+  }
+}
