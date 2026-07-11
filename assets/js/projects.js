@@ -125,12 +125,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function applyFilters() {
-    const activeFilters = filters.filter(filter => filter.checked).map(filter => filter.value);
+    const activeFilters = filters
+      .filter(filter => filter.checked)
+      .map(filter => filter.value);
     const cards = Array.from(container.querySelectorAll(".dynamic-project-box"));
 
+    filters.forEach(filter => {
+      const label = filter.closest("label");
+      if (label) label.classList.toggle("filter-active", filter.checked);
+    });
+
     cards.forEach(card => {
-      const matches = activeFilters.every(filter => card.classList.contains(filter));
-      card.classList.toggle("hidden", !matches);
+      const matches = activeFilters.length === 0 || activeFilters.some(filter => card.classList.contains(filter));
+      card.hidden = !matches;
     });
   }
 
