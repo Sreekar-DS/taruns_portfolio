@@ -1,0 +1,89 @@
+/* Temporary headerless inner-page view plus the next round of About and project refinements. */
+
+/* Hide the large hero/header blocks so the content sections become the visual starting point. */
+.portfolio-inner-page .inner-page-hero {
+  display: none !important;
+}
+
+.portfolio-inner-page .inner-dashboard-page {
+  gap: 18px;
+}
+
+/* ABOUT: one three-card row followed by one full-width analytics journey block. */
+.about-dashboard-page .about-profile-grid {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.78fr) minmax(0, 1.25fr) minmax(0, 1.05fr) !important;
+  gap: 18px !important;
+  align-items: stretch;
+}
+
+.about-dashboard-page .about-profile-grid > .inner-dashboard-panel {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.about-dashboard-page .about-intro-card,
+.about-dashboard-page .about-direction-card {
+  padding: 26px 28px;
+}
+
+.about-dashboard-page .about-direction-card p {
+  margin: 14px 0 0;
+  color: #c6d8e8;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.about-dashboard-page .about-direction-card p:first-of-type {
+  margin-top: 16px;
+}
+
+.about-dashboard-page .about-journey-section,
+.about-dashboard-page .about-journey-section .inner-story-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Match emphasized identity text to the cyan eyebrow label in the same card. */
+.about-dashboard-page .about-intro-card strong {
+  color: var(--inner-cyan) !important;
+  font-weight: 780;
+}
+
+/* Publication publisher/date metadata should remain clearly visible on the dark card. */
+.publications-dashboard-page .publications-data-page .portfolio-card > p strong,
+.publication-dashboard-page .publications-data-page .portfolio-card > p strong {
+  color: var(--inner-cyan) !important;
+  font-weight: 750;
+}
+
+/* Dynamic project skill filters. */
+.projects-dashboard-page .project-filter-loading {
+  color: #9eb5c9;
+  font-size: 12px;
+}
+
+.projects-dashboard-page .project-filter-box[hidden] {
+  display: none !important;
+}
+
+@media screen and (max-width: 1180px) {
+  .about-dashboard-page .about-profile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .about-dashboard-page .about-direction-card {
+    grid-column: 1 / -1;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .about-dashboard-page .about-profile-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .about-dashboard-page .about-direction-card {
+    grid-column: auto;
+  }
+}
