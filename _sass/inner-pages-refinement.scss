@@ -1,0 +1,292 @@
+/* Layout and interaction refinements requested after the first inner-page dashboard pass. */
+
+/* Reset the Minimal-theme width/float rules on nested page sections as well as the outer content section. */
+.portfolio-inner-page .inner-dashboard-page {
+  gap: 18px;
+}
+
+.portfolio-inner-page .inner-dashboard-page > section {
+  float: none !important;
+  position: relative !important;
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+}
+
+.portfolio-inner-page .inner-page-hero {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box;
+}
+
+.portfolio-inner-page .inner-page-hero-copy {
+  flex: 1 1 auto;
+  max-width: none;
+}
+
+/* Major page headings use the same uppercase dashboard language. */
+.portfolio-inner-page .inner-page-hero h1,
+.portfolio-inner-page .inner-page-section-heading h2,
+.portfolio-inner-page .inner-story-card h2 {
+  text-transform: uppercase;
+}
+
+/* ABOUT: keep the role line intact, then use full-width narrative rows with one spacing rhythm. */
+.about-dashboard-page .about-profile-grid,
+.about-dashboard-page .inner-page-two-column {
+  gap: 18px;
+}
+
+.about-dashboard-page .about-profile-grid {
+  grid-template-columns: minmax(320px, 0.72fr) minmax(0, 1.65fr);
+}
+
+.about-dashboard-page .about-role-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.about-dashboard-page .inner-page-two-column {
+  grid-template-columns: 1fr;
+}
+
+.about-dashboard-page .inner-story-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* EXPERIENCE + EDUCATION: resume-style two-line headers. */
+.experience-dashboard-page .portfolio-card-list-layout,
+.education-dashboard-page .portfolio-card-list-layout {
+  gap: 18px;
+}
+
+.portfolio-inner-page .resume-entry-card {
+  display: block !important;
+  width: 100% !important;
+}
+
+.portfolio-inner-page .resume-entry-card .portfolio-card-body {
+  padding: 24px 26px !important;
+}
+
+.portfolio-inner-page .resume-entry-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 22px;
+}
+
+.portfolio-inner-page .resume-entry-primary-line h3,
+.portfolio-inner-page .resume-entry-location {
+  margin: 0;
+  color: #ffffff !important;
+  font-size: 20px;
+  font-weight: 780;
+  line-height: 1.3;
+}
+
+.portfolio-inner-page .resume-entry-location,
+.portfolio-inner-page .resume-entry-period {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.portfolio-inner-page .resume-entry-secondary-line {
+  margin-top: 7px;
+}
+
+.portfolio-inner-page .resume-entry-organization,
+.portfolio-inner-page .resume-entry-period {
+  color: #8cecf8;
+  font-size: 14px;
+  font-weight: 680;
+  line-height: 1.45;
+}
+
+.portfolio-inner-page .resume-entry-summary,
+.portfolio-inner-page .resume-entry-card .portfolio-card-list,
+.portfolio-inner-page .resume-entry-card .portfolio-card-list li {
+  color: #edf7ff !important;
+}
+
+.portfolio-inner-page .resume-entry-summary {
+  margin: 18px 0 0 !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+}
+
+.portfolio-inner-page .resume-entry-card .portfolio-card-list {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* PROJECTS: one full-width row block per project. */
+.projects-dashboard-page .project-list-layout {
+  display: flex !important;
+  flex-direction: column;
+  gap: 18px !important;
+}
+
+.projects-dashboard-page .project-box {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.projects-dashboard-page .project-box .project-content {
+  display: flex !important;
+  align-items: stretch;
+  width: 100%;
+}
+
+.projects-dashboard-page .project-box .project-details {
+  flex: 1 1 auto;
+  padding: 24px 26px !important;
+}
+
+.projects-dashboard-page .project-box .project-image-wrap {
+  width: 180px;
+  min-width: 180px;
+}
+
+.projects-dashboard-page .dynamic-project-box[hidden] {
+  display: none !important;
+}
+
+/* SKILLS + CERTIFICATIONS: fill the desktop width rather than stopping after two cards. */
+.skills-dashboard-page .skills-category-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+}
+
+.certifications-dashboard-page .portfolio-card-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+}
+
+.certifications-dashboard-page .portfolio-card-meta p {
+  color: #e8f5ff !important;
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+}
+
+.certifications-dashboard-page .portfolio-card-meta strong {
+  color: #7eeaf7 !important;
+}
+
+/* PROFESSIONAL DEVELOPMENT: full-width closed accordions with a clear left-side disclosure control. */
+.professional-development-dashboard-page .career-track-groups {
+  display: grid;
+  gap: 18px;
+  width: 100%;
+}
+
+.professional-development-dashboard-page .career-track-group {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.professional-development-dashboard-page .career-track-group summary {
+  display: grid !important;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.professional-development-dashboard-page .career-track-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.professional-development-dashboard-page .career-track-group summary::before {
+  content: "›";
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(32, 211, 238, 0.42);
+  border-radius: 8px;
+  color: #7eeaf7;
+  background: rgba(10, 54, 92, 0.48);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.professional-development-dashboard-page .career-track-group[open] summary::before {
+  transform: rotate(90deg);
+  background: rgba(20, 98, 130, 0.55);
+}
+
+.professional-development-dashboard-page .professional-course-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1280px) {
+  .skills-dashboard-page .skills-category-grid,
+  .certifications-dashboard-page .portfolio-card-grid,
+  .professional-development-dashboard-page .professional-course-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .about-dashboard-page .about-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-inner-page .resume-entry-primary-line h3,
+  .portfolio-inner-page .resume-entry-location {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .skills-dashboard-page .skills-category-grid,
+  .certifications-dashboard-page .portfolio-card-grid,
+  .professional-development-dashboard-page .professional-course-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .portfolio-inner-page .resume-entry-line {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .portfolio-inner-page .resume-entry-location,
+  .portfolio-inner-page .resume-entry-period {
+    text-align: left;
+    white-space: normal;
+  }
+
+  .projects-dashboard-page .project-box .project-content {
+    flex-direction: column;
+  }
+
+  .projects-dashboard-page .project-box .project-image-wrap {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .about-dashboard-page .about-role-line {
+    font-size: 13px;
+  }
+
+  .about-dashboard-page .about-role-line .role-separator {
+    margin-right: 6px;
+    margin-left: 6px;
+  }
+}
