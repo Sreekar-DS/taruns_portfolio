@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const dashboard = document.getElementById("portfolio-dashboard");
   if (!dashboard) return;
 
+  const dataApi = window.PortfolioData;
+  if (!dataApi || typeof dataApi.load !== "function") return;
+
   const sources = {
     projects: dashboard.dataset.projectsSource,
     currentWork: dashboard.dataset.currentWorkSource,
@@ -26,6 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
       .replace(/'/g, "&#039;");
   }
 
+  function asArray(value) {
+    return Array.isArray(value) ? value : [];
+  }
+
   function isVisible(item, key) {
     return !Object.prototype.hasOwnProperty.call(item, key) || item[key] !== false;
   }
@@ -33,10 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function normalizeSkills(skills) {
     if (Array.isArray(skills)) return skills.filter(Boolean).map(skill => String(skill).trim());
     if (typeof skills === "string") {
-      return skills
-        .split(/[,;|]/)
-        .map(skill => skill.trim())
-        .filter(Boolean);
+      return skills.split(/[,;|]/).map(skill => skill.trim()).filter(Boolean);
     }
     return [];
   }
@@ -53,13 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return aliases[value] || value;
   }
 
-  async function loadJson(url) {
-    if (!url) throw new Error("A learning chart data source is missing.");
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`Unable to load ${url}`);
-    return response.json();
-  }
-
   function polarPoint(centerX, centerY, radius, angleDegrees) {
     const radians = (angleDegrees * Math.PI) / 180;
     return {
@@ -73,11 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function radarLabelMarkup(label, count, x, y, anchor) {
-    const safeLabel = escapeHtml(label);
     const safeCount = Number(count) || 0;
     return `
       <text class="learning-radar-label" x="${x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="${anchor}">
-        <tspan x="${x.toFixed(1)}" dy="0">${safeLabel}</tspan>
+        <tspan x="${x.toFixed(1)}" dy="0">${escapeHtml(label)}</tspan>
         <tspan class="learning-radar-value" x="${x.toFixed(1)}" dy="16">${safeCount} ${safeCount === 1 ? "course" : "courses"}</tspan>
       </text>
     `;
@@ -90,8 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const topicCounts = learningItems.reduce((counts, item) => {
       normalizeSkills(item.skills).forEach(skill => {
         const topic = normalizeLearningTopic(skill);
-        if (!topic) return;
-        counts[topic] = (counts[topic] || 0) + 1;
+        if (topic) counts[topic] = (counts[topic] || 0) + 1;
       });
       return counts;
     }, {});
@@ -117,8 +112,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const gridPolygons = Array.from({ length: 5 }, (_, index) => {
       const gridRadius = radius * ((index + 1) / 5);
-      const gridPoints = angles.map(angle => polarPoint(centerX, centerY, gridRadius, angle));
-      return `<polygon class="learning-radar-grid" points="${pointsAttribute(gridPoints)}"></polygon>`;
+      const points = angles.map(angle => polarPoint(centerX, centerY, gridRadius, angle));
+      return `<polygon class="learning-radar-grid" points="${pointsAttribute(points)}"></polygon>`;
     }).join("");
 
     const axes = angles.map(angle => {
@@ -126,20 +121,23 @@ document.addEventListener("DOMContentLoaded", () => {
       return `<line class="learning-radar-axis" x1="${centerX}" y1="${centerY}" x2="${point.x.toFixed(1)}" y2="${point.y.toFixed(1)}"></line>`;
     }).join("");
 
-    const dataPoints = topics.map(([, count], index) => {
-      const normalizedRadius = radius * (count / maximum);
-      return polarPoint(centerX, centerY, normalizedRadius, angles[index]);
-    });
+    const dataPoints = topics.map(([, count], index) =>
+      polarPoint(centerX, centerY, radius * (count / maximum), angles[index])
+    );
 
     const labels = topics.map(([label, count], index) => {
       const point = polarPoint(centerX, centerY, labelRadius, angles[index]);
       const cosine = Math.cos((angles[index] * Math.PI) / 180);
       const anchor = cosine > 0.25 ? "start" : cosine < -0.25 ? "end" : "middle";
-      const yOffset = angles[index] > 20 && angles[index] < 160 ? 3 : angles[index] < -20 && angles[index] > -160 ? -4 : 0;
+      const yOffset = angles[index] > 20 && angles[index] < 160
+        ? 3
+        : angles[index] < -20 && angles[index] > -160
+          ? -4
+          : 0;
       return radarLabelMarkup(label, count, point.x, point.y + yOffset, anchor);
     }).join("");
 
-    const pointMarkers = dataPoints.map((point, index) => `
+    const markers = dataPoints.map((point, index) => `
       <circle class="learning-radar-point learning-radar-point-${(index % 3) + 1}" cx="${point.x.toFixed(1)}" cy="${point.y.toFixed(1)}" r="4.5"></circle>
     `).join("");
 
@@ -161,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ${gridPolygons}
           ${axes}
           <polygon class="learning-radar-shape" points="${pointsAttribute(dataPoints)}"></polygon>
-          ${pointMarkers}
+          ${markers}
         </g>
         ${labels}
       </svg>
@@ -175,9 +173,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const isoMatch = text.match(/^(\d{4})-(\d{1,2})(?:-\d{1,2})?$/);
     if (isoMatch) {
-      const year = Number(isoMatch[1]);
       const month = Number(isoMatch[2]);
-      if (month >= 1 && month <= 12) return `${year}-${String(month).padStart(2, "0")}`;
+      if (month >= 1 && month <= 12) {
+        return `${isoMatch[1]}-${String(month).padStart(2, "0")}`;
+      }
     }
 
     const monthYearMatch = text.match(/^([A-Za-z]{3,9})\s+(\d{4})$/);
@@ -207,9 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
       indexes.add(Math.round((index * (keys.length - 1)) / (maximumPoints - 1)));
     }
 
-    return [...indexes]
-      .sort((a, b) => a - b)
-      .map(index => keys[index]);
+    return [...indexes].sort((a, b) => a - b).map(index => keys[index]);
   }
 
   function cumulativeValues(events, keys) {
@@ -235,21 +232,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function linePath(points) {
-    return points.map((point, index) => `${index === 0 ? "M" : "L"}${point.x.toFixed(1)},${point.y.toFixed(1)}`).join(" ");
+    return points
+      .map((point, index) => `${index === 0 ? "M" : "L"}${point.x.toFixed(1)},${point.y.toFixed(1)}`)
+      .join(" ");
   }
 
   function renderLearningProgress({ learning, certifications, projects, currentWork }) {
     const container = document.getElementById("learning-progress-chart");
     if (!container) return;
 
-    const courseEvents = learning
-      .map(item => parseMonthKey(item.completion_date))
-      .filter(Boolean);
-
-    const certificationEvents = certifications
-      .map(item => parseMonthKey(item.issue_date))
-      .filter(Boolean);
-
+    const courseEvents = learning.map(item => parseMonthKey(item.completion_date)).filter(Boolean);
+    const certificationEvents = certifications.map(item => parseMonthKey(item.issue_date)).filter(Boolean);
     const projectEvents = [...projects, ...currentWork]
       .map(item => parseMonthKey(item.start_date || item.completion_date))
       .filter(Boolean);
@@ -263,9 +256,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const series = [
-      { key: "courses", label: "Courses completed", values: cumulativeValues(courseEvents, keys), color: "#20d3ee" },
-      { key: "certifications", label: "Certifications earned", values: cumulativeValues(certificationEvents, keys), color: "#f044a4" },
-      { key: "projects", label: "Projects started", values: cumulativeValues(projectEvents, keys), color: "#f5c84c" }
+      { label: "Courses completed", values: cumulativeValues(courseEvents, keys), color: "#20d3ee" },
+      { label: "Certifications earned", values: cumulativeValues(certificationEvents, keys), color: "#f044a4" },
+      { label: "Projects started", values: cumulativeValues(projectEvents, keys), color: "#f5c84c" }
     ];
 
     const width = 920;
@@ -298,7 +291,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }).join("");
 
     const seriesMarkup = series.map((item, seriesIndex) => {
-      const points = item.values.map((value, index) => ({ x: xForIndex(index), y: yForValue(value), value }));
+      const points = item.values.map((value, index) => ({
+        x: xForIndex(index),
+        y: yForValue(value),
+        value
+      }));
       const lastPoint = points[points.length - 1];
       const labelOffset = seriesIndex === 0 ? -10 : seriesIndex === 1 ? 2 : 15;
       const markers = points.map(point => `
@@ -316,7 +313,9 @@ document.addEventListener("DOMContentLoaded", () => {
       <span><i style="--series-color:${item.color}"></i>${escapeHtml(item.label)}</span>
     `).join("");
 
-    const ariaSummary = series.map(item => `${item.label}: ${item.values[item.values.length - 1]}`).join(", ");
+    const ariaSummary = series
+      .map(item => `${item.label}: ${item.values[item.values.length - 1]}`)
+      .join(", ");
 
     container.innerHTML = `
       <div class="learning-progress-legend" aria-hidden="true">${legend}</div>
@@ -331,34 +330,62 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
-  Promise.all([
-    loadJson(sources.projects),
-    loadJson(sources.currentWork),
-    loadJson(sources.certifications),
-    loadJson(sources.learning)
-  ])
-    .then(([projects, currentWork, certifications, learning]) => {
-      const completedLearning = learning.filter(item =>
+  function setUnavailable(containerId, message) {
+    const container = document.getElementById(containerId);
+    if (container) container.innerHTML = `<p class="dashboard-loading">${escapeHtml(message)}</p>`;
+  }
+
+  const requests = [
+    ["projects", sources.projects],
+    ["currentWork", sources.currentWork],
+    ["certifications", sources.certifications],
+    ["learning", sources.learning]
+  ];
+
+  Promise.allSettled(requests.map(([, url]) => dataApi.load(url)))
+    .then(results => {
+      const values = {};
+      const failed = [];
+
+      results.forEach((result, index) => {
+        const name = requests[index][0];
+        if (result.status === "fulfilled") {
+          values[name] = asArray(result.value);
+        } else {
+          values[name] = [];
+          failed.push(name);
+          console.error(`Learning chart ${name} data error:`, result.reason);
+        }
+      });
+
+      const completedLearning = values.learning.filter(item =>
         isVisible(item, "display_on_professional_development") &&
         String(item.status || "").toLowerCase() === "completed"
       );
-      const visibleCertifications = certifications.filter(item => isVisible(item, "display_on_certifications"));
-      const visibleProjects = projects.filter(item => isVisible(item, "display_on_projects"));
-      const visibleCurrentWork = currentWork.filter(item => isVisible(item, "display_on_home"));
+      const visibleCertifications = values.certifications.filter(item => isVisible(item, "display_on_certifications"));
+      const visibleProjects = values.projects.filter(item => isVisible(item, "display_on_projects"));
+      const visibleCurrentWork = values.currentWork.filter(item => isVisible(item, "display_on_home"));
 
-      renderLearningSummary(completedLearning);
-      renderLearningProgress({
-        learning: completedLearning,
-        certifications: visibleCertifications,
-        projects: visibleProjects,
-        currentWork: visibleCurrentWork
-      });
+      if (failed.includes("learning")) {
+        setUnavailable("learning-summary-chart", "Learning summary data is temporarily unavailable.");
+      } else {
+        renderLearningSummary(completedLearning);
+      }
+
+      if (failed.length === requests.length) {
+        setUnavailable("learning-progress-chart", "Learning progress data is temporarily unavailable.");
+      } else {
+        renderLearningProgress({
+          learning: completedLearning,
+          certifications: visibleCertifications,
+          projects: visibleProjects,
+          currentWork: visibleCurrentWork
+        });
+      }
     })
     .catch(error => {
-      const summary = document.getElementById("learning-summary-chart");
-      const progress = document.getElementById("learning-progress-chart");
-      if (summary) summary.innerHTML = '<p class="dashboard-loading">Unable to load the learning summary.</p>';
-      if (progress) progress.innerHTML = '<p class="dashboard-loading">Unable to load the progress timeline.</p>';
+      setUnavailable("learning-summary-chart", "Unable to load the learning summary.");
+      setUnavailable("learning-progress-chart", "Unable to load the progress timeline.");
       console.error("Learning dashboard charts error:", error);
     });
 });
