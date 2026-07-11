@@ -173,19 +173,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }).join("");
   }
 
-  Promise.all([
-    loadJson(sources.profile),
-    loadJson(sources.links),
-    loadJson(sources.publications),
-    loadJson(sources.experience)
-  ])
-    .then(([profile, links, publications, experience]) => {
-      renderProfile(profile);
-      renderLinks(links);
-      renderPublications(publications);
-      renderExperience(experience);
+  const requests = [
+    ["profile", sources.profile],
+    ["links", sources.links],
+    ["publications", sources.publications],
+    ["experience", sources.experience]
+  ];
+
+  Promise.allSettled(requests.map(([, url]) => loadJson(url)))
+    .then(results => {
+      results.forEach((result, index) => {
+        const [name] = requests[index];
+
+        if (result.status === "fulfilled") {
+          if (name === "profile") renderProfile(result.value);
+          if (name === "links") renderLinks(result.value);
+          if (name === "publications") renderPublications(result.value);
+          if (name === "experience") renderExperience(result.value);
+          return;
+        }
+
+        console.error(`Portfolio ${name} data error:`, result.reason);
+
+        if (name === "publications") {
+          const container = document.getElementById("dashboard-publications");
+          if (container) container.innerHTML = '<p class="dashboard-loading">Publications are temporarily unavailable.</p>';
+        }
+
+        if (name === "experience") {
+          const container = document.getElementById("dashboard-experience-list");
+          if (container) container.innerHTML = '<p class="dashboard-loading">Experience data is temporarily unavailable.</p>';
+        }
+      });
     })
     .catch(error => {
-      console.error("Portfolio content data error:", error);
+      console.error("Portfolio content rendering error:", error);
     });
 });
