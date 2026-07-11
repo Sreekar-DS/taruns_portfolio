@@ -3,8 +3,8 @@
 Expected workbook path:
     data/portfolio_data.xlsx
 
-The script is designed for GitHub Actions. It converts small worksheet tables into
-JSON files that the Jekyll site can load with JavaScript.
+The script converts worksheet tables into the same JSON files used by the
+Google Sheets publishing workflow and the Jekyll site.
 """
 
 from __future__ import annotations
@@ -22,13 +22,30 @@ WORKBOOK_PATH = ROOT / "data" / "portfolio_data.xlsx"
 OUTPUT_DIR = ROOT / "assets" / "data"
 
 SHEETS = {
+    "Profile & Opportunity": "profile.json",
+    "Links": "links.json",
+    "Publications": "publications.json",
+    "Awards": "awards.json",
     "Currently Working On": "currently-working-on.json",
     "Projects": "projects.json",
     "Certifications": "certifications.json",
     "Professional Development": "professional-development.json",
+    "Experience": "experience.json",
+    "Education": "education.json",
+    "Skills": "skills.json",
 }
 
 KEY_ALIASES = {
+    "name": "name",
+    "primary role": "primary_role",
+    "secondary role": "secondary_role",
+    "profile summary": "profile_summary",
+    "opportunity label": "opportunity_label",
+    "opportunity roles": "opportunity_roles",
+    "platform": "platform",
+    "label": "label",
+    "url": "url",
+    "external": "external",
     "title": "title",
     "type": "type",
     "category": "category",
@@ -38,18 +55,24 @@ KEY_ALIASES = {
     "completion date": "completion_date",
     "issue date": "issue_date",
     "expiry date": "expiry_date",
+    "publication date": "publication_date",
+    "award date": "award_date",
     "priority": "priority",
     "skills": "skills",
+    "tools": "tools",
+    "opportunity_roles": "opportunity_roles",
     "short description": "short_description",
     "progress": "progress",
     "github link": "github_link",
     "demo link": "demo_link",
+    "publication url": "publication_url",
     "display on home": "display_on_home",
     "display": "display",
     "featured": "featured",
     "display order": "display_order",
     "organization": "organization",
     "provider": "provider",
+    "publisher": "publisher",
     "course type": "course_type",
     "credential id": "credential_id",
     "credential url": "credential_url",
@@ -82,12 +105,12 @@ def to_bool(value: Any) -> bool:
     return str(value).strip().lower() in {"yes", "y", "true", "1", "show", "featured"}
 
 
-def split_skills(value: Any) -> list[str]:
+def split_list(value: Any) -> list[str]:
     if value is None:
         return []
     if isinstance(value, list):
         return [str(item).strip() for item in value if str(item).strip()]
-    return [item.strip() for item in str(value).split(",") if item.strip()]
+    return [item.strip() for item in re.split(r"[,;|]", str(value)) if item.strip()]
 
 
 def sheet_to_records(ws) -> list[dict[str, Any]]:
@@ -100,15 +123,16 @@ def sheet_to_records(ws) -> list[dict[str, Any]]:
 
     for row in rows[1:]:
         record = {headers[i]: clean_value(row[i]) if i < len(row) else "" for i in range(len(headers)) if headers[i]}
-        if not record.get("title"):
+        if not any(value not in ("", None) for value in record.values()):
             continue
 
-        if "skills" in record:
-            record["skills"] = split_skills(record.get("skills"))
+        for list_key in ["skills", "tools", "highlights", "opportunity_roles"]:
+            if list_key in record:
+                record[list_key] = split_list(record.get(list_key))
 
-        for bool_key in ["display_on_home", "display", "featured"]:
-            if bool_key in record:
-                record[bool_key] = to_bool(record.get(bool_key))
+        for key in list(record):
+            if key.startswith("display_on_") or key in {"display", "featured", "external"}:
+                record[key] = to_bool(record.get(key))
 
         if "progress" in record and record["progress"] != "":
             try:
