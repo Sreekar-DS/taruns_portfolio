@@ -1,0 +1,276 @@
+/* Typography consistency, KPI card structure, and profile readability refinements. */
+
+.home-dashboard-page {
+  /* Profile block readability. */
+  .dashboard-top-grid .dashboard-summary {
+    color: #dcecff !important;
+    font-size: 15px !important;
+    font-weight: 500;
+    line-height: 1.55;
+  }
+
+  .dashboard-top-grid .dashboard-actions a {
+    font-size: 13px !important;
+    font-weight: 700;
+  }
+
+  .dashboard-top-grid .dashboard-opportunity {
+    width: calc(100% - 128px);
+    margin-left: 128px;
+  }
+
+  .dashboard-top-grid .dashboard-opportunity strong {
+    color: #ffffff !important;
+    font-size: 13px !important;
+  }
+
+  .dashboard-top-grid .dashboard-opportunity span {
+    color: #d5e8f7 !important;
+    font-size: 12px !important;
+    font-weight: 500;
+  }
+
+  /* Give the compact 3 x 2 KPI grid enough vertical room for the richer card hierarchy. */
+  .dashboard-top-grid .dashboard-hero {
+    min-height: 390px;
+  }
+
+  .dashboard-top-grid .dashboard-kpis {
+    align-items: stretch;
+  }
+
+  .dashboard-top-grid .kpi-card {
+    min-height: 0;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 7px;
+    text-align: center;
+  }
+
+  /* Icon and KPI heading share one line, like the visual reference. */
+  .dashboard-top-grid .kpi-heading-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .dashboard-top-grid .kpi-icon {
+    flex: 0 0 auto;
+    width: 42px !important;
+    height: 42px !important;
+    padding: 2px !important;
+    color: var(--kpi-accent) !important;
+    filter: drop-shadow(0 0 7px var(--kpi-accent));
+  }
+
+  .dashboard-top-grid .kpi-icon .dashboard-icon-svg {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .dashboard-top-grid .kpi-label {
+    color: #ffffff !important;
+    font-size: clamp(15px, 1.2vw, 19px) !important;
+    font-weight: 700 !important;
+    line-height: 1.2;
+    letter-spacing: 0 !important;
+    text-transform: none;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+  }
+
+  .dashboard-top-grid .kpi-metric {
+    width: 100%;
+  }
+
+  /* Sleeker number styling than the previous heavy 800-weight numerals. */
+  .dashboard-top-grid .kpi-metric > strong {
+    display: block;
+    margin: 4px 0 3px;
+    color: #ffffff !important;
+    font-family: "Segoe UI Variable Display", Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: clamp(34px, 2.2vw, 42px) !important;
+    font-weight: 500 !important;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+
+  .dashboard-top-grid .kpi-info-line {
+    display: block;
+    color: #f5fbff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  .dashboard-top-grid .kpi-divider {
+    width: min(100%, 150px);
+    height: 1px;
+    margin: 3px auto 1px;
+    background: linear-gradient(90deg, transparent, rgba(164, 203, 231, 0.38), transparent);
+  }
+
+  .dashboard-top-grid .kpi-card small {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 20px;
+    color: #f4fbff !important;
+    font-size: 13px !important;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .dashboard-top-grid .kpi-card small::before {
+    width: 9px !important;
+    height: 9px !important;
+    background: var(--kpi-accent) !important;
+    box-shadow: 0 0 12px var(--kpi-accent), 0 0 3px var(--kpi-accent) !important;
+  }
+
+  /* One consistent section-heading scale across all dashboard blocks. */
+  .dashboard-panel-heading h2,
+  .publication-panel h2 {
+    color: #ffffff !important;
+    font-size: 18px !important;
+    font-weight: 800;
+    line-height: 1.25;
+    text-transform: capitalize;
+  }
+
+  /* Certifications: +2px over the previous detailed text scale. */
+  .overview-certifications-panel .dashboard-panel-heading h2 {
+    font-size: 18px !important;
+  }
+
+  .overview-certifications-panel .dashboard-certification-item strong,
+  .overview-certifications-panel .dashboard-certification-item strong a,
+  .overview-certifications-panel .dashboard-certification-item strong span {
+    font-size: 15px !important;
+  }
+
+  .overview-certifications-panel .dashboard-certification-item small,
+  .overview-certifications-panel .dashboard-certification-item time {
+    font-size: 12.5px !important;
+  }
+
+  /* Skills by Category: +2px. */
+  .skills-category-panel .horizontal-bar-label {
+    font-size: 13px !important;
+  }
+
+  .skills-category-panel .horizontal-bar-label strong {
+    font-size: 13px !important;
+  }
+
+  /* Learning Summary: +2px and visually centered. */
+  .learning-radar-chart {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .learning-radar-svg {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .learning-radar-label {
+    font-size: 14px !important;
+  }
+
+  .learning-radar-value {
+    font-size: 12px !important;
+  }
+
+  /* Learning Progress Over Time: +2px. */
+  .learning-progress-legend {
+    font-size: 12px !important;
+  }
+
+  .learning-progress-axis-label {
+    font-size: 12px !important;
+  }
+
+  .learning-progress-end-label {
+    font-size: 13px !important;
+  }
+
+  /* Currently Working On: +2px for secondary content. */
+  .dashboard-project-type,
+  .dashboard-project-status {
+    font-size: 11px !important;
+  }
+
+  .dashboard-project-card > p {
+    font-size: 14px !important;
+  }
+
+  .dashboard-project-progress-copy {
+    font-size: 13px !important;
+  }
+
+  .dashboard-project-skills span {
+    font-size: 12px !important;
+  }
+
+  .dashboard-project-meta span {
+    font-size: 11px !important;
+  }
+
+  .dashboard-project-meta strong {
+    font-size: 12px !important;
+  }
+
+  .dashboard-project-links a {
+    font-size: 12px !important;
+  }
+
+  /* Tech stack and footer: +2px. */
+  .dashboard-tech-item > span:last-child {
+    font-size: 12px !important;
+  }
+
+  .dashboard-traits strong {
+    font-size: 14px !important;
+  }
+
+  .dashboard-traits small {
+    font-size: 12px !important;
+  }
+}
+
+@media screen and (max-width: 1360px) {
+  .home-dashboard-page {
+    .dashboard-top-grid .dashboard-hero {
+      min-height: 240px;
+    }
+
+    .dashboard-top-grid .kpi-card {
+      min-height: 180px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .home-dashboard-page {
+    .dashboard-top-grid .dashboard-opportunity {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    .dashboard-top-grid .kpi-label {
+      font-size: 15px !important;
+    }
+  }
+}
