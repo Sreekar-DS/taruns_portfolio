@@ -55,8 +55,9 @@
   };
 
   function replaceContent(selector, iconName) {
-    const element = document.querySelector(selector);
-    if (element && icons[iconName]) element.innerHTML = icons[iconName];
+    document.querySelectorAll(selector).forEach(element => {
+      if (icons[iconName]) element.innerHTML = icons[iconName];
+    });
   }
 
   function enhanceStaticIcons() {
@@ -101,6 +102,12 @@
     if (techStack) {
       const observer = new MutationObserver(enhanceTechStack);
       observer.observe(techStack, { childList: true, subtree: true });
+    }
+
+    const publications = document.getElementById("dashboard-publications");
+    if (publications) {
+      const observer = new MutationObserver(() => replaceContent("#dashboard-publications .publication-icon", "publication"));
+      observer.observe(publications, { childList: true, subtree: true });
     }
   }
 
