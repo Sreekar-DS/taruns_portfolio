@@ -26,15 +26,12 @@ permalink: /
         </div>
 
         <div class="dashboard-identity-copy">
-          <p id="rotating-greeting" class="dashboard-greeting" aria-live="polite">Hi, this is Tarun.</p>
+          <p id="dashboard-profile-message" class="dashboard-greeting dashboard-profile-message" aria-live="polite">Turning data into practical insights, business decisions, and analytics-focused solutions.</p>
           <h1 id="dashboard-name">Tarun Sreekar Parasa</h1>
           <p class="dashboard-role">
             <span id="dashboard-primary-role">Data Analyst</span>
             <span class="dashboard-role-separator" aria-hidden="true">|</span>
             <span id="dashboard-secondary-role">Business Analyst</span>
-          </p>
-          <p id="dashboard-profile-summary" class="dashboard-summary">
-            Turning data into practical insights, business decisions, and analytics-focused solutions.
           </p>
 
           <div id="dashboard-actions" class="dashboard-actions" aria-label="Portfolio links">
@@ -149,6 +146,36 @@ permalink: /
     </article>
   </section>
 
+  <section class="dashboard-work-cert-grid" aria-label="Certifications and current projects">
+    <article class="dashboard-panel dashboard-chart-panel overview-certifications-panel">
+      <div class="dashboard-panel-heading">
+        <div>
+          <span class="dashboard-eyebrow">Credentials</span>
+          <h2>Certifications</h2>
+        </div>
+        <a href="{{ '/certifications/' | relative_url }}">View all</a>
+      </div>
+      <div id="dashboard-certifications" class="dashboard-certification-list dashboard-vertical-scroll" aria-live="polite">
+        <p class="dashboard-loading">Loading certifications…</p>
+      </div>
+    </article>
+
+    <article class="dashboard-panel dashboard-chart-panel dashboard-projects-panel dashboard-current-work-panel">
+      <div class="dashboard-panel-heading">
+        <div>
+          <span class="dashboard-eyebrow">Live progress</span>
+          <h2>Currently Working On</h2>
+        </div>
+        <a href="{{ '/projects/' | relative_url }}">All projects</a>
+      </div>
+      <div id="dashboard-current-projects-viewport" class="dashboard-current-projects-viewport dashboard-vertical-scroll">
+        <div id="dashboard-current-projects" class="dashboard-project-grid dashboard-current-project-grid" aria-live="polite">
+          <p class="dashboard-loading">Loading current projects…</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
   <section class="dashboard-analytics-grid" aria-label="Skills and learning analytics">
     <article class="dashboard-panel dashboard-chart-panel skills-category-panel">
       <div class="dashboard-panel-heading">
@@ -185,36 +212,6 @@ permalink: /
       </div>
       <div id="learning-progress-chart" class="learning-progress-chart" aria-live="polite">
         <p class="dashboard-loading">Loading progress timeline…</p>
-      </div>
-    </article>
-  </section>
-
-  <section class="dashboard-work-cert-grid" aria-label="Certifications and current projects">
-    <article class="dashboard-panel dashboard-chart-panel overview-certifications-panel">
-      <div class="dashboard-panel-heading">
-        <div>
-          <span class="dashboard-eyebrow">Credentials</span>
-          <h2>Certifications</h2>
-        </div>
-        <a href="{{ '/certifications/' | relative_url }}">View all</a>
-      </div>
-      <div id="dashboard-certifications" class="dashboard-certification-list dashboard-vertical-scroll" aria-live="polite">
-        <p class="dashboard-loading">Loading certifications…</p>
-      </div>
-    </article>
-
-    <article class="dashboard-panel dashboard-chart-panel dashboard-projects-panel dashboard-current-work-panel">
-      <div class="dashboard-panel-heading">
-        <div>
-          <span class="dashboard-eyebrow">Live progress</span>
-          <h2>Currently Working On</h2>
-        </div>
-        <a href="{{ '/projects/' | relative_url }}">All projects</a>
-      </div>
-      <div id="dashboard-current-projects-viewport" class="dashboard-current-projects-viewport dashboard-vertical-scroll">
-        <div id="dashboard-current-projects" class="dashboard-project-grid dashboard-current-project-grid" aria-live="polite">
-          <p class="dashboard-loading">Loading current projects…</p>
-        </div>
       </div>
     </article>
   </section>
@@ -273,3 +270,4 @@ permalink: /
 <script src="{{ '/assets/js/home-content.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
 <script src="{{ '/assets/js/home-icons.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
 <script src="{{ '/assets/js/home-scroll.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
+<script src="{{ '/assets/js/home-profile-message.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
