@@ -90,8 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const experiences = (Array.isArray(items) ? items : [])
       .filter(item => isVisible(item, "display_on_experience"))
-      .sort((a, b) => Number(a.display_order || 999) - Number(b.display_order || 999))
-      .slice(0, 4);
+      .sort((a, b) => Number(a.display_order || 999) - Number(b.display_order || 999));
 
     if (!experiences.length) {
       container.innerHTML = '<p class="dashboard-loading">No experience items are listed.</p>';

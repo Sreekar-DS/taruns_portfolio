@@ -47,8 +47,9 @@ permalink: /
 
       <div class="dashboard-opportunity">
         <span class="dashboard-live-dot" aria-hidden="true"></span>
-        <div>
+        <div class="dashboard-opportunity-line">
           <strong id="dashboard-opportunity-label">Open to opportunities</strong>
+          <span class="dashboard-opportunity-separator" aria-hidden="true">-</span>
           <span id="dashboard-opportunity-roles">Data Analyst · Business Analyst · BI Analyst</span>
         </div>
       </div>
@@ -62,7 +63,7 @@ permalink: /
         </div>
         <a href="{{ '/experience/' | relative_url }}">View all</a>
       </div>
-      <div id="dashboard-experience-list" class="dashboard-experience-list" aria-live="polite">
+      <div id="dashboard-experience-list" class="dashboard-experience-list dashboard-vertical-scroll" aria-live="polite">
         <p class="dashboard-loading">Loading experience…</p>
       </div>
     </article>
@@ -148,20 +149,7 @@ permalink: /
     </article>
   </section>
 
-  <section class="dashboard-chart-grid dashboard-overview-grid" aria-label="Portfolio overview charts">
-    <article class="dashboard-panel dashboard-chart-panel overview-certifications-panel">
-      <div class="dashboard-panel-heading">
-        <div>
-          <span class="dashboard-eyebrow">Credentials</span>
-          <h2>Certifications</h2>
-        </div>
-        <a href="{{ '/certifications/' | relative_url }}">View all</a>
-      </div>
-      <div id="dashboard-certifications" class="dashboard-certification-list" aria-live="polite">
-        <p class="dashboard-loading">Loading certifications…</p>
-      </div>
-    </article>
-
+  <section class="dashboard-analytics-grid" aria-label="Skills and learning analytics">
     <article class="dashboard-panel dashboard-chart-panel skills-category-panel">
       <div class="dashboard-panel-heading">
         <div>
@@ -174,9 +162,7 @@ permalink: /
         <p class="dashboard-loading">Loading skill categories…</p>
       </div>
     </article>
-  </section>
 
-  <section class="dashboard-learning-grid" aria-label="Learning analytics">
     <article class="dashboard-panel dashboard-chart-panel learning-summary-panel">
       <div class="dashboard-panel-heading">
         <div>
@@ -203,64 +189,65 @@ permalink: /
     </article>
   </section>
 
-  <section class="dashboard-panel dashboard-wide-section dashboard-scroll-section dashboard-projects-panel">
-    <div class="dashboard-panel-heading dashboard-scroll-heading">
-      <div>
-        <span class="dashboard-eyebrow">Live progress</span>
-        <h2>Currently Working On</h2>
+  <section class="dashboard-work-cert-grid" aria-label="Certifications and current projects">
+    <article class="dashboard-panel dashboard-chart-panel overview-certifications-panel">
+      <div class="dashboard-panel-heading">
+        <div>
+          <span class="dashboard-eyebrow">Credentials</span>
+          <h2>Certifications</h2>
+        </div>
+        <a href="{{ '/certifications/' | relative_url }}">View all</a>
       </div>
-      <div class="dashboard-heading-actions">
+      <div id="dashboard-certifications" class="dashboard-certification-list dashboard-vertical-scroll" aria-live="polite">
+        <p class="dashboard-loading">Loading certifications…</p>
+      </div>
+    </article>
+
+    <article class="dashboard-panel dashboard-chart-panel dashboard-projects-panel dashboard-current-work-panel">
+      <div class="dashboard-panel-heading">
+        <div>
+          <span class="dashboard-eyebrow">Live progress</span>
+          <h2>Currently Working On</h2>
+        </div>
         <a href="{{ '/projects/' | relative_url }}">All projects</a>
-        <div class="dashboard-scroll-controls" aria-label="Scroll current projects">
-          <button type="button" class="dashboard-scroll-button" data-scroll-target="dashboard-current-projects-viewport" data-scroll-direction="-1" aria-label="Scroll current projects left">‹</button>
-          <button type="button" class="dashboard-scroll-button" data-scroll-target="dashboard-current-projects-viewport" data-scroll-direction="1" aria-label="Scroll current projects right">›</button>
+      </div>
+      <div id="dashboard-current-projects-viewport" class="dashboard-current-projects-viewport dashboard-vertical-scroll">
+        <div id="dashboard-current-projects" class="dashboard-project-grid dashboard-current-project-grid" aria-live="polite">
+          <p class="dashboard-loading">Loading current projects…</p>
         </div>
       </div>
-    </div>
-    <div id="dashboard-current-projects-viewport" class="dashboard-horizontal-viewport">
-      <div id="dashboard-current-projects" class="dashboard-project-grid dashboard-horizontal-track" aria-live="polite">
-        <p class="dashboard-loading">Loading current projects…</p>
-      </div>
-    </div>
+    </article>
   </section>
 
-  <section class="dashboard-panel dashboard-wide-section dashboard-scroll-section dashboard-tech-panel">
-    <div class="dashboard-panel-heading dashboard-scroll-heading">
-      <div>
-        <span class="dashboard-eyebrow">Tools and platforms</span>
-        <h2>Tech Stack</h2>
-      </div>
-      <div class="dashboard-scroll-controls" aria-label="Scroll tech stack">
-        <button type="button" class="dashboard-scroll-button" data-scroll-target="dashboard-tech-stack-viewport" data-scroll-direction="-1" aria-label="Scroll tech stack left">‹</button>
-        <button type="button" class="dashboard-scroll-button" data-scroll-target="dashboard-tech-stack-viewport" data-scroll-direction="1" aria-label="Scroll tech stack right">›</button>
-      </div>
-    </div>
-    <div id="dashboard-tech-stack-viewport" class="dashboard-horizontal-viewport">
-      <div id="dashboard-tech-stack" class="dashboard-tech-stack dashboard-horizontal-track" aria-live="polite">
-        <p class="dashboard-loading">Loading tools…</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="dashboard-panel dashboard-wide-section dashboard-scroll-section dashboard-publications-panel">
-    <div class="dashboard-panel-heading dashboard-scroll-heading">
-      <div>
-        <span class="dashboard-eyebrow">Research and writing</span>
-        <h2>Publications</h2>
-      </div>
-      <div class="dashboard-heading-actions">
+  <section class="dashboard-publications-tech-grid" aria-label="Publications and tech stack">
+    <article class="dashboard-panel dashboard-chart-panel dashboard-publications-panel">
+      <div class="dashboard-panel-heading">
+        <div>
+          <span class="dashboard-eyebrow">Research and writing</span>
+          <h2>Publications</h2>
+        </div>
         <a href="{{ '/publication/' | relative_url }}">View all</a>
-        <div class="dashboard-scroll-controls" aria-label="Scroll publications">
-          <button type="button" class="dashboard-scroll-button" data-scroll-target="dashboard-publications-viewport" data-scroll-direction="-1" aria-label="Scroll publications left">‹</button>
-          <button type="button" class="dashboard-scroll-button" data-scroll-target="dashboard-publications-viewport" data-scroll-direction="1" aria-label="Scroll publications right">›</button>
+      </div>
+      <div id="dashboard-publications-viewport" class="dashboard-publications-viewport dashboard-vertical-scroll">
+        <div id="dashboard-publications" class="dashboard-publication-list" aria-live="polite">
+          <p class="dashboard-loading">Loading publications…</p>
         </div>
       </div>
-    </div>
-    <div id="dashboard-publications-viewport" class="dashboard-horizontal-viewport">
-      <div id="dashboard-publications" class="dashboard-publication-list dashboard-horizontal-track" aria-live="polite">
-        <p class="dashboard-loading">Loading publications…</p>
+    </article>
+
+    <article class="dashboard-panel dashboard-chart-panel dashboard-tech-panel">
+      <div class="dashboard-panel-heading">
+        <div>
+          <span class="dashboard-eyebrow">Tools and platforms</span>
+          <h2>Tech Stack</h2>
+        </div>
       </div>
-    </div>
+      <div id="dashboard-tech-stack-viewport" class="dashboard-tech-stack-viewport dashboard-vertical-scroll">
+        <div id="dashboard-tech-stack" class="dashboard-tech-stack" aria-live="polite">
+          <p class="dashboard-loading">Loading tools…</p>
+        </div>
+      </div>
+    </article>
   </section>
 
   <section class="dashboard-panel dashboard-footer-strip">
