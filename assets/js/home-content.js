@@ -135,33 +135,42 @@ document.addEventListener("DOMContentLoaded", () => {
     return text;
   }
 
-  function renderPublication(items) {
-    const publication = (Array.isArray(items) ? items : [])
+  function renderPublications(items) {
+    const container = document.getElementById("dashboard-publications");
+    if (!container) return;
+
+    const publications = (Array.isArray(items) ? items : [])
       .filter(item => isVisible(item, "display_on_home"))
-      .sort((a, b) => Number(a.display_order || 999) - Number(b.display_order || 999))[0];
+      .sort((a, b) => Number(a.display_order || 999) - Number(b.display_order || 999));
 
-    if (!publication) return;
-
-    setText("dashboard-publication-title", publication.title);
-
-    const meta = [
-      publication.short_description,
-      publication.publisher,
-      formatPublicationDate(publication.publication_date)
-    ].filter(Boolean).join(" · ");
-    setText("dashboard-publication-meta", meta);
-
-    const link = document.getElementById("dashboard-publication-link");
-    if (link && publication.publication_url) {
-      link.href = publication.publication_url;
-      if (/^https?:\/\//i.test(String(publication.publication_url))) {
-        link.target = "_blank";
-        link.rel = "noopener";
-      } else {
-        link.removeAttribute("target");
-        link.removeAttribute("rel");
-      }
+    if (!publications.length) {
+      container.innerHTML = '<p class="dashboard-loading">No publications are listed.</p>';
+      return;
     }
+
+    container.innerHTML = publications.map((publication, index) => {
+      const title = escapeHtml(publication.title || "Publication");
+      const meta = [
+        publication.short_description,
+        publication.publisher,
+        formatPublicationDate(publication.publication_date)
+      ].filter(Boolean).map(escapeHtml).join(" · ");
+      const url = escapeHtml(publication.publication_url || "");
+      const external = /^https?:\/\//i.test(String(publication.publication_url || ""));
+      const target = external ? ' target="_blank" rel="noopener"' : "";
+      const link = url ? `<a href="${url}"${target}>Read publication</a>` : "";
+
+      return `
+        <article class="dashboard-publication-card" style="--publication-index: ${index};">
+          <span class="publication-icon" aria-hidden="true">R</span>
+          <div class="dashboard-publication-copy">
+            <h3>${title}</h3>
+            <p>${meta}</p>
+            ${link}
+          </div>
+        </article>
+      `;
+    }).join("");
   }
 
   Promise.all([
@@ -173,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(([profile, links, publications, experience]) => {
       renderProfile(profile);
       renderLinks(links);
-      renderPublication(publications);
+      renderPublications(publications);
       renderExperience(experience);
     })
     .catch(error => {
