@@ -1,0 +1,14 @@
+/* Small interaction-state refinements layered after the main inner-page overrides. */
+
+.projects-dashboard-page .filter-box label.filter-active {
+  color: #ffffff;
+  border-color: rgba(32, 211, 238, 0.7);
+  background: rgba(18, 105, 141, 0.42);
+  box-shadow: inset 0 0 18px rgba(32, 211, 238, 0.08), 0 0 16px rgba(32, 211, 238, 0.08);
+}
+
+.professional-development-dashboard-page #professional-development {
+  display: grid;
+  gap: 18px;
+  width: 100%;
+}
