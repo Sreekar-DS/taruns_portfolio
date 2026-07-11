@@ -1,0 +1,68 @@
+/* Final consistency pass for dashboard headings, KPI accents, notes, and secondary text. */
+
+.home-dashboard-page {
+  /* Six clearly distinct KPI accents. The same accent drives both icon and bottom dot. */
+  .dashboard-top-grid .kpi-card:nth-child(1) { --kpi-accent: #20d3ee; }
+  .dashboard-top-grid .kpi-card:nth-child(2) { --kpi-accent: #36dfbd; }
+  .dashboard-top-grid .kpi-card:nth-child(3) { --kpi-accent: #f044a4; }
+  .dashboard-top-grid .kpi-card:nth-child(4) { --kpi-accent: #f5c84c; }
+  .dashboard-top-grid .kpi-card:nth-child(5) { --kpi-accent: #9b6cff; }
+  .dashboard-top-grid .kpi-card:nth-child(6) { --kpi-accent: #ff9b55; }
+
+  /* Use the KPI-heading typography for every dashboard block heading. */
+  .dashboard-panel-heading h2,
+  .publication-panel h2 {
+    color: #ffffff !important;
+    font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: clamp(15px, 1.2vw, 19px) !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0 !important;
+    text-transform: capitalize !important;
+  }
+
+  /* Increase chart-note text by 2px from the previous 9px scale. */
+  .learning-radar-note,
+  .learning-progress-note,
+  .dashboard-chart-note {
+    font-size: 11px !important;
+  }
+
+  /* Match Skills category names to the KPI-card bottom description styling. */
+  .skills-category-panel .horizontal-bar-label span {
+    color: #f4fbff !important;
+    font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1.3;
+  }
+
+  /* Match certification issuer and date to the KPI-card bottom description styling. */
+  .overview-certifications-panel .dashboard-certification-item small,
+  .overview-certifications-panel .dashboard-certification-item time {
+    color: #f4fbff !important;
+    font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1.3;
+  }
+
+  /* Match Learning Progress axis labels and dates to KPI bottom-description color/font.
+     Keep the existing 12px size as requested. */
+  .learning-progress-axis-label {
+    fill: #f4fbff !important;
+    font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+  }
+
+  /* Pills and tech-stack names should be lighter, not bold. */
+  .dashboard-project-type,
+  .dashboard-project-status {
+    font-weight: 500 !important;
+  }
+
+  .dashboard-tech-item > span:last-child {
+    font-weight: 500 !important;
+  }
+}
