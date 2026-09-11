@@ -1,5 +1,99 @@
 [
   {
+    "title": "E-commerce Fulfillment & Order Operations Database",
+    "type": "Academic SQL / Database Project",
+    "status": "Completed",
+    "start_date": "",
+    "completion_date": "2026-02-20",
+    "skills": [
+      "SQL",
+      "MySQL",
+      "Relational Database Design",
+      "Fulfillment Analytics",
+      "Inventory",
+      "Shipment Tracking",
+      "Returns & Refunds",
+      "Query Optimization"
+    ],
+    "short_description": "Designed an e-commerce operations database covering inventory, fulfillment centres, item-level shipments, status history, returns, refunds, reporting views, and SQL optimization.",
+    "long_description": "Portfolio refactor of an MSc relational-database assignment. The full academic design contained 50+ tables; the recruiter-facing implementation focuses on the operational flow from inventory and fulfillment centres through order items, shipments, tracking events, returns, and refunds. Includes MySQL schema design, reporting views, warehouse-style operational queries, and a CTE-based query optimization example.",
+    "github_link": "https://github.com/Sreekar-DS/taruns_portfolio/tree/main/project-artifacts/bsbi-ecommerce-fulfillment-database",
+    "demo_link": "",
+    "image_url": "",
+    "display_on_projects": true,
+    "display_order": 1
+  },
+  {
+    "title": "Excelerate Learners, Opportunities & Cohorts Analysis",
+    "type": "Internship SQL / BI Project",
+    "status": "Completed",
+    "start_date": "2025-03-01",
+    "completion_date": "2025-04-02",
+    "skills": [
+      "PostgreSQL",
+      "SQL",
+      "ETL",
+      "Data Cleaning",
+      "Data Quality",
+      "CTEs",
+      "Joins",
+      "Looker Studio"
+    ],
+    "short_description": "Built a PostgreSQL analytics pipeline across six source datasets and produced a BI-ready model for learner, opportunity, cohort, and enrollment analysis.",
+    "long_description": "Cleaned and integrated six source datasets into an analytics-ready PostgreSQL model. The final extract contains 184,782 rows, 42 columns, and 129,262 unique learners. Used CTEs, joins, COALESCE, CASE, date extraction, data-quality checks, and aggregate analysis; published privacy-safe portfolio results instead of the 149 MB learner-level dataset.",
+    "github_link": "https://github.com/Sreekar-DS/Data-Visualization-Internship/tree/main/Excelerate%20Learners%20Opportunities%20Cohorts",
+    "demo_link": "https://lookerstudio.google.com/reporting/13f5c772-7e14-476d-8521-dffab2d2360c",
+    "image_url": "",
+    "display_on_projects": true,
+    "display_order": 2
+  },
+  {
+    "title": "Zalando Marketplace Relational Schema & Analytics",
+    "type": "PostgreSQL Data Architecture Project",
+    "status": "Completed",
+    "start_date": "2026-06-01",
+    "completion_date": "2026-09-11",
+    "skills": [
+      "PostgreSQL",
+      "SQL",
+      "Schema Design",
+      "ER Modeling",
+      "Data Architecture",
+      "E-commerce Analytics",
+      "Window Functions",
+      "Data Quality"
+    ],
+    "short_description": "Completed a Zalando-style fashion marketplace database with SKU-level variants, carts, orders, payments, shipments, returns, refunds, reviews, promotions, and analytics queries.",
+    "long_description": "Converted an academic product-dissection draft into a complete PostgreSQL portfolio implementation. Added a normalized relational schema, synthetic sample data, a Mermaid ER model, constraints and indexes, plus analytical queries for brand revenue, low stock, return rate, view-to-purchase conversion, average order value, promotion sales, shipment aging, and ratings.",
+    "github_link": "https://github.com/Sreekar-DS/taruns_portfolio/tree/main/project-artifacts/zalando-relational-schema",
+    "demo_link": "",
+    "image_url": "",
+    "display_on_projects": true,
+    "display_order": 3
+  },
+  {
+    "title": "Superhero U Facebook Ads Campaign Analysis",
+    "type": "Internship BI Project",
+    "status": "Completed",
+    "start_date": "2025-01-01",
+    "completion_date": "2025-02-28",
+    "skills": [
+      "Microsoft Excel",
+      "Tableau",
+      "Marketing Analytics",
+      "KPI Analysis",
+      "Campaign Performance",
+      "Business Recommendation"
+    ],
+    "short_description": "Evaluated 11 paid campaigns across 13 countries and translated campaign KPIs into a recommendation to remove or reallocate underperforming spend.",
+    "long_description": "Analyzed Facebook campaign performance for the Superhero U event using Excel and Tableau. Compared reach, spend, and efficiency indicators across campaigns, built an interactive Tableau Public dashboard, and recommended removing/reallocating weak campaigns with an estimated ~30% marketing-budget saving in the internship scenario.",
+    "github_link": "https://github.com/Sreekar-DS/Data-Visualization-Internship/tree/main/Superhero%20U%20Event%20-%20Facebook%20Ads%20Campaign%20Analysis",
+    "demo_link": "https://public.tableau.com/app/profile/tarun.sreekar.parasa3476/viz/DVT15Week-2Deliverable/CAMPAIGNWISETOTALREACH?publish=yes",
+    "image_url": "",
+    "display_on_projects": true,
+    "display_order": 4
+  },
+  {
     "title": "Operation and Metric Analysis",
     "type": "SQL Analytics Project",
     "status": "Completed",
@@ -20,7 +114,7 @@
     "demo_link": "https://www.datascienceportfol.io/taruns_portfolio/projects/3",
     "image_url": "",
     "display_on_projects": true,
-    "display_order": 1
+    "display_order": 5
   },
   {
     "title": "Instagram User Analytics",
@@ -43,7 +137,7 @@
     "demo_link": "https://www.datascienceportfol.io/taruns_portfolio/projects/1",
     "image_url": "",
     "display_on_projects": true,
-    "display_order": 2
+    "display_order": 6
   },
   {
     "title": "Student App Data Learning Analysis",
@@ -66,7 +160,7 @@
     "demo_link": "https://www.datascienceportfol.io/taruns_portfolio/projects/0",
     "image_url": "/assets/Student_App_Learning_Data_Analysis_Cover_Image.png",
     "display_on_projects": true,
-    "display_order": 3
+    "display_order": 7
   },
   {
     "title": "RFM Analysis of e-Commerce Customers",
@@ -88,6 +182,6 @@
     "demo_link": "https://www.datascienceportfol.io/taruns_portfolio/projects/2",
     "image_url": "",
     "display_on_projects": true,
-    "display_order": 4
+    "display_order": 8
   }
 ]
